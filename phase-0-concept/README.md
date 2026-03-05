@@ -13,11 +13,18 @@ Transform a raw idea into a validated concept with enough clarity to commit reso
 
 | Step | Name | Purpose | Key Output |
 |------|------|---------|------------|
+| 0 | [Guided Concept Session](steps/00-guided-concept-session.md) | Interactive Q&A that drives Steps 1-5 conversationally | Draft deliverables for all steps |
 | 1 | [Ideation & Vision](steps/01-ideation-and-vision.md) | Define the core idea and who it serves | Vision Statement |
 | 2 | [Discovery Questions](steps/02-discovery-questions.md) | Surface unknowns and scope decisions | Completed Questionnaire |
 | 3 | [Competitive Analysis](steps/03-competitive-analysis.md) | Understand the market and differentiation | Competitor Matrix + Positioning |
 | 4 | [Technical Feasibility](steps/04-technical-feasibility.md) | Validate that the idea is buildable | Feasibility Assessment |
 | 5 | [Concept Document](steps/05-concept-document.md) | Synthesize everything into a Go/No-Go decision | Concept Document |
+
+### How to Start
+
+**Recommended:** Begin with **Step 0 (Guided Concept Session)**. It runs an iterative Q&A conversation that produces draft deliverables for Steps 1-4 and feeds into Step 5. This is faster and more thorough than working through templates in isolation.
+
+**Alternative:** Work through Steps 1-5 independently using the templates in `templates/`. Better suited for teams who prefer async documentation or already have a well-formed concept.
 
 ## Exit Criteria
 
