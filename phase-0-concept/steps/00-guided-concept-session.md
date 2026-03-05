@@ -163,7 +163,21 @@ This session produces draft versions of all Phase 0 deliverables:
 - Technical Feasibility → `docs/concept/technical-feasibility.md`
 - Concept Document → `docs/concept/concept-document.md`
 
+After synthesis, create the **session continuity artifacts** (see [Step 6: Phase Retrospective](06-phase-retrospective.md)):
+- Concept Brief → `docs/concept/BRIEF.md` (one-page summary — the "read this first" doc)
+- Project CLAUDE.md → `.claude/CLAUDE.md` (AI context with key decisions, current phase, stack)
+- ROADMAP.md → `docs/ROADMAP.md` (Phase 1 tasks initialized)
+
 After the session, each deliverable may need refinement — especially the Competitor Matrix and Technical Feasibility, which benefit from deeper research than a single conversation can provide. The session gets you 70-80% there; the individual step guides cover the remaining polish.
+
+## Session Continuity
+
+Long concept sessions may span multiple conversations. To prevent context loss:
+
+1. **Save progress after each section.** Write deliverables to disk after each checkpoint, not at the end.
+2. **Create the Concept Brief early.** As soon as the Go decision is made, write BRIEF.md. Any new session starts by reading this.
+3. **Create the project CLAUDE.md.** This gives any AI collaborator instant context on what's been decided, what's in scope, and what not to revisit.
+4. **Use ROADMAP.md as the handoff.** Phase 1 tasks should be defined before closing Phase 0.
 
 ## Adapting This Process
 

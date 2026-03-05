@@ -19,6 +19,7 @@ Transform a raw idea into a validated concept with enough clarity to commit reso
 | 3 | [Competitive Analysis](steps/03-competitive-analysis.md) | Understand the market and differentiation | Competitor Matrix + Positioning |
 | 4 | [Technical Feasibility](steps/04-technical-feasibility.md) | Validate that the idea is buildable | Feasibility Assessment |
 | 5 | [Concept Document](steps/05-concept-document.md) | Synthesize everything into a Go/No-Go decision | Concept Document |
+| 6 | [Phase Retrospective](steps/06-phase-retrospective.md) | Capture process learnings and set up Phase 1 | Retrospective notes, continuity artifacts |
 
 ### How to Start
 
@@ -35,6 +36,9 @@ Phase 0 is complete when:
 - [ ] Technical feasibility is assessed with no unresolved blockers
 - [ ] Concept Document is written and approved
 - [ ] Go/No-Go decision is made
+- [ ] Concept Brief created (one-page summary for fast context)
+- [ ] Session continuity artifacts created (CLAUDE.md, ROADMAP.md)
+- [ ] Phase retrospective completed
 
 ## Deliverables
 
@@ -46,13 +50,17 @@ Phase 0 is complete when:
 Copy templates into your project at `docs/concept/`:
 ```
 your-project/
-└── docs/
-    └── concept/
-        ├── vision-statement.md
-        ├── discovery-questionnaire.md
-        ├── competitor-matrix.md
-        ├── technical-feasibility.md
-        └── concept-document.md
+├── .claude/
+│   └── CLAUDE.md                  # AI context file — key decisions, tech stack, current phase
+├── docs/
+│   ├── concept/
+│   │   ├── BRIEF.md               # One-page concept summary (read first)
+│   │   ├── vision-statement.md
+│   │   ├── discovery-questionnaire.md
+│   │   ├── competitor-matrix.md
+│   │   ├── technical-feasibility.md
+│   │   └── concept-document.md
+│   └── ROADMAP.md                 # Task tracking (initialized for Phase 1)
 ```
 
 ## Time Investment
