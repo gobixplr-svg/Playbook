@@ -1,4 +1,4 @@
-# Step 6: Phase Retrospective
+# Step 7: Phase Retrospective
 
 ## Purpose
 
@@ -19,6 +19,7 @@ List everything created during Phase 0. Confirm nothing is missing:
 - [ ] Competitor Matrix + Deep-Dive Analyses
 - [ ] Technical Feasibility Assessment
 - [ ] Concept Document (with Go/No-Go decision)
+- [ ] App name selected (Step 6)
 - [ ] Concept Brief (one-page summary)
 - [ ] ROADMAP.md (task tracking initialized)
 - [ ] Project CLAUDE.md (AI context file)

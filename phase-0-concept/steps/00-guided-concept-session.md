@@ -163,7 +163,7 @@ This session produces draft versions of all Phase 0 deliverables:
 - Technical Feasibility → `docs/concept/technical-feasibility.md`
 - Concept Document → `docs/concept/concept-document.md`
 
-After synthesis, create the **session continuity artifacts** (see [Step 6: Phase Retrospective](06-phase-retrospective.md)):
+After synthesis, create the **session continuity artifacts** (see [Step 7: Phase Retrospective](07-phase-retrospective.md)):
 - Concept Brief → `docs/concept/BRIEF.md` (one-page summary — the "read this first" doc)
 - Project CLAUDE.md → `.claude/CLAUDE.md` (AI context with key decisions, current phase, stack)
 - ROADMAP.md → `docs/ROADMAP.md` (Phase 1 tasks initialized)
