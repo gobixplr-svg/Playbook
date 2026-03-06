@@ -14,21 +14,9 @@ Establish the visual direction, user flows, wireframes, and screen designs for t
 
 This step is the creative exploration phase — mood, color, typography, layout. Step 5 (Design System) extracts the reusable system from these designs.
 
-## AI-Powered Design Pipeline
+### AI-Assisted Workflow (Optional)
 
-This step uses AI tools to accelerate design without requiring professional design skills:
-
-| Phase | Tool | Cost | Purpose |
-|-------|------|------|---------|
-| Visual direction | Midjourney | $10 one-time | Mood boards, color exploration, atmosphere |
-| Color system | Khroma + Coolors | Free | AI color palette generation, accessibility checking |
-| Screen generation | Google Stitch | Free | Text-to-UI design, multi-screen flows, Figma export |
-| Design refinement | Figma (Starter) | Free | Polish designs, build components, prototype flows |
-| Design-to-code | Codia AI + Figma MCP | Free | Figma → SwiftUI code bridge, Claude Code integration |
-
-**Pipeline:** Midjourney (mood) → Khroma/Coolors (colors) → Stitch (screens) → Figma (refine) → Codia/MCP (SwiftUI)
-
-You don't need every tool. The minimum viable pipeline is: hand-drawn wireframes → Figma → code. AI tools accelerate the process but aren't required.
+For solo developers, an AI-powered design pipeline can accelerate this step significantly. See the [AI Design Pipeline Reference](../references/ai-design-pipeline.md) for tool recommendations and workflows (Midjourney, Stitch, Figma, Codia). The process below works with or without AI tools.
 
 ## Process
 
@@ -61,14 +49,11 @@ Don't just list apps you like — do structured research. For each reference:
 
 5. **Document anti-patterns too.** What did you find that you want to AVOID? (e.g., "Headspace hides premium labels, causing surprise paywalls — we'll show lock icons upfront")
 
-**Mood board (AI-assisted):**
-- Use Midjourney to generate 4-8 images that capture the app's atmosphere
-- Use design-specific language: "interface," "layout," "component," "HIG" — not art words like "beautiful" or "fantasy"
-- Set `--ar 9:16` for mobile proportions, `--stylize 500-700` for UI-appropriate results
-- Use `--sref [URL]` to match a style you like across multiple prompts
-- Create a Midjourney Moodboard (5-10 images) for consistent style with `--p [moodboardID]`
-- Save the best images to `docs/pre-production/mood-board/` for reference throughout the project
+**Mood board:**
+- Collect 5-10 images that capture the app's atmosphere — use AI generation tools, screenshots from reference apps, or photos that match the intended feeling
 - Focus on atmosphere, not specific UI patterns — color temperature, lighting, density, typography weight
+- Use design-specific language when searching or prompting: "interface," "layout," "component" — not vague words like "beautiful" or "cool"
+- Save the best images to `docs/pre-production/mood-board/` for reference throughout the project
 
 **Browse real app designs:**
 - [Mobbin](https://mobbin.com) — hundreds of real app designs organized by screen type (search for your screen types)
@@ -86,10 +71,6 @@ Define the app's color system. Colors are the most impactful design decision —
 4. Choose an accent color (alerts, celebrations, highlights)
 5. Define neutral colors (backgrounds, text, borders, cards)
 6. Define semantic colors (success, warning, error, info)
-
-**AI-assisted approach:**
-- **Khroma** (khroma.co): Train it on colors you like, then browse AI-generated palettes
-- **Coolors** (coolors.co): Generate palettes, check contrast ratios, export as design tokens
 
 **Accessibility requirements:**
 - Text on backgrounds must meet WCAG AA contrast ratio (4.5:1 for body text, 3:1 for large text)
@@ -139,6 +120,21 @@ Document every key user journey as a sequence of screens with transitions betwee
 
 **Use the navigation architecture from Step 3** (Architecture Document) as the foundation.
 
+**What to include in each user flow:**
+- Entry point (how does the user arrive at this flow?)
+- Decision points (where does the user choose between paths?)
+- Happy path (the ideal sequence from start to goal)
+- Error/edge paths (what happens when something goes wrong?)
+- Exit points (where does the user end up after completing the flow?)
+
+**Core flows every app needs:**
+- First launch (onboarding → core feature)
+- Core loop (the action users repeat most often)
+- Recovery (error → resolution → back to core loop)
+- Settings/account management
+
+Map flows as simple diagrams: boxes for screens, arrows for navigation, diamonds for decisions. The user flow map becomes the test plan for UI testing — each path through the flow is a test case.
+
 ### 4.5 Create Wireframes
 
 Create low-fidelity layouts for every screen in the app. Wireframes define what goes where — layout, hierarchy, and content — without visual polish.
@@ -168,21 +164,14 @@ Create low-fidelity layouts for every screen in the app. Wireframes define what 
 
 Transform wireframes into high-fidelity designs with real colors, typography, and imagery.
 
-**AI-assisted approach (Google Stitch):**
-1. Go to [stitch.withgoogle.com](https://stitch.withgoogle.com) and sign in with Google — completely free, web-based
-2. Choose **Standard Mode** (350 generations/month) and **Mobile** platform
-3. Write a detailed prompt for each screen. Include: screen purpose, layout structure, specific UI components, color hex values, typography style, and the emotional tone you want
-4. Stitch generates multiple design options — select the best one
-5. Submit follow-up prompts to refine ("make the stats larger," "add more whitespace")
-6. Click **"Copy to Figma"** to export (Standard Mode only)
-7. Repeat for each screen
-
-**Writing effective Stitch prompts:**
+**How to approach high-fidelity design:**
+- Use your wireframes as the blueprint — the layout is decided, now apply the visual treatment
 - Be specific about layout: "Three stat pills in a row below the title" not "show some stats"
-- Include exact colors: "teal #0A7B6F" not "a teal color"
+- Use exact color values from your palette, not vague descriptions
 - Reference known patterns: "Airbnb-style card layout" or "iOS large title navigation"
 - Describe the mood: "celebratory but classy" or "inviting, not aggressive"
-- The wireframes from Step 4.5 are your prompt blueprint — describe what's in the wireframe plus the visual treatment
+- Generate multiple variants per screen and pick the best elements from each
+- Whether using AI tools (see [AI Design Pipeline](../references/ai-design-pipeline.md)), Figma manually, or another design tool — the principles are the same
 
 **Design priority order:**
 1. The screen most users see first (e.g., Route Library)
@@ -210,7 +199,7 @@ Connect the designed screens into interactive prototypes that can be tapped thro
 **Figma setup (if not already done):**
 1. Sign up at [figma.com](https://figma.com) — Starter plan is free (3 files, unlimited pages)
 2. Create a new file for your app designs
-3. Paste Stitch exports (Cmd+V) — each screen as a separate frame
+3. Import or paste screen designs — each screen as a separate frame
 4. Standardize colors and typography to match your palette (create Color Styles and Text Styles)
 5. Align all spacing to a 4pt/8pt grid
 
@@ -239,8 +228,8 @@ Connect the designed screens into interactive prototypes that can be tapped thro
 - Is the paywall persuasive but not aggressive?
 
 **Design-to-code bridge (for Step 5 / Phase 2):**
-- **Codia AI** (Figma plugin): Select a frame → run plugin → choose SwiftUI → "Get Code" → download Xcode project
-- **Figma MCP** (Claude Code integration): `claude mcp add --transport http figma https://mcp.figma.com/mcp` → authenticate → paste Figma URLs into Claude Code prompts to generate SwiftUI
+- See the [AI Design Pipeline Reference](../references/ai-design-pipeline.md) for tools that translate Figma designs into SwiftUI code
+- Generated code is a starting point — extract design values (colors, spacing, layout structure) rather than using generated views directly
 
 ### 4.8 Review and Iterate
 
@@ -275,7 +264,7 @@ Complete the [UI/UX Spec Template](../templates/uiux-spec.md) and save it to you
 - [ ] Typography chosen with type scale defined
 - [ ] All user flows mapped with screen sequences and transitions
 - [ ] Wireframes created for every screen in the screen inventory
-- [ ] High-fidelity designs created for core flow screens (via Stitch/Figma or manual)
+- [ ] High-fidelity designs created for core flow screens
 - [ ] Interactive prototype for at least the first-launch and daily check-in flows
 - [ ] Designs reviewed against accessibility requirements
 - [ ] Screen states designed (empty, loading, populated, error)
@@ -289,4 +278,4 @@ Complete the [UI/UX Spec Template](../templates/uiux-spec.md) and save it to you
 - **Test on a real device.** Designs on a desktop monitor feel different on a 6.1" phone screen. Use Figma Mirror or print screenshots at actual phone size.
 - **Steal from the best.** Browse Mobbin (mobbin.com) for hundreds of real app designs organized by screen type. See how successful apps solve the same design problems you're facing.
 - **Don't over-design v1.** You need enough design to build confidently. You don't need pixel-perfect mockups of every edge case. Wireframes + key screen designs + prototype is sufficient.
-- **The AI pipeline is a starting point.** Stitch and Midjourney generate ideas fast, but the output needs human curation and refinement in Figma. AI accelerates; it doesn't replace taste.
+- **AI tools are a starting point.** If you use AI generation tools (see [AI Design Pipeline](../references/ai-design-pipeline.md)), remember that output needs human curation and refinement. AI accelerates; it doesn't replace taste.

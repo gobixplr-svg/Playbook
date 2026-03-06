@@ -19,9 +19,9 @@ Transform the approved Concept Document into a buildable plan. This phase answer
 | 4 | [UI/UX Design](steps/04-uiux-design.md) | Visual direction, wireframes, screen designs, user flow prototypes | UI/UX Spec + Figma designs |
 | 5 | [Design System](steps/05-design-system.md) | Design tokens, component library, SwiftUI component specs | Design System Spec |
 | 6 | [API & Data Design](steps/06-api-data-design.md) | Database schema, API contracts, data flows | API Spec + Schema |
-| 7 | Project Plan | Milestones, sprints, task lists | Project Plan |
-| 8 | Dev Environment Setup | Repos, CI/CD, testing infrastructure, tooling | Working dev environment |
-| 9 | Phase Retrospective | Capture process learnings, create Phase 2 continuity | Retrospective + continuity artifacts |
+| 7 | [Project Plan](steps/07-project-plan.md) | Milestones, sprints, task lists | Project Plan |
+| 8 | [Dev Environment Setup](steps/08-dev-environment-setup.md) | Repos, CI/CD, testing infrastructure, AI workspace | Working dev environment |
+| 9 | [Phase Retrospective](steps/09-phase-retrospective.md) | Capture process learnings, create Phase 2 continuity | Retrospective + continuity artifacts |
 
 ### How to Start
 
@@ -51,6 +51,52 @@ Any "Complex" or "Unknown" items from the feasibility assessment get a time-boxe
 ### Set Up for Speed
 
 The dev environment, CI/CD, and tooling should make Phase 2 (Production) as frictionless as possible.
+
+## AI-Assisted Development Integration
+
+The Playbook is designed to produce specs that serve as both human documentation and AI context. When using AI coding tools (Claude Code, Cursor, etc.), the pre-production deliverables become the AI's knowledge base for Phase 2 development.
+
+### Session Handoff Protocol
+
+At the start of each AI coding session, the AI needs context about where the project stands. Establish a standard briefing pattern:
+
+1. **ROADMAP.md** — current phase, active sprint, what's done vs. pending
+2. **Current sprint section** from the project plan — stories and tasks for this sprint
+3. **MEMORY.md** (if using Claude Code) — key decisions, patterns, and conventions
+
+At the end of each session, update these artifacts so the next session can pick up cleanly:
+- Mark completed tasks in the project plan
+- Update ROADMAP.md if stories moved between sections
+- Save any new decisions or patterns to memory
+
+### Spec-as-Context Design
+
+The pre-production specs from Steps 1–7 serve as AI reference material during development. To maximize their effectiveness:
+
+- **Use consistent identifiers** — Story IDs (E1-S1), component names, and service names should be identical across all specs. The AI can trace "E3-S2" from requirements → architecture → project plan → code.
+- **Keep specs updated** — if a decision changes during development, update the relevant spec. Stale specs produce stale AI suggestions.
+- **Reference specs in prompts** — instead of re-explaining architecture, point the AI to the spec: "Implement E2-S1 following the HealthKitService protocol in architecture-document.md"
+
+### Skill Integration Points
+
+If using Claude Code with custom skills, integrate them into the development workflow:
+
+| Development Event | Skill / Action | Purpose |
+|-------------------|---------------|---------|
+| Completing a story's tasks | `/commit` | Review changes and create structured commit |
+| End of sprint | `/wrapup` | Update docs, commit, generate continuation prompt |
+| End of session | `/continue` | Generate prompt for next session to resume |
+| After significant changes | `/docs` | Keep documentation current |
+
+### AI Workspace Setup (Step 8)
+
+Step 8 (Dev Environment Setup) should include configuring the AI workspace:
+
+- **`.claude/CLAUDE.md`** — Project-specific instructions, conventions, and guardrails. Seed from architecture and design system decisions.
+- **`.claude/memory/MEMORY.md`** — Key decisions from Steps 1–7 that the AI should remember across sessions. Include: tech stack, architecture pattern, naming conventions, testing approach, design tokens.
+- **Skill configurations** — Custom skills for project-specific workflows (if applicable)
+
+The goal is that a new AI session can read CLAUDE.md + MEMORY.md + ROADMAP.md and understand the project well enough to start coding immediately.
 
 ## AI-Powered UI/UX Tooling
 
@@ -99,7 +145,8 @@ your-project/
 │   │   ├── uiux-spec.md
 │   │   ├── design-system-spec.md
 │   │   ├── api-spec.md
-│   │   └── project-plan.md
+│   │   ├── project-plan.md
+│   │   └── dev-environment-setup.md
 │   └── ROADMAP.md
 ```
 

@@ -16,9 +16,32 @@
 
 _High-level diagram showing how major components connect. Include: client app, backend, external integrations, and data flow direction._
 
+### System Architecture Diagram
+
 ```
-[Diagram here — ASCII or reference to image]
+┌─────────────────────────────────────────────┐
+│  Client App                                 │
+│  ┌──────────┐  ┌──────────┐  ┌───────────┐ │
+│  │  Views    │→ │ ViewModels│→ │ Services  │ │
+│  └──────────┘  └──────────┘  └─────┬─────┘ │
+└────────────────────────────────────┼────────┘
+                                     │ Network
+─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┼ ─ ─ ─ ─
+                                     │
+┌────────────────────────────────────┼────────┐
+│  Backend                           │        │
+│  ┌──────────┐  ┌──────────┐  ┌────┴──────┐ │
+│  │ Database  │  │ Auth     │  │ Functions │ │
+│  └──────────┘  └──────────┘  └───────────┘ │
+│  ┌──────────┐  ┌──────────┐               │
+│  │ Storage   │  │ Realtime │               │
+│  └──────────┘  └──────────┘               │
+└─────────────────────────────────────────────┘
+
+External Services: [List — e.g., HealthKit, Mapbox, FCM, StoreKit]
 ```
+
+_Replace this example with your project's actual architecture. Show major components, data flow directions, and the network boundary between client and server._
 
 ### Components
 

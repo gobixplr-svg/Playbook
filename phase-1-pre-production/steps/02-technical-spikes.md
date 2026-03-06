@@ -10,6 +10,11 @@ The Technical Feasibility assessment (Phase 0, Step 4) identified risks and comp
 
 Spikes are **experiments, not prototypes.** The code is disposable. The knowledge is permanent.
 
+## Prerequisites
+
+- Step 1 (Requirements) completed — user stories identify which features have technical unknowns
+- Phase 0 feasibility assessment flagged "Complex" or "Unknown" items
+
 ## Process
 
 ### 2.1 Identify Spike Candidates
@@ -25,6 +30,12 @@ Review three sources for spike candidates:
 - The approach has multiple viable options and you need data to choose
 - Failure would force a significant architectural change
 - The team has no prior experience with the technology
+
+**Prioritizing spike candidates:**
+- **Spike what blocks architecture decisions first** — if a spike outcome changes your data model or service design, run it before Step 3
+- **Spike integration risks over implementation risks** — "Can we connect to this API?" matters more than "Can we build this feature?" (features can always be simplified; incompatible APIs cannot)
+- **Skip obvious spikes** — if the team has production experience with the technology, a spike wastes time. Spike the unknowns, not the familiar.
+- **Limit to 2–4 spikes** — more than 4 means your architecture has too many unknowns. Simplify the tech stack or revisit requirements.
 
 ### 2.2 Define Spike Parameters
 

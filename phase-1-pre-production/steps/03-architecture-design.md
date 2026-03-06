@@ -29,6 +29,15 @@ Draw the high-level picture: what are the major components and how do they conne
 
 Keep it to a single diagram. If you need more than one diagram, you're overcomplicating it.
 
+**What to include in the system diagram:**
+- Client app (with major modules: views, services, data layer)
+- Backend services (database, auth, storage, serverless functions)
+- External integrations (health APIs, maps, push notifications, payment)
+- Data flow arrows showing which components talk to each other
+- Network boundary line separating client from server
+
+A simple box-and-arrow diagram is sufficient. Use ASCII art in the architecture document or reference an external diagram tool. The goal is to show the system's shape at a glance — not every class or method.
+
 ### 3.2 App Architecture Pattern
 
 Choose and document the app's internal architecture:
@@ -59,6 +68,14 @@ Define the Swift/Kotlin models that represent your domain:
 - Separate API response models from domain models if the shapes differ
 - Use value types by default
 
+**Model design checklist:**
+- Each model represents a single domain concept (User, Route, Activity — not UserRouteActivity)
+- Relationships are explicit: one-to-many, many-to-many, or embedded
+- Models own their validation rules (what makes an instance valid?)
+- Identify which models are synced to the server vs. local-only
+- Mark optional vs. required properties — this drives your UI (can you show this screen if this field is nil?)
+- Include computed properties where useful (e.g., `percentComplete` derived from distance fields)
+
 ### 3.4 Service Layer
 
 Define the services that provide data and capabilities to the app:
@@ -77,6 +94,13 @@ Define the services that provide data and capabilities to the app:
 - Map/location service
 - Notification service
 - Analytics service (if applicable)
+
+**Protocol design principles:**
+- Each protocol should have 5–10 methods. More than 10 suggests the service does too much — split it.
+- Methods should be named from the caller's perspective: `fetchRoutes()`, not `performDatabaseQuery()`
+- Every method that hits the network should be `async throws`
+- Return domain models, not raw data (the service handles parsing)
+- Include a mock implementation for every protocol — this is what makes your architecture testable
 
 ### 3.5 State Management
 

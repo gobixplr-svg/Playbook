@@ -40,6 +40,19 @@ Translate the data models from Step 3 into a concrete database schema for your c
 - Keep it normalized for v1 — denormalize only when you have a proven performance problem
 - Name columns consistently: `snake_case`, past tense for booleans (`is_active`, not `active`)
 
+**Normalization guidance:**
+- **Start normalized** — separate tables for separate concepts. A `routes` table and a `milestones` table, not a `routes_with_milestones` mega-table.
+- **Denormalize only with evidence** — if profiling shows a specific query is slow because of joins, denormalize that specific case. Don't pre-optimize.
+- **Common denormalization patterns:** embedding child counts in parent rows (e.g., `milestone_count` on `routes`), caching computed values (e.g., `percent_complete` on `user_routes`), materialized views for dashboards.
+- **When in doubt, normalize** — storage is cheap, data inconsistency is expensive. For v1 with small datasets, normalized schemas are fast enough.
+
+**Index strategy:**
+- Index every foreign key column (databases don't do this automatically)
+- Index columns used in WHERE clauses and ORDER BY
+- For geospatial data, use spatial indexes (PostGIS GIST)
+- Don't index columns with low cardinality (booleans) unless combined with other columns
+- Monitor query performance before adding composite indexes — they have write overhead
+
 ### 6.2 Define Row-Level Security (RLS) Policies
 
 If your backend supports row-level security (Supabase, Firebase), define access policies for every table:
@@ -109,6 +122,33 @@ Map how data moves through the system for each major operation:
 - Where data transforms happen
 - Error handling at each step
 - Offline behavior
+
+**Data flow template:**
+
+For each flow, document using this structure:
+
+```
+Flow: [Name]
+Trigger: [User action / System event / Schedule]
+Direction: [Client → Server / Server → Client / External → Client → Server]
+
+Steps:
+1. [Component] — [Action] → produces [Output]
+2. [Component] — [Action] → produces [Output]
+3. [Component] — [Action] → produces [Output]
+
+Transforms: [Where data changes shape — e.g., HealthKit workout → ActivityRecord model]
+Error handling: [What happens if step N fails — retry? fallback? user notification?]
+Offline behavior: [Queue for later? Use cached data? Block the action?]
+```
+
+**Identify your critical flows first:**
+- The core loop flow (the action users repeat daily)
+- The data ingestion flow (how external data enters your system)
+- The sync flow (how data moves between client and server)
+- The purchase flow (if monetized — payment → validation → access grant)
+
+Each critical flow should be diagrammed and tested end-to-end before building secondary flows.
 
 ### 6.5 Define Server-Side Logic
 

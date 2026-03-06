@@ -4,13 +4,17 @@
 
 ## Project
 
-**App Name:** [Name]
-**Date:** [YYYY-MM-DD]
-**Author:** [Name]
+**App Name:** _[Name]_
+**Date:** _[YYYY-MM-DD]_
+**Author:** _[Name]_
 
 ---
 
 ## Visual Direction
+
+### Design North Star
+
+_[One sentence describing the ideal user experience — the feeling you're designing toward. Example: "Every walk feels like an adventure unfolding on a real trail."]_
 
 ### Mood Board
 
@@ -24,9 +28,9 @@ _Link or embed 10-20 reference images that capture the app's personality._
 
 ### App Personality
 
-**The app should feel:** [3-5 adjectives]
+**Should feel:** _[3-5 adjectives describing how the app should feel]_
 
-**The app should NOT feel:** [3-5 adjectives]
+**Should NOT feel:** _[3-5 adjectives describing how the app should NOT feel]_
 
 ### Visual References
 

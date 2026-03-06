@@ -22,7 +22,8 @@ With a design system:
 
 ## Prerequisites
 
-- Step 4 (UI/UX Design) completed — color palette, typography scale, wireframes, and interaction patterns defined
+- Step 3 (Architecture) completed — data models and service protocols inform which components need data-bound states
+- Step 4 (UI/UX Design) completed — wireframes and screen designs provide the visual vocabulary to systematize
 
 ## Process
 
@@ -243,6 +244,24 @@ celebratory → spring(response: 0.5, dampingFraction: 0.7)
 - Milestone reached: `.notification(.success)`
 - Badge earned: `.impact(.medium)` + `.notification(.success)`
 - Error: `.notification(.error)`
+
+**Animation categories to define:**
+1. **Micro-interactions** — button presses, toggle switches, text field focus. These should feel instant (0.1–0.2s) and use `easeOut` curves.
+2. **Transitions** — screen-to-screen navigation, modal presentation, tab switching. Use `easeInOut` at 0.25–0.35s. Match iOS system conventions unless your brand intentionally departs.
+3. **State changes** — loading → loaded, empty → populated, collapsed → expanded. Use `spring` animations for natural feel. Define skeleton/shimmer states for loading.
+4. **Celebrations** — achievement earned, milestone reached, route completed. These are your brand moments — invest in making them distinctive. Longer duration (0.5–1.5s), multi-stage sequences, consider haptics.
+5. **Data updates** — progress bar advancement, counter increments, list reordering. Use `linear` or `easeInOut` to feel smooth, not jarring.
+
+**Motion principles to establish:**
+- **Consistent direction** — elements entering from the right should exit to the left. Pick a spatial model and stick to it.
+- **Meaningful motion** — animation should communicate something (completion, error, hierarchy). If removing an animation doesn't lose information, the animation isn't needed.
+- **Respect reduced motion** — define fallback behaviors for every animation when `UIAccessibility.isReduceMotionEnabled` is true (typically instant transitions, no bouncing, no parallax).
+
+**Document each animation as:**
+- Trigger (what starts it)
+- Duration and curve
+- Properties animated (opacity, scale, position, color)
+- Reduced motion alternative
 
 ### 5.7 Verify Design System Coverage
 

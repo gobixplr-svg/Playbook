@@ -10,6 +10,12 @@ The Concept Document captures *what* the app does. Requirements capture *how use
 
 Well-written acceptance criteria are also your TDD test specifications. Write them now, and you've already written your test plan before a single line of code exists.
 
+## Prerequisites
+
+- Phase 0 Concept Document completed with a "Go" or "Conditional Go" decision
+- MoSCoW feature list defined (Must Have, Should Have, Could Have, Won't Have)
+- Target audience and core value proposition established
+
 ## Process
 
 ### 1.1 Review Phase 0 Outputs
