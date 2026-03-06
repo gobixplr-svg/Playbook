@@ -27,15 +27,22 @@
 | | Integration | S/M/L | | |
 | | Tests | S/M/L | | |
 
+**Test Plan:**
+- New tests: N | Modified: N | Running total: N
+- [ ] TestSuite (count): testName1, testName2...
+- Manual check (optional):
+  - [ ] Verify [behavior] in simulator
+
 ---
 
 <!-- Copy the story block above for each story in the sprint -->
 
 ## Integration Buffer
 
-- [ ] End-to-end test across all sprint stories
+- [ ] Full test suite passes (Tier 3: `xcodebuild test`)
 - [ ] Demo scenario verified on device
 - [ ] ROADMAP.md updated
+- [ ] No regressions from prior sprints
 
 ## Blockers
 
