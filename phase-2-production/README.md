@@ -10,15 +10,13 @@ Build the app. Execute the plan from Pre-Production in structured sprints, maint
 - Architecture, design system, and project plan are finalized
 - Dev environment is set up and building
 
-## Steps (To Be Developed)
+## Steps
 
 | Step | Name | Purpose | Key Output |
 |------|------|---------|------------|
-| 1 | Foundation Sprint | Core architecture, navigation, data layer, auth | App skeleton that builds and runs |
-| 2 | Feature Sprints | Build features per milestone plan | Working features, one at a time |
-| 3 | Integration Sprint | Connect all features, end-to-end flows | Fully integrated app |
-| 4 | Content & Data Population | Load real content, seed databases | App with real data |
-| 5 | Polish Sprint | Animations, transitions, error states, edge cases | Production-quality UX |
+| 1 | [Sprint Execution](steps/01-sprint-execution.md) | Run a structured sprint from kickoff to review (repeatable) | [Sprint Tracker](templates/sprint-tracker.md) |
+
+**Note:** Phase 2 uses a single repeatable step rather than sequential steps. Each sprint follows the same Sprint Execution process. The project plan (from Phase 1, Step 7) defines sprint scope and sequencing.
 
 ## Exit Criteria
 
