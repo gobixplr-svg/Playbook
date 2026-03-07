@@ -30,8 +30,13 @@
 **Test Plan:**
 - New tests: N | Modified: N | Running total: N
 - [ ] TestSuite (count): testName1, testName2...
-- Manual check (optional):
-  - [ ] Verify [behavior] in simulator
+
+**Visual Smoke Test (required for View layer):**
+- [ ] Ran in simulator — all elements visible (light mode)
+- [ ] Ran in simulator — all elements visible (dark mode)
+- [ ] Colors match design spec
+- [ ] Navigation works (push, back, dismiss)
+- [ ] Layout is intentional — no clipping, overflow, or invisible text
 
 ---
 
@@ -40,7 +45,14 @@
 ## Integration Buffer
 
 - [ ] Full test suite passes (Tier 3: `xcodebuild test`)
-- [ ] Demo scenario verified on device
+- [ ] **User Flow Walkthrough:**
+  - [ ] Cold start (Command+R) — app lands in correct state
+  - [ ] New user flow: discover → start → complete core loop
+  - [ ] Returning user flow: restart → resume previous state (mock seed data)
+  - [ ] Edge cases: double-tap, swipe back mid-action, abandon/cancel
+  - [ ] Light mode verified
+  - [ ] Dark mode verified
+  - [ ] Screenshots compared to mockups/design spec
 - [ ] ROADMAP.md updated
 - [ ] No regressions from prior sprints
 

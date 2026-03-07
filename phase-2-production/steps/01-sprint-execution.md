@@ -16,6 +16,18 @@ At the start of each sprint, after Pre-Production is complete and the project pl
 
 ## Process
 
+### 0. Design System Bootstrap (First Sprint Only)
+
+Before writing any feature code, validate that your design system actually works in-app:
+
+1. Implement `DesignTokens.swift` (or equivalent) with **actual color values** — hex codes via `UIColor`, not named asset catalog references unless the assets are also created and verified
+2. Use a **deterministic mock user ID** (`static let mockUserId`) shared across all mock services. Random `UUID()` in auth/health/route services causes cross-service mismatches that silently break user flows
+3. Build a throwaway `#if DEBUG` token gallery view that renders every color, font, and spacing token on screen
+4. Run in simulator, screenshot, compare to design spec — fix discrepancies before any feature uses the tokens
+5. Delete or gate the gallery view behind `#if DEBUG`
+
+**Why:** Design tokens defined in a spec but never validated in-app cause cascading invisible bugs. In RoamAbout, `Color("TrailTeal")` referenced asset catalog entries that never existed — every branded element was transparent. Three sprints of features built on top were technically correct but visually broken. 30 minutes of bootstrap prevents this entire class of failure.
+
 ### 1. Sprint Setup (Day 1)
 
 1. Copy the [Sprint Tracker](../templates/sprint-tracker.md) template into your project
@@ -37,14 +49,20 @@ For each layer:
 |-------|---------------|-----------|
 | **Data** | Models (`Codable` structs), database migrations | Model compiles, JSON round-trips |
 | **Service** | Protocol definition, mock implementation, real implementation | Protocol defined, mock passes tests |
-| **View** | SwiftUI views bound to ViewModel | View renders with mock data |
-| **Integration** | Wire real services, navigation, state | Feature works end-to-end |
+| **View** | SwiftUI views bound to ViewModel | View renders with mock data, **visually verified in simulator** |
+| **Integration** | Wire real services, navigation, state | Feature works end-to-end via user flow walkthrough |
 | **Tests** | Unit tests (models, services), UI tests (flows) | Tests written and reviewed |
 
 **Key rules:**
 - Build the mock implementation first — test against it before touching real services
 - Each layer should compile before moving to the next
 - Commit after each layer completes
+- **Every View must be visually verified in the simulator** before marking the layer done (see Tier 1.5 below)
+
+**Mock service requirements:**
+- Use a **shared deterministic user ID** across all mock services (auth, routes, health, achievements). Random `UUID()` per service causes silent cross-service mismatches.
+- Provide a `.withDemoData()` or `.withSeedData()` factory that includes **realistic starting state** — active routes with progress, earned badges, activity history. This enables end-to-end flow validation without real backends.
+- Auto-restore sessions so developers don't have to sign in after every Command+R. Mock auth should simulate a persisted session.
 
 ### 3. Testing Cadence
 
@@ -56,6 +74,21 @@ Use a **3-tier testing approach** to balance confidence with development speed. 
 - **What:** `xcodebuild build` — compilation only, no simulator, no tests
 - **Time:** ~15-30 seconds
 - **Purpose:** Catch type errors, missing imports, API misuse immediately
+
+#### Tier 1.5: Visual Smoke Test (after every View layer)
+
+- **When:** After completing any View layer task
+- **What:** Run the app in the simulator, navigate to the new/changed view, verify visually
+- **Time:** ~30-60 seconds
+- **Purpose:** Catch invisible elements, broken layouts, missing colors, wrong fonts — bugs that `xcodebuild build` cannot detect
+- **Checklist:**
+  - [ ] Can you see every text element? (check against both light and dark backgrounds)
+  - [ ] Do colors match the design spec?
+  - [ ] Are buttons tappable and visually distinct?
+  - [ ] Does the layout look intentional, not clipped or overflowing?
+  - [ ] Does navigation work (push, back, dismiss)?
+
+**Why this exists:** A view can compile perfectly with transparent colors, white-on-white text, or navigation that goes nowhere. Build checks verify syntax. Visual smoke tests verify the user can actually see and use the feature.
 
 #### Tier 2: Test Plan (end of each story)
 
@@ -93,7 +126,13 @@ Use a **3-tier testing approach** to balance confidence with development speed. 
 ### 5. Integration Buffer (Final 1-2 Days)
 
 - Run full test suite (Tier 3) across all sprint stories
-- Verify the demo scenario works on a real device
+- **User Flow Walkthrough** — walk through the app as a real user, not a developer:
+  1. Cold start (Command+R) — does the app land in the right state?
+  2. Primary flow: new user → discover feature → complete core loop
+  3. Returning user: restart → resume where they left off (requires mock seed data)
+  4. Every navigation path: forward, back, edge cases (double-tap, swipe back mid-action)
+  5. Both light and dark mode
+  6. Screenshot each screen, compare to mockups/design spec
 - Fix integration issues surfaced by combining features
 - Update ROADMAP.md with completed stories
 
@@ -111,6 +150,9 @@ Use a **3-tier testing approach** to balance confidence with development speed. 
 - **Gold-plating** — If it's not in the sprint scope, write it down for later. Don't sneak in extras.
 - **Broken builds** — Never leave the project in a state that doesn't compile. Every commit builds.
 - **Over-testing cadence** — Don't run full simulator test suites after every story. Use Tier 1 build checks during development, Tier 3 at sprint boundaries.
+- **Test-only validation** — `xcodebuild build` and `xcodebuild test` cannot verify that a user can see a button, that colors render correctly, or that navigation flows work end-to-end. Every view must be visually verified in the simulator at least once before marking a story complete. Tests verify logic in isolation; visual smoke tests verify the user experience.
+- **Phantom design tokens** — Referencing named colors (e.g., `Color("BrandTeal")`) or assets that don't exist in the asset catalog. The code compiles, views render, but elements are transparent/invisible. Always validate design tokens visually before building features on top.
+- **Random mock identifiers** — Using `UUID()` in mock services creates a different identity on every launch. Cross-service operations (auth → routes → health) silently fail because IDs don't match. Use deterministic, shared mock IDs.
 
 ## Exit Criteria
 
@@ -118,6 +160,8 @@ Sprint is complete when:
 - [ ] All sprint stories are done (or explicitly deferred with reason)
 - [ ] Demo scenario runs successfully
 - [ ] Full test suite passes (Tier 3)
+- [ ] **User flow walkthrough completed** — cold start, primary flow, returning user, light + dark mode
+- [ ] **Visual smoke test passed** — every new/changed view verified in simulator against design spec
 - [ ] Code is committed with clear messages
 - [ ] ROADMAP.md is updated
 - [ ] No known regressions from prior sprints
