@@ -15,8 +15,9 @@ Build the app. Execute the plan from Pre-Production in structured sprints, maint
 | Step | Name | Purpose | Key Output |
 |------|------|---------|------------|
 | 1 | [Sprint Execution](steps/01-sprint-execution.md) | Run a structured sprint from kickoff to review (repeatable) | [Sprint Tracker](templates/sprint-tracker.md) |
+| 2 | [Retrospective](steps/02-retrospective.md) | Pause, reflect, and improve the process (repeatable) | [Retro Tracker](templates/retro-tracker.md) |
 
-**Note:** Phase 2 uses a single repeatable step rather than sequential steps. Each sprint follows the same Sprint Execution process. The project plan (from Phase 1, Step 7) defines sprint scope and sequencing.
+**Note:** Both steps are repeatable cycles, not sequential. Run Sprint Execution for every sprint and Retrospective at natural checkpoints (sprint end, major integration, bug-fix session, or bi-weekly minimum). The project plan (from Phase 1, Step 7) defines sprint scope and sequencing.
 
 ## Exit Criteria
 

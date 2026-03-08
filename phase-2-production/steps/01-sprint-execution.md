@@ -139,9 +139,34 @@ Use a **3-tier testing approach** to balance confidence with development speed. 
 ### 6. Sprint Review
 
 - Demo the sprint deliverable (run the demo scenario)
-- Note what worked and what didn't
 - Update sprint tracker with final status
 - Identify carryover items for next sprint
+- **Run a [Retrospective](02-retrospective.md)** — capture what worked, what didn't, and apply changes to the playbook
+
+### 7. Backend Integration (When Transitioning Mock → Real)
+
+When replacing mock services with real backend implementations, follow this checklist in addition to normal story execution. The mock-first pattern makes the swap easy architecturally, but these process steps prevent common integration bugs.
+
+#### Pre-flight
+- [ ] **SDK API verification** — Read the SDK docs or source for the specific methods you'll call. Don't assume method signatures match your expectations. (e.g., supabase-swift `signUp` returns non-optional `User`, not `User?`)
+- [ ] **Service coupling map** — Document which real services depend on each other. Enable dependent services together. (e.g., RLS-protected routes require real auth — you can't test real routes with mock auth)
+- [ ] **Infrastructure pre-flight** — Verify hosting costs, account limits, and self-hosting fallback (see Phase 1, Step 8, Section 8.4)
+
+#### Migration validation
+- [ ] **Schema test** — Run `supabase db reset` (or equivalent) and verify all migrations execute without errors. Watch for forward references (functions/types used before they're defined)
+- [ ] **Seed data test** — Verify seed data matches mock service data (same UUIDs, same field values) for transparent transition
+- [ ] **RLS smoke test** — With a real authenticated session, verify CRUD operations against every table's policies
+
+#### Incremental flag testing
+- [ ] Enable **one service at a time** (e.g., auth first, then routes, then achievements)
+- [ ] Build and run after each flag change
+- [ ] Verify the enabled service works with both mock and real versions of its dependencies
+- [ ] Document any coupling requirements discovered (add to service coupling map)
+
+#### Session scoping
+- [ ] If the integration plan has **5+ phases**, split across multiple sessions with explicit handoff documents
+- [ ] Each session should end with working code and updated progress tracking
+- [ ] Write a continuation note at the end of each session describing: what's done, what's next, and any gotchas discovered
 
 ## Anti-Patterns
 
@@ -153,6 +178,9 @@ Use a **3-tier testing approach** to balance confidence with development speed. 
 - **Test-only validation** — `xcodebuild build` and `xcodebuild test` cannot verify that a user can see a button, that colors render correctly, or that navigation flows work end-to-end. Every view must be visually verified in the simulator at least once before marking a story complete. Tests verify logic in isolation; visual smoke tests verify the user experience.
 - **Phantom design tokens** — Referencing named colors (e.g., `Color("BrandTeal")`) or assets that don't exist in the asset catalog. The code compiles, views render, but elements are transparent/invisible. Always validate design tokens visually before building features on top.
 - **Random mock identifiers** — Using `UUID()` in mock services creates a different identity on every launch. Cross-service operations (auth → routes → health) silently fail because IDs don't match. Use deterministic, shared mock IDs.
+- **SQL forward references** — Defining functions, types, or views after the RLS policies or queries that reference them. SQL migrations execute top-to-bottom — a forward reference causes `function does not exist` errors. Always define dependencies before dependents.
+- **SDK API assumptions** — Writing code against assumed SDK method signatures without checking docs or source. Method return types, optionality, and parameter names vary between SDK versions. Read the actual API before writing service code.
+- **Unchecked service coupling** — Enabling one real service without verifying its dependencies on other services. RLS policies require authenticated sessions — real routes with mock auth silently return empty results. Map service dependencies before toggling flags.
 
 ## Exit Criteria
 
@@ -164,6 +192,7 @@ Sprint is complete when:
 - [ ] **Visual smoke test passed** — every new/changed view verified in simulator against design spec
 - [ ] Code is committed with clear messages
 - [ ] ROADMAP.md is updated
+- [ ] **[Retrospective](02-retrospective.md) completed** — lessons captured, changes applied to playbook
 - [ ] No known regressions from prior sprints
 
 ## Key Output

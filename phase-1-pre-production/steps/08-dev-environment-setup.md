@@ -123,6 +123,21 @@ Set up development instances for all external services from the architecture and
 
 Verify connectivity by running a simple request against each service. A database query, an auth check, a map tile load — anything that proves the connection works.
 
+#### Infrastructure Pre-flight Checklist
+
+Before committing to any hosted backend or third-party service, verify the following. Discovering cost or account issues mid-sprint is expensive — 5 minutes of pre-flight prevents a session-derailing pivot.
+
+| Check | What to Verify |
+|-------|---------------|
+| **Account limits** | Free tier project count, bandwidth caps, storage limits. Will you hit a wall during development? |
+| **Hosting costs** | Pricing at all tiers (free, dev, production). Can you justify the cost at each phase? |
+| **Self-hosting viability** | Is there a Docker/self-hosted option as fallback? What's the setup cost? |
+| **Required secrets** | List every API key, private key, and credential the service needs. Where will each one live? |
+| **Service coupling** | Which app services depend on this backend? (e.g., RLS-protected routes require real auth) |
+| **Local development** | Can you run the service locally without internet? Is there a CLI or emulator? |
+
+**Why this exists:** In RoamAbout, the team committed to Supabase Cloud without checking account limits — the free tier was already exhausted. Mid-integration pivot to Docker self-hosting cost a session. The service coupling between auth and routes (RLS requires authenticated role) wasn't flagged until testing, causing another pivot.
+
 ### 8.5 CI/CD Pipeline
 
 Configure automated builds so broken code is caught before it merges.
