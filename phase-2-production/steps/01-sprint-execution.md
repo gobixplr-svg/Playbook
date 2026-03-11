@@ -136,14 +136,41 @@ Use a **3-tier testing approach** to balance confidence with development speed. 
 - Fix integration issues surfaced by combining features
 - Update ROADMAP.md with completed stories
 
-### 6. Sprint Review
+### 6. Code Review (End of Sprint)
+
+Before the sprint review, run a structured code review on all code written during the sprint. This catches bugs, security issues, and architectural drift that testing alone misses.
+
+**When using AI coding tools (Claude Code, Cursor, etc.):**
+
+AI-generated code is especially prone to subtle issues — it compiles, passes tests, and looks correct, but may contain security flaws, performance problems, or patterns that diverge from your architecture. Code review is the quality gate.
+
+**Review process:**
+
+1. **Gather the diff:** `git diff <sprint-start-commit>..HEAD` to see everything that changed this sprint
+2. **Run `code-review` skill** (if using Claude Code): Ask it to review the sprint diff for security, performance, correctness, and maintainability
+3. **Review each dimension:**
+
+| Dimension | What to Check | Common AI-Generated Issues |
+| --------- | ------------- | -------------------------- |
+| **Security** | Input validation, auth checks, data exposure, secrets in code | Hardcoded API keys, missing server-side validation, overly permissive RLS policies |
+| **Performance** | N+1 queries, unbounded loops, missing indexes, memory leaks | Unnecessary re-renders, fetching entire tables instead of filtered queries |
+| **Correctness** | Edge cases, error handling, race conditions, off-by-one | Optimistic assumptions about optional values, missing error propagation |
+| **Maintainability** | Naming clarity, single responsibility, duplication, test coverage | Generated code that's technically correct but doesn't follow your architecture patterns |
+| **Architecture** | Does the code follow the patterns defined in the architecture doc? | Bypassing the service layer, direct database calls from views, inconsistent dependency injection |
+
+1. **Fix critical and high issues** before sprint review. Log medium/low issues as tech debt for future sprints.
+2. **Update the sprint tracker** with review findings and actions taken.
+
+**Tip:** If working solo, the code-review skill is your pair programmer. If working with others, combine AI review with human review — they catch different things.
+
+### 7. Sprint Review
 
 - Demo the sprint deliverable (run the demo scenario)
 - Update sprint tracker with final status
 - Identify carryover items for next sprint
 - **Run a [Retrospective](02-retrospective.md)** — capture what worked, what didn't, and apply changes to the playbook
 
-### 7. Backend Integration (When Transitioning Mock → Real)
+### 8. Backend Integration (When Transitioning Mock → Real)
 
 When replacing mock services with real backend implementations, follow this checklist in addition to normal story execution. The mock-first pattern makes the swap easy architecturally, but these process steps prevent common integration bugs.
 
@@ -190,6 +217,7 @@ Sprint is complete when:
 - [ ] Full test suite passes (Tier 3)
 - [ ] **User flow walkthrough completed** — cold start, primary flow, returning user, light + dark mode
 - [ ] **Visual smoke test passed** — every new/changed view verified in simulator against design spec
+- [ ] **Code review completed** — security, performance, correctness, maintainability, architecture reviewed; critical issues fixed
 - [ ] Code is committed with clear messages
 - [ ] ROADMAP.md is updated
 - [ ] **[Retrospective](02-retrospective.md) completed** — lessons captured, changes applied to playbook

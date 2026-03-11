@@ -263,7 +263,76 @@ celebratory → spring(response: 0.5, dampingFraction: 0.7)
 - Properties animated (opacity, scale, position, color)
 - Reduced motion alternative
 
-### 5.7 Verify Design System Coverage
+### 5.8 Asset Planning & Pipeline
+
+Before entering production, inventory the visual assets the app will need and decide how each will be created. This step is advisory — you can defer asset creation to later sprints — but planning now prevents last-minute scrambles before launch.
+
+**Why plan assets early:**
+
+- App icons and launch screens are needed for the first testable build
+- Empty state illustrations and onboarding graphics affect layout decisions
+- Knowing whether you'll use SF Symbols vs. custom icons impacts component specs
+- Store screenshots require real content and polished UI — planning backward from launch avoids crunch
+
+See the [Asset Pipeline Reference](../references/asset-pipeline.md) for detailed tool recommendations, generation workflows, and format specifications.
+
+**Asset inventory — identify what you need:**
+
+Review your wireframes and user flows from Step 4 and catalog every visual asset:
+
+| Category | Assets | Priority | Creation Approach |
+| -------- | ------ | -------- | ----------------- |
+| **App Identity** | App icon (1024x1024), launch screen, logo variants | Must Have — needed for first build | AI generation → refine, or commission |
+| **Iconography** | Tab bar icons, action icons, status indicators | Must Have — needed for UI | SF Symbols first, custom only when SF Symbols fall short |
+| **Empty States** | No data, no results, first-time-use illustrations | Should Have — improves polish | AI illustration generation or minimal vector |
+| **Onboarding** | Welcome screens, feature highlights, tutorial graphics | Should Have — improves retention | AI generation matched to visual direction |
+| **In-App Graphics** | Achievement badges, progress visuals, decorative elements | Could Have — adds delight | Design tool or AI generation |
+| **Store Assets** | Screenshots, preview video, promotional art | Must Have — but deferred to Phase 4 | Planned here, created in Phase 4 |
+| **Marketing** | Social cards, press kit, website hero | Could Have — deferred to Phase 4+ | Planned here, created in Phase 4 |
+
+**Decide your icon strategy:**
+
+This is the most impactful asset decision because icons appear on every screen.
+
+1. **SF Symbols first (recommended for iOS):** Apple provides 5,000+ symbols that automatically support Dynamic Type, weight variants, and accessibility. Use SF Symbols for any standard action (share, settings, heart, star, map pin, etc.).
+2. **Custom icons only when needed:** If your app has domain-specific concepts that SF Symbols can't express (e.g., a trail blaze marker, a specific badge shape), plan custom icons. Define the style: line weight, corner radius, filled vs. outlined, size grid.
+3. **Consistency rule:** Don't mix SF Symbols and custom icons with different visual weights. If you use custom icons, match them to SF Symbol weight conventions.
+
+**App icon approach:**
+
+The app icon is the single most visible brand asset. Decide the creation approach early:
+
+- **AI generation → refinement:** Use Midjourney or similar to explore concepts, then refine the best option in a vector tool. Fast, good for exploration, but may need manual polish.
+- **Design tool:** Build directly in Figma or Sketch using your design tokens. Full control, but slower.
+- **Commission:** Hire a designer for the icon only ($50-200 for a quality app icon). Worth it if the icon is critical to brand identity.
+- **Apple guidelines:** Single, recognizable glyph. No text (illegible at small sizes). No photos. Avoid transparency. Test at 29pt, 40pt, 60pt, and 1024pt — it must read at all sizes.
+
+**Asset catalog structure:**
+
+Plan the Xcode Asset Catalog organization:
+
+```text
+Assets.xcassets/
+├── AppIcon.appiconset/          # App icon (single 1024x1024, Xcode generates sizes)
+├── Colors/                       # Named colors (from design tokens)
+│   ├── BrandPrimary.colorset/
+│   ├── BrandSecondary.colorset/
+│   └── ...
+├── Icons/                        # Custom icons (if any)
+│   ├── icon-trail-blaze.imageset/
+│   └── ...
+├── Illustrations/                # Empty states, onboarding, decorative
+│   ├── empty-state-no-routes.imageset/
+│   └── ...
+└── LaunchScreen/                 # Launch screen assets
+    └── ...
+```
+
+**Naming convention:** `category-descriptor-variant` (e.g., `icon-badge-earned`, `illustration-empty-search`, `onboard-welcome-01`). Lowercase, hyphen-separated.
+
+**Add your asset inventory to the [Design System Spec](../templates/design-system-spec.md)** in the Asset Inventory section, noting priority and creation approach for each item.
+
+### 5.9 Verify Design System Coverage
 
 Check the design system against the wireframes and requirements:
 

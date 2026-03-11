@@ -281,6 +281,51 @@ _Repeat for each component..._
 
 ---
 
+## Asset Inventory
+
+> Playbook Reference: [Step 5, Section 5.8: Asset Planning & Pipeline](../../steps/05-design-system.md) and [Asset Pipeline Reference](../../references/asset-pipeline.md)
+
+### Icon Strategy
+
+**Approach:** _[SF Symbols only / SF Symbols + custom / Fully custom]_
+**Custom icon style (if applicable):** _[Line weight, corner radius, filled vs outlined, size grid]_
+**SF Symbol weight:** _[ultralight / thin / light / regular / medium / semibold / bold / heavy / black]_
+
+### Asset Catalog
+
+| # | Asset | Category | Priority | Creation Approach | Status |
+| - | ----- | -------- | -------- | ----------------- | ------ |
+| 1 | App Icon (1024x1024) | Identity | Must Have | | _[ ] Planned / [ ] Created / [ ] Verified_ |
+| 2 | Launch Screen | Identity | Must Have | | _[ ] Planned / [ ] Created / [ ] Verified_ |
+| 3 | | Iconography | | | |
+| 4 | | Empty States | | | |
+| 5 | | Onboarding | | | |
+| 6 | | In-App Graphics | | | |
+
+_Add rows as needed. Store and marketing assets are tracked in Phase 4._
+
+### App Icon
+
+**Concept:** _[Description of the icon concept — glyph, colors, mood]_
+**Creation tool:** _[Midjourney / Figma / Commissioned / Other]_
+**Tested at sizes:** _[ ] 29pt [ ] 40pt [ ] 60pt [ ] 1024pt_
+**Light/dark variants:** _[Yes — tinted icon support / No]_
+
+### Naming Convention
+
+**Pattern:** `category-descriptor-variant`
+**Examples:** _[e.g., icon-badge-earned, illustration-empty-search, onboard-welcome-01]_
+
+### Deferred Assets
+
+_Assets identified as needed but deferred to later sprints or Phase 4._
+
+| Asset | Deferred To | Reason |
+| ----- | ----------- | ------ |
+| | | |
+
+---
+
 ## Status
 
 - [ ] Color tokens defined (light + dark)
@@ -293,4 +338,8 @@ _Repeat for each component..._
 - [ ] Components fully specified
 - [ ] Layout patterns documented
 - [ ] Animation & motion defined
+- [ ] Asset inventory cataloged with priorities and creation approaches
+- [ ] Icon strategy decided (SF Symbols vs custom)
+- [ ] App icon approach defined
+- [ ] Asset catalog structure planned
 - [ ] Coverage verified against wireframes

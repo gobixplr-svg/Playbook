@@ -12,7 +12,7 @@ Transform the approved Concept Document into a buildable plan. This phase answer
 ## Steps
 
 | Step | Name | Purpose | Key Output |
-|------|------|---------|------------|
+| ---- | ---- | ------- | ---------- |
 | 1 | [Requirements Specification](steps/01-requirements-specification.md) | Formalize features into user stories, acceptance criteria, and TDD test plans | Requirements Document |
 | 2 | [Technical Spikes](steps/02-technical-spikes.md) | Time-boxed prototypes to validate unknowns before committing | Spike reports + recommendations |
 | 3 | [Architecture Design](steps/03-architecture-design.md) | System architecture, data models, testability patterns | Architecture Document |
@@ -65,6 +65,7 @@ At the start of each AI coding session, the AI needs context about where the pro
 3. **MEMORY.md** (if using Claude Code) — key decisions, patterns, and conventions
 
 At the end of each session, update these artifacts so the next session can pick up cleanly:
+
 - Mark completed tasks in the project plan
 - Update ROADMAP.md if stories moved between sections
 - Save any new decisions or patterns to memory
@@ -82,7 +83,7 @@ The pre-production specs from Steps 1–7 serve as AI reference material during 
 If using Claude Code with custom skills, integrate them into the development workflow:
 
 | Development Event | Skill / Action | Purpose |
-|-------------------|---------------|---------|
+| ----------------- | -------------- | ------- |
 | Completing a story's tasks | `/commit` | Review changes and create structured commit |
 | End of sprint | `/wrapup` | Update docs, commit, generate continuation prompt |
 | End of session | `/continue` | Generate prompt for next session to resume |
@@ -103,7 +104,8 @@ The goal is that a new AI session can read CLAUDE.md + MEMORY.md + ROADMAP.md an
 Steps 4 and 5 use an AI-assisted design pipeline. All tools are free or near-free:
 
 | Phase | Tool | Cost | Purpose |
-|-------|------|------|---------|
+| ----- | ---- | ---- | ------- |
+| Asset pipeline | See [Asset Pipeline Reference](references/asset-pipeline.md) | Varies | App icon, illustrations, store assets, optimization |
 | Visual direction | Midjourney | $10 one-time | Mood boards, color exploration, atmosphere |
 | Color system | Khroma + Coolors | Free | AI color palette generation, accessibility checking |
 | Screen generation | Google Stitch | Free | Text-to-UI design, multi-screen flows, Figma export |
@@ -115,6 +117,7 @@ Steps 4 and 5 use an AI-assisted design pipeline. All tools are free or near-fre
 ## Exit Criteria
 
 Phase 1 is complete when:
+
 - [ ] Requirements are formalized with acceptance criteria and TDD test plans
 - [ ] Technical spikes are completed for all "Complex" or "Unknown" items
 - [ ] Architecture is documented with testability patterns
@@ -129,12 +132,15 @@ Phase 1 is complete when:
 ## Deliverables
 
 ### Process (Playbook)
+
 - Step guides with instructions for each activity
 - Blank templates ready to copy into any project
 
 ### Project-Specific
+
 Copy templates into your project at `docs/pre-production/`:
-```
+
+```text
 your-project/
 ├── docs/
 │   ├── concept/                    # Phase 0 deliverables (already exist)
