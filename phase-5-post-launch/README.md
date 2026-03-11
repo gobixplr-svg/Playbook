@@ -10,16 +10,16 @@ Sustain, grow, and evolve the app based on real user data. This phase is ongoing
 - App is live on all target platforms
 - Analytics and crash reporting are active
 
-## Steps (To Be Developed)
+## Steps
 
 | Step | Name | Purpose | Key Output |
-|------|------|---------|------------|
-| 1 | Monitoring Setup | Dashboards for key metrics, alerts for issues | Monitoring dashboard |
-| 2 | User Feedback Loop | Collect, categorize, and prioritize user feedback | Feedback log + priorities |
-| 3 | Iteration Planning | Plan updates based on data and feedback | Updated roadmap |
-| 4 | Update Cycle | Regular cadence for bug fixes, features, content | Release schedule |
-| 5 | Growth & Retention | ASO optimization, referral mechanics, re-engagement | Growth metrics |
-| 6 | Retrospective | What worked, what didn't, lessons learned | Retro document |
+| ---- | ---- | ------- | ---------- |
+| 1 | [Monitoring Setup](steps/01-monitoring-setup.md) | Dashboards for key metrics, alerts for issues | Monitoring dashboard |
+| 2 | [User Feedback Loop](steps/02-user-feedback-loop.md) | Collect, categorize, and prioritize user feedback | Feedback log + priorities |
+| 3 | [Iteration Planning](steps/03-iteration-planning.md) | Plan updates based on data and feedback | Updated roadmap |
+| 4 | [Update Cycle](steps/04-update-cycle.md) | Regular cadence for bug fixes, features, content | Release schedule |
+| 5 | [Growth & Retention](steps/05-growth-retention.md) | ASO optimization, referral mechanics, re-engagement | Growth metrics |
+| 6 | [Retrospective](steps/06-retrospective.md) | What worked, what didn't, lessons learned | Retro document |
 
 ## Ongoing Activities
 
@@ -31,7 +31,7 @@ Sustain, grow, and evolve the app based on real user data. This phase is ongoing
 ## Key Metrics to Track
 
 | Category | Metrics |
-|----------|---------|
+| -------- | ------- |
 | Acquisition | Downloads, install sources, store conversion rate |
 | Engagement | DAU/MAU, session length, feature usage |
 | Retention | D1/D7/D30 retention, churn rate |

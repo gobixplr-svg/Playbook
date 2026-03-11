@@ -10,21 +10,22 @@ Prove the app works correctly, performs well, and meets the acceptance criteria 
 - All "Must Have" features are implemented
 - App builds and runs on all target platforms
 
-## Steps (To Be Developed)
+## Steps
 
 | Step | Name | Purpose | Key Output |
-|------|------|---------|------------|
-| 1 | Test Plan | Define what to test, how, and acceptance criteria | Test Plan Document |
-| 2 | Functional Testing | Verify all features work as specified | Test results + bug list |
-| 3 | Platform Testing | Test on real devices across platforms and OS versions | Platform compatibility report |
-| 4 | Performance Testing | Profile and optimize for speed, memory, battery | Performance benchmarks |
-| 5 | Security & Privacy Audit | Verify data handling, auth, and compliance | Security audit report |
-| 6 | Beta Testing | External testers via TestFlight / internal tracks | User feedback + bug reports |
-| 7 | Bug Fix Sprint | Address all critical and high-priority bugs | Clean bug tracker |
+| ---- | ---- | ------- | ---------- |
+| 1 | [Test Plan](steps/01-test-plan.md) | Define what to test, how, and acceptance criteria | Test Plan Document |
+| 2 | [Functional Testing](steps/02-functional-testing.md) | Verify all features work as specified | Test results + bug list |
+| 3 | [Platform Testing](steps/03-platform-testing.md) | Test on real devices across platforms and OS versions | Platform compatibility report |
+| 4 | [Performance Testing](steps/04-performance-testing.md) | Profile and optimize for speed, memory, battery | Performance benchmarks |
+| 5 | [Security & Privacy Audit](steps/05-security-privacy-audit.md) | Verify data handling, auth, and compliance | Security audit report |
+| 6 | [Beta Testing](steps/06-beta-testing.md) | External testers via TestFlight / internal tracks | User feedback + bug reports |
+| 7 | [Bug Fix Sprint](steps/07-bug-fix-sprint.md) | Address all critical and high-priority bugs | Clean bug tracker |
 
 ## Exit Criteria
 
 Phase 3 is complete when:
+
 - [ ] All acceptance criteria from requirements are verified
 - [ ] No critical or high-priority bugs remain open
 - [ ] App performs within defined benchmarks (launch time, memory, battery)

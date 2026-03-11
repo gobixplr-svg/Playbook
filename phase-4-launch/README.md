@@ -11,21 +11,22 @@ Ship the app to users. Prepare store listings, submit for review, coordinate mar
 - App Store / Play Store compliance is verified
 - Beta testing is complete
 
-## Steps (To Be Developed)
+## Steps
 
 | Step | Name | Purpose | Key Output |
-|------|------|---------|------------|
-| 1 | Store Preparation | App Store Connect + Google Play Console setup | Store listings configured |
-| 2 | Metadata & ASO | Screenshots, descriptions, keywords, categories | Optimized store presence |
-| 3 | Compliance Final Check | Privacy manifests, ATT, age rating, content declarations | Compliance checklist passed |
-| 4 | Submission | Submit builds for review | Apps in review |
-| 5 | Launch Marketing | Press, social, community, launch day plan | Marketing materials + plan |
-| 6 | Launch Day | Monitor reviews, crashes, analytics | Live app with monitoring |
-| 7 | Web Deployment | Deploy web version (if applicable) | Live website |
+| ---- | ---- | ------- | ---------- |
+| 1 | [Store Preparation](steps/01-store-preparation.md) | App Store Connect setup, pricing, availability | Store listings configured |
+| 2 | [Store & Marketing Assets](steps/02-store-marketing-assets.md) | Screenshots, preview video, promotional artwork, press kit, social assets | Store-ready visuals + marketing materials |
+| 3 | [Compliance Final Check](steps/03-compliance-final-check.md) | Privacy manifests, ATT, age rating, content declarations | Compliance checklist passed |
+| 4 | [Submission](steps/04-submission.md) | Archive, upload, submit for review | Apps in review |
+| 5 | [Launch Marketing](steps/05-launch-marketing.md) | Press, social, community, launch day plan | Marketing materials + plan |
+| 6 | [Launch Day](steps/06-launch-day.md) | Monitor reviews, crashes, analytics | Live app with monitoring |
+| 7 | [Web Deployment](steps/07-web-deployment.md) | Deploy web version (if applicable) | Live website |
 
 ## Exit Criteria
 
 Phase 4 is complete when:
+
 - [ ] App is live on all target platforms
 - [ ] Store listings are optimized (screenshots, descriptions, keywords)
 - [ ] Analytics and crash reporting are active and verified
