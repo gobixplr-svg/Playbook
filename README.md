@@ -11,13 +11,15 @@ Solo developers and small teams who want a professional, documented development 
 ### Phases
 
 | Phase | Name | Purpose | Exit Criteria |
-|-------|------|---------|---------------|
+| ----- | ---- | ------- | ------------- |
 | 0 | [Concept](phase-0-concept/) | Define what you're building and why | Concept Document approved |
 | 1 | [Pre-Production](phase-1-pre-production/) | Plan how you'll build it | Architecture, design system, and project plan complete |
 | 2 | [Production](phase-2-production/) | Build it | Feature-complete, integrated codebase |
 | 3 | [Testing & QA](phase-3-testing-qa/) | Prove it works | All acceptance criteria met, no critical bugs |
 | 4 | [Launch](phase-4-launch/) | Ship it | Live in app stores and/or on the web |
 | 5 | [Post-Launch](phase-5-post-launch/) | Grow and maintain it | Ongoing — metrics, iteration, support |
+
+See [TRANSITIONS.md](TRANSITIONS.md) for readiness checklists and common mistakes when moving between phases.
 
 ### Two Deliverables Per Step
 
@@ -50,18 +52,22 @@ This Playbook is designed to work alongside Claude Code skills and CLAUDE.md con
 
 ## Directory Structure
 
-```
+```text
 Playbook/
 ├── README.md                           # This file
+├── TRANSITIONS.md                      # Phase transition readiness checklists
 ├── phase-0-concept/
 │   ├── README.md                       # Phase overview, entry/exit criteria
-│   ├── steps/                          # Step-by-step process guides
+│   ├── steps/
+│   │   ├── 00-guided-concept-session.md  # Interactive Q&A shortcut for Steps 1-5
 │   │   ├── 01-ideation-and-vision.md
 │   │   ├── 02-discovery-questions.md
 │   │   ├── 03-competitive-analysis.md
 │   │   ├── 04-technical-feasibility.md
-│   │   └── 05-concept-document.md
-│   └── templates/                      # Blank templates to copy per project
+│   │   ├── 05-concept-document.md
+│   │   ├── 06-app-naming.md
+│   │   └── 07-phase-retrospective.md
+│   └── templates/
 │       ├── vision-statement.md
 │       ├── discovery-questionnaire.md
 │       ├── competitor-matrix.md
@@ -70,23 +76,62 @@ Playbook/
 ├── phase-1-pre-production/
 │   ├── README.md
 │   ├── steps/
-│   └── templates/
+│   │   ├── 01-requirements.md
+│   │   ├── 02-technical-spikes.md
+│   │   ├── 03-architecture.md
+│   │   ├── 04-ui-ux-design.md
+│   │   ├── 05-design-system.md          # Includes asset planning pipeline
+│   │   ├── 06-api-spec.md
+│   │   ├── 07-project-plan.md
+│   │   ├── 08-dev-environment.md
+│   │   └── 09-retrospective.md
+│   ├── templates/
+│   └── references/
+│       └── asset-pipeline.md            # Asset creation tools and workflows
 ├── phase-2-production/
 │   ├── README.md
 │   ├── steps/
+│   │   ├── 01-sprint-execution.md       # Includes code review + 3-tier testing
+│   │   └── 02-retrospective.md
 │   └── templates/
+│       └── sprint-tracker.md
 ├── phase-3-testing-qa/
 │   ├── README.md
 │   ├── steps/
+│   │   ├── 01-test-plan.md
+│   │   ├── 02-functional-testing.md
+│   │   ├── 03-platform-testing.md
+│   │   ├── 04-performance-testing.md
+│   │   ├── 05-security-privacy-audit.md
+│   │   ├── 06-beta-testing.md
+│   │   └── 07-bug-fix-sprint.md
 │   └── templates/
+│       ├── test-plan.md
+│       └── bug-tracker.md
 ├── phase-4-launch/
 │   ├── README.md
 │   ├── steps/
+│   │   ├── 01-store-preparation.md
+│   │   ├── 02-store-marketing-assets.md  # AppShot + BatchSnap references
+│   │   ├── 03-compliance-final-check.md
+│   │   ├── 04-submission.md
+│   │   ├── 05-launch-marketing.md
+│   │   ├── 06-launch-day.md
+│   │   └── 07-web-deployment.md
 │   └── templates/
+│       └── store-asset-checklist.md
 └── phase-5-post-launch/
     ├── README.md
     ├── steps/
+    │   ├── 01-monitoring-setup.md
+    │   ├── 02-user-feedback-loop.md
+    │   ├── 03-iteration-planning.md
+    │   ├── 04-update-cycle.md
+    │   ├── 05-growth-retention.md
+    │   └── 06-retrospective.md
     └── templates/
+        ├── feedback-log.md
+        └── project-retrospective.md
 ```
 
 ## Principles
