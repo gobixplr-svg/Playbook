@@ -374,3 +374,12 @@ Complete the [Design System Spec Template](../templates/design-system-spec.md) a
 - **The spec is the contract.** When a developer (or AI) implements a component, they should be able to match the spec without asking questions. If the spec is ambiguous, fix the spec.
 - **Use the wireframes as your test.** After defining the system, mentally "rebuild" each wireframe using only your tokens and components. If you can't, something is missing.
 - **SwiftUI code patterns, not runnable code.** The spec defines the API surface (how you'll use `Color.brandPrimary`, `Spacing.md`, `PrimaryButton()`). Actual implementation happens in Phase 2.
+
+### Game Development Notes
+
+If building a game rather than a standard app:
+
+- **Glow tokens replace shadow tokens.** Dark-background games with neon aesthetics use glow intensity levels (none/subtle/standard/intense) instead of shadow elevation. Define glow colors, blur radii, and intensity values as tokens.
+- **Gameplay object colors are a first-class token category.** Blob colors, tile colors, team colors — whatever your core gameplay objects use — should be defined as tokens alongside UI colors. Include unlock order, accessibility contrast ratios, and colorblind-distinguishable values.
+- **Dark-only is valid.** Not every app needs light/dark mode. Games with a specific visual aesthetic (neon, space, underwater) can commit to a single appearance and eliminate the token duplication.
+- **Use engine-native code patterns.** For Unity: `ScriptableObject` color palettes and `static class` design tokens instead of SwiftUI `Color` extensions. For Godot/Unreal: equivalent data-driven approaches.

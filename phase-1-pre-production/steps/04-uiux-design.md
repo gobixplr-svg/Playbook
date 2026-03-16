@@ -279,3 +279,9 @@ Complete the [UI/UX Spec Template](../templates/uiux-spec.md) and save it to you
 - **Steal from the best.** Browse Mobbin (mobbin.com) for hundreds of real app designs organized by screen type. See how successful apps solve the same design problems you're facing.
 - **Don't over-design v1.** You need enough design to build confidently. You don't need pixel-perfect mockups of every edge case. Wireframes + key screen designs + prototype is sufficient.
 - **AI tools are a starting point.** If you use AI generation tools (see [AI Design Pipeline](../references/ai-design-pipeline.md)), remember that output needs human curation and refinement. AI accelerates; it doesn't replace taste.
+
+### Game Development Notes
+
+- **Audio direction belongs in pre-production.** For games where sound is a core polish layer (rhythm games, atmospheric games, games with satisfying feedback loops), define audio direction during this step — not mid-sprint. Identify: soundtrack style, SFX categories (e.g., splat, merge, explosion, UI tap), audio-reactive elements, and whether you'll source, commission, or generate audio assets.
+- **Game feel is a design deliverable.** Haptic feedback patterns, screen shake intensity, VFX timing, and animation curves are part of the user experience. Specify them here alongside visual design — they inform production implementation just as much as wireframes do.
+- **Portrait vs landscape is a core UX decision for mobile games.** Lock the orientation early and design all screens for it. One-handed reachability in portrait mode constrains button placement and touch target zones differently than landscape.

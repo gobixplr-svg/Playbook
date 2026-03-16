@@ -218,3 +218,12 @@ Complete the [API Spec Template](../templates/api-spec.md) and save it to your p
 - **Don't over-normalize.** If you always fetch a route with its milestones, consider whether a join is fine or if you'd rather embed milestones. For v1 with < 20 routes, normalized is fine.
 - **RLS is your security layer.** With Supabase, RLS policies replace traditional API middleware. Every table needs explicit policies — tables without policies are inaccessible by default.
 - **Version your API from day one.** Even if you're a solo dev, naming things `v1` makes future changes easier.
+
+### No-Backend / On-Device Projects
+
+If your project has no backend (local-only games, offline-first tools):
+
+- **Reframe "API" as "service contracts."** Define interfaces for each external service (Game Center, ad SDK, health kit, etc.) with input/output/error shapes. These are the contracts your code builds against.
+- **Local persistence is your "database."** Define the save file schema (JSON, SQLite, Core Data, PlayerPrefs) with the same rigor as a database schema. Include a version field for forward migration.
+- **Skip sections that don't apply.** RLS policies, Edge Functions, server-side logic, and API pagination are irrelevant for on-device apps. Don't fill them with "N/A" — remove or replace them with applicable sections (save triggers, data lifecycle, schema migration strategy).
+- **Data flows still matter.** Even without a server, data moves between systems (gameplay → save file, game over → leaderboard, ad completion → reward). Map these flows with the same trigger → steps → error handling structure.

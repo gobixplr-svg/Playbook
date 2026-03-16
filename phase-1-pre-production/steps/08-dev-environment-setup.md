@@ -254,3 +254,10 @@ Complete the [Dev Environment Setup Template](../templates/dev-environment-setup
 - **Security rules prevent vulnerabilities at generation time.** It's cheaper to never write `UserDefaults.set(token)` than to find and fix it in code review.
 - **Separate dev from production early.** Use a separate backend instance for development. Accidentally deleting production data during Sprint 1 is a bad day.
 - **The validation checklist is your exit gate.** If any item fails, the environment isn't ready. Fix it before starting Sprint 1.
+
+### Game Engine Projects (Unity, Godot, Unreal)
+
+- **Create the project manually in the engine's project manager** (Unity Hub, Godot Project Manager, Unreal Launcher). AI-generated engine project files miss renderer assignments, quality profiles, and platform-specific settings. The AI can create the folder structure and code files after the project exists.
+- **Clearly separate "AI creates" from "developer does manually."** The AI produces: documentation, coding rules, memory files, folder structure on the filesystem, assembly/module definitions, and starter scripts. The developer does: engine project creation, Editor settings, renderer configuration, build pipeline setup, and first device build.
+- **Assembly definitions (Unity) / modules (Godot/Unreal) enforce architecture boundaries.** Create one per module from the architecture document. This is the most valuable thing the AI can set up — it prevents dependency violations from day one.
+- **Test framework setup varies by engine.** Unity uses Unity Test Framework (NUnit-based) with Edit Mode and Play Mode test assemblies. Godot uses GdUnit or GUT. Unreal uses the Automation Framework. Set up the test runner and verify one passing test before Sprint 1.
