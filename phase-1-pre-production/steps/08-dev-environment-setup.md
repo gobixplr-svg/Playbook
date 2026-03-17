@@ -15,6 +15,7 @@ This step formalizes three things:
 
 ## Prerequisites
 
+- Phase 0 Step 6 (App Naming) completed — finalized app name for project name, bundle ID, and identifiers
 - Step 1 (Requirements) completed — test plan scope and acceptance criteria count
 - Step 3 (Architecture) completed — module structure, service protocols, DI pattern
 - Step 5 (Design System) completed — design tokens for asset setup
@@ -38,7 +39,7 @@ Create the IDE project and configure it to match the architecture from Step 3.
 | Setting | Value |
 |---------|-------|
 | Template | App (iOS) |
-| Product Name | [Your app name] |
+| Product Name | [Finalized app name from Phase 0 Step 6] |
 | Team | Your Apple Developer account |
 | Organization Identifier | [com.yourapp] |
 | Interface | SwiftUI |

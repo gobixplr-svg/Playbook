@@ -8,6 +8,7 @@ Transform the approved Concept Document into a buildable plan. This phase answer
 
 - Phase 0 Concept Document is complete with a "Go" or "Conditional Go" decision
 - Core concept, audience, and feature scope are defined
+- App name finalized (Phase 0 Step 6) — the name feeds into project creation (bundle ID, product name), architecture (assembly/module names), and design system (branding)
 
 ## Steps
 
