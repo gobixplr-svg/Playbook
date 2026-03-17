@@ -15,7 +15,7 @@ You do not need a budget. You need a plan and the discipline to execute it.
 - Store and marketing assets completed (Step 2 — press kit, social assets, screenshots)
 - App submitted for review (Step 4) or close to submission
 - Target audience defined (Phase 0)
-- App Store keywords researched (use the `app-builder` skill's ASO strategy)
+- App Store keywords researched (see Section 5.8 below for ASO strategy)
 
 ## Process
 
@@ -220,7 +220,7 @@ Your beta testers are your most valuable launch-day asset. They already know and
 
 ### 5.8 App Store Optimization (ASO)
 
-Reference the `app-builder` skill's ASO strategy for detailed keyword research and optimization techniques. The essentials:
+ASO keyword research and optimization is an ongoing process. Use tools like AppFollow, Sensor Tower, or AppTweak (free tiers available) alongside App Store Connect's search metrics. The essentials:
 
 **Keywords (100 characters max):**
 

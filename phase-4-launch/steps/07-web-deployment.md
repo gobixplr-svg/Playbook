@@ -18,7 +18,7 @@ It is also a practical requirement: Apple expects a working Support URL and Priv
 - App Store link is known (even if the app is not yet live, you can construct the URL)
 - Privacy policy and terms of service are written
 - Marketing assets from Step 2 are available (screenshots, icon, description)
-- Reference the `web-dev-lead` skill for deployment details and technical implementation
+- A deployment platform selected (Cloudflare Pages, Vercel, Netlify, or similar)
 
 ## Process
 
@@ -48,7 +48,7 @@ A landing page has one job: convince visitors to download your app.
 
 **Technical implementation:**
 
-The `web-dev-lead` skill covers Cloudflare Pages deployment, React/Vite/Tailwind setup, and best practices in detail. Consult it for implementation specifics.
+Choose a deployment platform that matches your skill level. Cloudflare Pages, Vercel, and Netlify all offer free tiers with automatic SSL, CDN, and GitHub integration. Each platform's documentation covers setup in detail.
 
 **Quick-start options by complexity:**
 
@@ -66,7 +66,7 @@ The `web-dev-lead` skill covers Cloudflare Pages deployment, React/Vite/Tailwind
 4. Deploy — Cloudflare handles SSL, CDN, and global distribution
 5. Add your custom domain
 
-Refer to the `web-dev-lead` skill for step-by-step Cloudflare Pages deployment instructions.
+Refer to [Cloudflare Pages documentation](https://developers.cloudflare.com/pages/) for step-by-step deployment instructions. Vercel and Netlify have equivalent guides.
 
 ### 7.3 App Store Smart Banner
 
@@ -158,7 +158,7 @@ Search engine traffic is free and compounds over time. Basic SEO takes minutes a
 }
 ```
 
-Refer to the `web-dev-lead` skill for comprehensive SEO guidance.
+Refer to [web.dev's SEO guide](https://web.dev/learn/seo) for comprehensive SEO guidance.
 
 ### 7.5 Universal Links (Optional)
 
@@ -273,7 +273,7 @@ Live web presence: marketing/landing page deployed, privacy policy and terms of 
 ## Tips
 
 - **A one-page site is enough.** Do not let the website become a project that delays your launch. A single, well-designed page with a download button, privacy policy link, and support email covers all requirements.
-- **Use the `web-dev-lead` skill for implementation details.** This step guide covers *what* to deploy. The skill covers *how* — including Cloudflare Pages setup, React/Vite/Tailwind patterns, and SEO specifics.
+- **Use your deployment platform's docs for implementation details.** This step guide covers *what* to deploy. Your platform's documentation covers *how* — setup, configuration, and platform-specific patterns.
 - **The Smart App Banner is the highest-ROI web feature.** One meta tag in your HTML gives every iOS Safari visitor a native prompt to download your app. There is no easier conversion mechanism.
 - **Host your privacy policy on a page you control.** Google Docs or Notion links look unprofessional and can break if you change the sharing settings. A static page on your domain is permanent and trustworthy.
 - **Do not skip Open Graph tags.** When someone shares your landing page link on Twitter or LinkedIn, the preview card is generated from OG tags. Without them, the link preview is a blank box with a URL — which nobody clicks.

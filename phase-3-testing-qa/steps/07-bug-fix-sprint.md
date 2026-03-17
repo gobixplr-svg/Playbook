@@ -148,7 +148,7 @@ After all Critical and High bugs are fixed, do a complete walkthrough of every c
 
 Bug fix code is written under time pressure and focused on a specific symptom. This makes it prone to shortcuts, incomplete fixes, and side effects. Review all bug fix changes before declaring them done.
 
-**Run the `code-review` skill on the bug fix diff:**
+**Run a structured code review on the bug fix diff:**
 
 ```text
 git diff <pre-bugfix-commit>..HEAD
@@ -259,7 +259,7 @@ Updated bug tracker (using the [Bug Tracker Template](../templates/bug-tracker.m
 - **Time-box the sprint.** Set a deadline (1-2 weeks is typical for a solo developer). Bugs you can't fix in that window get re-triaged. If you're still finding Critical bugs after 2 weeks, the problem is upstream — go back to development.
 - **One fix, one commit.** Don't batch multiple bug fixes into a single commit. Atomic commits make it easy to revert a fix that causes a regression without losing other work.
 - **Write the test first if you can.** For bugs with clear reproduction steps, write a failing test before implementing the fix. This proves the fix works and prevents regression.
-- **Use the `code-review` skill on every fix.** Bug fix code is written fast and focused on a symptom. Review catches the shortcuts.
+- **Review every fix before merging.** Bug fix code is written fast and focused on a symptom. A structured review (AI-assisted or manual) catches the shortcuts.
 - **Update the beta build after fixing Critical bugs.** Don't wait until all bugs are fixed. Let beta testers verify Critical fixes early — they may find that the fix doesn't work in their environment.
 - **The production readiness checklist is a hard gate, not a suggestion.** If any item fails, the app isn't ready. Shipping with a failed checklist item is how post-launch emergencies happen.
 - **Keep the energy focused.** Bug fix sprints are a grind. Track your progress visually (bugs remaining graph, severity breakdown) so you can see the finish line approaching.

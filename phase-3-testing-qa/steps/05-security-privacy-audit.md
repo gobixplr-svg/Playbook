@@ -52,7 +52,7 @@ Before auditing privacy compliance, you need a complete picture of what data the
 
 Apple requires a privacy manifest that declares what APIs your app uses and why. This applies to your app and to any third-party SDK that accesses covered API categories.
 
-**Reference:** The `app-store-expert` skill's `privacy-requirements.md` covers the full PrivacyInfo.xcprivacy specification, required API categories, and approved reason codes.
+**Reference:** Apple's [privacy manifest documentation](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files) covers the full PrivacyInfo.xcprivacy specification, required API categories, and approved reason codes.
 
 **Audit checklist:**
 
@@ -204,7 +204,7 @@ Verify that the backend enforces security — don't rely on the client to be wel
 - [ ] Rate limiting is configured on sensitive endpoints (auth, purchases, data mutations)
 - [ ] Error responses don't leak database structure, stack traces, or internal identifiers
 
-**Reference:** The `code-review` skill's security review dimensions cover these areas systematically.
+**Reference:** The code review dimensions in [Phase 2, Step 1 (Section 6)](../../phase-2-production/steps/01-sprint-execution.md) cover these areas systematically.
 
 ### 5.9 OWASP Mobile Top 10 Quick Check
 
@@ -282,7 +282,7 @@ Security audit report saved to your project's `docs/testing/security-audit-repor
 - **Start with the data inventory.** Everything else flows from knowing what data you actually touch. Skip this and you'll miss things in every downstream section.
 - **Use `git log -p --all -S 'api_key'` to search git history for secrets.** Removing a key from HEAD doesn't remove it from history. If you find one, rotate the key immediately — don't just delete the commit.
 - **Test RLS policies with a real authenticated session, not the service role.** The service role bypasses RLS entirely. Your audit must use the same access level as your users.
-- **Run the `code-review` skill on security-sensitive code paths.** Authentication flows, payment processing, data encryption, and permission checks are high-value targets for review.
+- **Run a focused code review on security-sensitive code paths.** Authentication flows, payment processing, data encryption, and permission checks are high-value targets for review. Use an AI coding assistant or a dedicated security review checklist.
 - **Check third-party SDK changelogs before updating.** New SDK versions can add new data collection that changes your privacy obligations.
 - **Privacy compliance is not a one-time gate.** Every feature that touches new data types, adds an SDK, or changes data flows should trigger a mini-audit of the affected sections.
 - **When in doubt about App Privacy Details, over-disclose.** Failing to disclose data collection causes App Store rejection. Disclosing data you don't collect just makes your privacy label slightly longer.

@@ -37,7 +37,7 @@ Phase 4 is complete when:
 ## Key Principles
 
 - **Submit early.** App Store review can take 1-7 days. Don't let review time delay your launch date.
-- **Prepare for rejection.** Have a plan for common rejection reasons. The app-store-expert skill covers this.
+- **Prepare for rejection.** Have a plan for common rejection reasons. See Step 3 (Compliance Final Check) and Step 4, Section 4.6 (Common Rejection Reasons).
 - **Monitor launch day.** Watch crash reports, reviews, and analytics closely for the first 48 hours.
 - **Launch is the beginning.** Shipping is not the finish line — it's the starting line for learning from real users.
 

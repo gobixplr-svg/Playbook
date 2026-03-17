@@ -15,22 +15,45 @@ This step is a pre-flight check. You run it once, fix everything it catches, and
 - App Store Connect app record exists (Step 1)
 - A build is uploaded and available in TestFlight (Step 1)
 - Store and marketing assets are ready (Step 2)
-- You have access to the `app-store-expert` skill for detailed guidance
+- Familiarity with Apple's [App Store Review Guidelines](https://developer.apple.com/app-store/review/guidelines/)
 
 ## Process
 
-### 3.1 Run the App Store Expert Pre-Submission Review
+### 3.1 Pre-Submission Review Checklist
 
-The `app-store-expert` skill contains comprehensive, up-to-date knowledge of Apple's review guidelines, privacy requirements, rejection patterns, and technical requirements. **Use it as your primary compliance reference rather than duplicating its content here.**
+Walk through each category below against Apple's [App Store Review Guidelines](https://developer.apple.com/app-store/review/guidelines/). Document every finding. Fix issues immediately or create a tracked list of items to resolve before submission.
 
-Start by running the `app-store-expert` skill's pre-submission review workflow. This covers:
+**App Store Review Guidelines compliance:**
 
-- App Store Review Guidelines compliance (all sections)
-- Common rejection patterns and how to avoid them
-- Technical requirements verification
-- Metadata best practices
+- [ ] Read (or re-read) the [App Store Review Guidelines](https://developer.apple.com/app-store/review/guidelines/) — they are updated regularly
+- [ ] Section 1 (Safety): No objectionable content, user-generated content is moderated if present
+- [ ] Section 2 (Performance): App is complete (no placeholder content, test data, or broken features), does not crash
+- [ ] Section 3 (Business): In-app purchases use Apple's IAP system, subscriptions follow auto-renewable rules
+- [ ] Section 4 (Design): App follows [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/), no misleading UI patterns
+- [ ] Section 5 (Legal): Privacy policy URL is provided, app complies with local laws in target markets
 
-Document every finding. Fix issues immediately or create a tracked list of items to resolve before submission.
+**Common rejection patterns:**
+
+- Metadata mismatches — screenshots do not match actual app UI, or descriptions promise features the app does not deliver
+- Functionality gaps — features behind login walls that reviewers cannot test (provide a demo account in App Review notes)
+- Privacy violations — missing privacy policy, undisclosed data collection, missing purpose strings in Info.plist
+- Design issues — non-standard UI that confuses users, alerts or prompts that appear immediately on launch
+
+**Technical requirements:**
+
+- [ ] Binary builds and runs on the minimum OS version you declared
+- [ ] App supports all required device sizes and orientations for your target devices
+- [ ] Binary size is reasonable (App Store OTA download limit is 200 MB over cellular)
+- [ ] App uses only public APIs — no private framework calls
+- [ ] No references to other mobile platforms in UI text or metadata
+
+**Metadata accuracy:**
+
+- [ ] Screenshots reflect the current app UI (not mockups or outdated versions)
+- [ ] App description accurately describes current functionality — no aspirational language for unshipped features
+- [ ] Keywords are relevant and not misleading (no competitor names, no unrelated terms)
+- [ ] App category and subcategory are appropriate
+- [ ] Support URL and privacy policy URL are live and accessible
 
 ### 3.2 PrivacyInfo.xcprivacy Verification
 
@@ -50,7 +73,7 @@ Apple requires a privacy manifest file (`PrivacyInfo.xcprivacy`) in your app bun
 - Declaring data as "not linked to identity" when you do have a user account system
 - Missing required reason APIs that are called indirectly through dependencies
 
-Refer to the `app-store-expert` skill for the current list of required reason APIs and data collection categories.
+Refer to [Apple's documentation on required reason APIs](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api) for the current list of required reason APIs and data collection categories.
 
 ### 3.3 App Tracking Transparency (ATT) Check
 
@@ -60,7 +83,7 @@ If your app tracks users (as defined by Apple), you must implement the ATT frame
 
 - If you use any advertising SDK that links device data with third-party data: **Yes**
 - If you use analytics that are first-party only (e.g., your own analytics, no data sharing): **No**
-- If you are unsure, consult the `app-store-expert` skill for Apple's current definition of "tracking"
+- If you are unsure, consult [Apple's User Privacy and Data Use documentation](https://developer.apple.com/app-store/user-privacy-and-data-use/) for the current definition of "tracking"
 
 **If ATT is required, verify:**
 
@@ -176,7 +199,7 @@ Apple holds your app responsible for everything third-party SDKs do. Audit each 
 **Where to find this information:**
 
 - Check the SDK's documentation or GitHub repository for privacy manifests
-- Apple maintains a list of commonly used SDKs that must include privacy manifests — consult the `app-store-expert` skill for the current list
+- Apple maintains a list of commonly used SDKs that must include privacy manifests — consult [Apple's list of privacy-impacting SDKs](https://developer.apple.com/support/third-party-SDK-requirements/) for the current requirements
 - Run `grep -r "NSPrivacyAccessedAPITypes" Pods/` or `grep -r "NSPrivacyAccessedAPITypes" .build/` to find privacy manifests in your dependencies
 
 **Common SDKs to audit:**
@@ -215,16 +238,16 @@ Run through this checklist as the final gate before proceeding to Step 4 (Submis
 
 **Review readiness:**
 
-- [ ] `app-store-expert` pre-submission review completed with no unresolved findings
+- [ ] Pre-submission review checklist (Section 3.1) completed with no unresolved findings
 - [ ] All findings from the pre-submission review have been fixed or documented with justification
 
 ## Deliverable
 
-Compliance checklist passed: every item in Section 3.9 is checked, all findings from the `app-store-expert` pre-submission review are resolved, and the app is ready for submission.
+Compliance checklist passed: every item in Section 3.9 is checked, all findings from the pre-submission review checklist are resolved, and the app is ready for submission.
 
 ## Definition of Done
 
-- [ ] `app-store-expert` pre-submission review workflow completed
+- [ ] Pre-submission review checklist (Section 3.1) completed
 - [ ] PrivacyInfo.xcprivacy verified and accurate
 - [ ] ATT implementation verified (or confirmed not needed)
 - [ ] App Privacy Details in App Store Connect are accurate and consistent with privacy manifest
@@ -236,7 +259,7 @@ Compliance checklist passed: every item in Section 3.9 is checked, all findings 
 
 ## Tips
 
-- **Use the `app-store-expert` skill as your primary reference.** It has detailed, current guidance on review guidelines, privacy requirements, and rejection patterns. This step guide tells you *what* to check — the skill tells you *how* and provides the latest specifics.
+- **Use Apple's [App Store Review Guidelines](https://developer.apple.com/app-store/review/guidelines/) as your primary reference.** Bookmark it — the guidelines are updated regularly, and changes can affect your app's compliance status. This step guide tells you *what* to check — Apple's documentation tells you the latest specifics.
 - **The privacy manifest is the most common compliance gap.** Apple started enforcing privacy manifest requirements in 2024, and many apps still get it wrong. Double-check every data type and required reason API.
 - **Set `ITSAppUsesNonExemptEncryption` in Info.plist.** This saves you from answering the encryption question on every build upload. For most apps that only use HTTPS, the answer is `false`.
 - **App Privacy Details and PrivacyInfo.xcprivacy must agree.** They are configured in different places (App Store Connect vs. Xcode), but Apple cross-references them. Mismatches trigger review questions or rejections.

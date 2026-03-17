@@ -97,7 +97,7 @@ In App Store Connect, navigate to your app and select the version you are submit
 | Screenshots | Upload all screenshots from Step 2 for each required device size |
 | App Preview | Upload preview video(s) from Step 2 (optional but recommended) |
 | Description | App Store description — lead with benefits, include keywords naturally, max 4000 characters |
-| Keywords | Comma-separated, max 100 characters total. Use the `app-builder` skill's ASO strategy for keyword research. |
+| Keywords | Comma-separated, max 100 characters total. See Step 5 (Launch Marketing), Section 5.8 for ASO keyword strategy. |
 | Support URL | Link to your support page, FAQ, or contact form |
 | Marketing URL | Link to your app's website or landing page (optional) |
 | Promotional Text | Up to 170 characters, can be changed without a new submission. Use for timely messages. |
@@ -136,7 +136,7 @@ Your app status changes to **Waiting for Review**.
 
 ### 4.6 Common Rejection Reasons
 
-The `app-store-expert` skill covers rejection patterns in detail. Here are the most frequent causes for solo developer apps:
+Apple's [App Store Review Guidelines](https://developer.apple.com/app-store/review/guidelines/) cover all rejection criteria. Here are the most frequent causes for solo developer apps:
 
 **Metadata issues:**
 
@@ -166,7 +166,7 @@ The `app-store-expert` skill covers rejection patterns in detail. Here are the m
 - App does not provide enough functionality to justify being on the App Store
 - UI is broken or unusable on certain device sizes
 
-Consult the `app-store-expert` skill for the complete rejection pattern database and specific guidance for your app's category.
+Consult Apple's [App Review page](https://developer.apple.com/app-store/review/) and the [Common App Rejections](https://developer.apple.com/app-store/review/rejections/) article for the full list and specific guidance for your app's category.
 
 ### 4.7 What to Do While Waiting
 

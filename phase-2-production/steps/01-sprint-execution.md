@@ -147,7 +147,7 @@ AI-generated code is especially prone to subtle issues — it compiles, passes t
 **Review process:**
 
 1. **Gather the diff:** `git diff <sprint-start-commit>..HEAD` to see everything that changed this sprint
-2. **Run `code-review` skill** (if using Claude Code): Ask it to review the sprint diff for security, performance, correctness, and maintainability
+2. **Run a structured code review** on the sprint diff — review it for security, performance, correctness, and maintainability (use an AI coding assistant, a teammate, or self-review against the dimensions below)
 3. **Review each dimension:**
 
 | Dimension | What to Check | Common AI-Generated Issues |
@@ -161,7 +161,7 @@ AI-generated code is especially prone to subtle issues — it compiles, passes t
 1. **Fix critical and high issues** before sprint review. Log medium/low issues as tech debt for future sprints.
 2. **Update the sprint tracker** with review findings and actions taken.
 
-**Tip:** If working solo, the code-review skill is your pair programmer. If working with others, combine AI review with human review — they catch different things.
+**Tip:** If working solo, use an AI coding assistant as your pair reviewer — ask it to review the diff against the dimensions above. If working with others, combine AI review with human review — they catch different things.
 
 ### 7. Sprint Review
 

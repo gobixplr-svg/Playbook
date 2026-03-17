@@ -26,7 +26,7 @@ ASO is SEO for the App Store. It determines whether users find your app when sea
 | Keyword field | 100 characters | Comma-separated, no spaces after commas, no duplicates of name/subtitle words |
 | Description | 4000 characters | First 1-3 sentences matter most (visible before "more" tap). Lead with value. |
 
-Reference the `app-store-expert` skill for detailed metadata formatting rules and common mistakes.
+Reference Apple's [App Store product page](https://developer.apple.com/app-store/product-page/) documentation for detailed metadata formatting rules and common mistakes.
 
 **A/B testing:**
 
