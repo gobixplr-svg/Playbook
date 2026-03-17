@@ -1,6 +1,6 @@
 # Project Plan — [App Name]
 
-> Playbook Reference: [Step 7: Project Plan](../../steps/07-project-plan.md)
+> Playbook Reference: [Step 7: Project Plan](../steps/07-project-plan.md)
 
 ## Project
 

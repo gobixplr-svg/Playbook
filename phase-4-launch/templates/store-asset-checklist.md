@@ -1,6 +1,6 @@
 # Store & Marketing Asset Checklist — [App Name]
 
-> Playbook Reference: [Step 2: Store & Marketing Assets](../../phase-4-launch/steps/02-store-marketing-assets.md)
+> Playbook Reference: [Step 2: Store & Marketing Assets](../steps/02-store-marketing-assets.md)
 
 ## Project
 

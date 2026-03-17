@@ -1,6 +1,6 @@
 # Design System Spec — [App Name]
 
-> Playbook Reference: [Step 5: Design System](../../steps/05-design-system.md)
+> Playbook Reference: [Step 5: Design System](../steps/05-design-system.md)
 
 ## Project
 
@@ -283,7 +283,7 @@ _Repeat for each component..._
 
 ## Asset Inventory
 
-> Playbook Reference: [Step 5, Section 5.8: Asset Planning & Pipeline](../../steps/05-design-system.md) and [Asset Pipeline Reference](../../references/asset-pipeline.md)
+> Playbook Reference: [Step 5, Section 5.8: Asset Planning & Pipeline](../steps/05-design-system.md) and [Asset Pipeline Reference](../references/asset-pipeline.md)
 
 ### Icon Strategy
 

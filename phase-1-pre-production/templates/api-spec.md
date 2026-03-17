@@ -1,6 +1,6 @@
 # API & Data Spec — [App Name]
 
-> Playbook Reference: [Step 6: API & Data Design](../../steps/06-api-data-design.md)
+> Playbook Reference: [Step 6: API & Data Design](../steps/06-api-data-design.md)
 
 ## Project
 

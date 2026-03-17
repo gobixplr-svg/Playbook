@@ -55,6 +55,7 @@ This Playbook is designed to work alongside Claude Code skills and CLAUDE.md con
 ```text
 Playbook/
 ├── README.md                           # This file
+├── LICENSE                             # MIT License
 ├── TRANSITIONS.md                      # Phase transition readiness checklists
 ├── phase-0-concept/
 │   ├── README.md                       # Phase overview, entry/exit criteria
@@ -68,25 +69,36 @@ Playbook/
 │   │   ├── 06-app-naming.md
 │   │   └── 07-phase-retrospective.md
 │   └── templates/
-│       ├── vision-statement.md
-│       ├── discovery-questionnaire.md
+│       ├── concept-brief.md
+│       ├── concept-document.md
 │       ├── competitor-matrix.md
+│       ├── discovery-questionnaire.md
 │       ├── technical-feasibility.md
-│       └── concept-document.md
+│       └── vision-statement.md
 ├── phase-1-pre-production/
 │   ├── README.md
 │   ├── steps/
-│   │   ├── 01-requirements.md
+│   │   ├── 01-requirements-specification.md
 │   │   ├── 02-technical-spikes.md
-│   │   ├── 03-architecture.md
-│   │   ├── 04-ui-ux-design.md
+│   │   ├── 03-architecture-design.md
+│   │   ├── 04-uiux-design.md
 │   │   ├── 05-design-system.md          # Includes asset planning pipeline
-│   │   ├── 06-api-spec.md
+│   │   ├── 06-api-data-design.md
 │   │   ├── 07-project-plan.md
-│   │   ├── 08-dev-environment.md
-│   │   └── 09-retrospective.md
+│   │   ├── 08-dev-environment-setup.md
+│   │   └── 09-phase-retrospective.md
 │   ├── templates/
+│   │   ├── api-spec.md
+│   │   ├── architecture-document.md
+│   │   ├── design-system-spec.md
+│   │   ├── dev-environment-setup.md
+│   │   ├── phase-retrospective.md
+│   │   ├── project-plan.md
+│   │   ├── requirements-document.md
+│   │   ├── spike-report.md
+│   │   └── uiux-spec.md
 │   └── references/
+│       ├── ai-design-pipeline.md        # AI-assisted design workflows
 │       └── asset-pipeline.md            # Asset creation tools and workflows
 ├── phase-2-production/
 │   ├── README.md
@@ -94,6 +106,7 @@ Playbook/
 │   │   ├── 01-sprint-execution.md       # Includes code review + 3-tier testing
 │   │   └── 02-retrospective.md
 │   └── templates/
+│       ├── retro-tracker.md
 │       └── sprint-tracker.md
 ├── phase-3-testing-qa/
 │   ├── README.md

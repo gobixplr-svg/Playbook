@@ -1,6 +1,6 @@
 # Dev Environment Setup — [App Name]
 
-> Playbook Reference: [Step 8: Dev Environment Setup](../../steps/08-dev-environment-setup.md)
+> Playbook Reference: [Step 8: Dev Environment Setup](../steps/08-dev-environment-setup.md)
 
 ## Project
 

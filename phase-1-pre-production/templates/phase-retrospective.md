@@ -1,6 +1,6 @@
 # Phase 1 Retrospective — [App Name]
 
-> Playbook Reference: [Step 9: Phase Retrospective](../../steps/09-phase-retrospective.md)
+> Playbook Reference: [Step 9: Phase Retrospective](../steps/09-phase-retrospective.md)
 
 ## Project
 

@@ -1,6 +1,6 @@
 # UI/UX Spec — [App Name]
 
-> Playbook Reference: [Step 4: UI/UX Design](../../steps/04-uiux-design.md)
+> Playbook Reference: [Step 4: UI/UX Design](../steps/04-uiux-design.md)
 
 ## Project
 
