@@ -50,7 +50,7 @@
 ## Where to Find Everything
 
 | Document | What's in it |
-|----------|-------------|
+| ---------- | ------------- |
 | `concept-document.md` | Full synthesis — the "pitch deck as a document" |
 | `vision-statement.md` | Problem, audience, elevator pitch, vision |
 | `discovery-questionnaire.md` | All answered questions across categories |

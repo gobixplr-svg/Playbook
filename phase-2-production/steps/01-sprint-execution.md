@@ -46,7 +46,7 @@ Data → Service → View → Integration → Tests
 For each layer:
 
 | Layer | What You Build | Done When |
-|-------|---------------|-----------|
+| ------- | --------------- | ----------- |
 | **Data** | Models (`Codable` structs), database migrations | Model compiles, JSON round-trips |
 | **Service** | Protocol definition, mock implementation, real implementation | Protocol defined, mock passes tests |
 | **View** | SwiftUI views bound to ViewModel | View renders with mock data, **visually verified in simulator** |

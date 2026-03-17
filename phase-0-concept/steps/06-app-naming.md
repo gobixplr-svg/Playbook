@@ -65,7 +65,7 @@ Look at how competitors and adjacent apps are named:
 Remove candidates that fail any of these:
 
 | Filter | Question |
-|--------|----------|
+| -------- | ---------- |
 | **Speakable** | Can you say it out loud without explaining the spelling? |
 | **Memorable** | Would someone remember it after hearing it once? |
 | **Tone match** | Does it match the tone criteria from 6.1? |

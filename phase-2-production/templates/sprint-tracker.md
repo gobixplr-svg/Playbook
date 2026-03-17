@@ -3,7 +3,7 @@
 ## Sprint Info
 
 | Field | Value |
-|-------|-------|
+| ------- | ------- |
 | **Sprint** | # |
 | **Theme** | |
 | **Goal** | |
@@ -20,7 +20,7 @@
 **Priority:** Must Have / Should Have
 
 | Task | Layer | Est | Status | Notes |
-|------|-------|-----|--------|-------|
+| ------ | ------- | ----- | -------- | ------- |
 | | Data | S/M/L | | |
 | | Service | S/M/L | | |
 | | View | S/M/L | | |
@@ -59,7 +59,7 @@
 ## Blockers
 
 | Blocker | Impact | Resolution | Status |
-|---------|--------|------------|--------|
+| --------- | -------- | ------------ | -------- |
 | | | | |
 
 ## Sprint Review

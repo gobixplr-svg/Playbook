@@ -37,7 +37,7 @@ Create the IDE project and configure it to match the architecture from Step 3.
 **Xcode project creation checklist:**
 
 | Setting | Value |
-|---------|-------|
+| --------- | ------- |
 | Template | App (iOS) |
 | Product Name | [Finalized app name from Phase 0 Step 6] |
 | Team | Your Apple Developer account |
@@ -73,7 +73,7 @@ Add all third-party dependencies identified across Steps 2–6.
 **Dependency inventory format:**
 
 | Dependency | Manager | Version | Purpose | Source Spec |
-|-----------|---------|---------|---------|-------------|
+| ----------- | --------- | --------- | --------- | ------------- |
 | [name] | SPM | ~x.y | [what it does] | Step 3 / Step 6 |
 
 Build the project after adding all dependencies. A clean build with all dependencies resolved is the baseline.
@@ -114,7 +114,7 @@ Set up development instances for all external services from the architecture and
 **For each service, document:**
 
 | Service | Dev Instance | Key Location | Verification |
-|---------|-------------|-------------|-------------|
+| --------- | ------------- | ------------- | ------------- |
 | [name] | [URL/project] | [Info.plist / Keychain / server-only] | [test request] |
 
 **Key placement rules:**
@@ -129,7 +129,7 @@ Verify connectivity by running a simple request against each service. A database
 Before committing to any hosted backend or third-party service, verify the following. Discovering cost or account issues mid-sprint is expensive — 5 minutes of pre-flight prevents a session-derailing pivot.
 
 | Check | What to Verify |
-|-------|---------------|
+| ------- | --------------- |
 | **Account limits** | Free tier project count, bandwidth caps, storage limits. Will you hit a wall during development? |
 | **Hosting costs** | Pricing at all tiers (free, dev, production). Can you justify the cost at each phase? |
 | **Self-hosting viability** | Is there a Docker/self-hosted option as fallback? What's the setup cost? |

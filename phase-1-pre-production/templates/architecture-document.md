@@ -46,7 +46,7 @@ _Replace this example with your project's actual architecture. Show major compon
 ### Components
 
 | Component | Technology | Purpose |
-|-----------|------------|---------|
+| ----------- | ------------ | --------- |
 | | | |
 | | | |
 | | | |
@@ -129,7 +129,7 @@ _[How services are mocked for testing]_
 ### Test Boundaries
 
 | Layer | Test Type | What's Verified |
-|-------|-----------|----------------|
+| ------- | ----------- | ---------------- |
 | | | |
 | | | |
 | | | |

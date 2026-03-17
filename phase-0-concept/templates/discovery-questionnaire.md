@@ -20,7 +20,7 @@ Status key: Decided | Needs Research | Deferred | Assumption
 ## Platform & Tech Stack
 
 | # | Question | Answer | Status |
-|---|----------|--------|--------|
+| --- | ---------- | -------- | -------- |
 | 1 | What platforms are you targeting for v1? (iOS, Android, Web, all?) | | |
 | 2 | What is the priority order for platform launches? | | |
 | 3 | Native per-platform or cross-platform framework? What are the tradeoffs? | | |
@@ -31,7 +31,7 @@ Status key: Decided | Needs Research | Deferred | Assumption
 ## Data Sources & Integrations
 
 | # | Question | Answer | Status |
-|---|----------|--------|--------|
+| --- | ---------- | -------- | -------- |
 | 7 | What first-party data does the app collect? (user input, sensors, etc.) | | |
 | 8 | What platform health/fitness APIs are needed? (HealthKit, Health Connect, etc.) | | |
 | 9 | What third-party services or APIs might you integrate? | | |
@@ -42,7 +42,7 @@ Status key: Decided | Needs Research | Deferred | Assumption
 ## Backend & Infrastructure
 
 | # | Question | Answer | Status |
-|---|----------|--------|--------|
+| --- | ---------- | -------- | -------- |
 | 13 | Do you need user accounts and authentication? | | |
 | 14 | Does data need to sync across devices/platforms? | | |
 | 15 | What backend platform will you use? (Firebase, Supabase, custom, etc.) | | |
@@ -53,7 +53,7 @@ Status key: Decided | Needs Research | Deferred | Assumption
 ## Social & Community
 
 | # | Question | Answer | Status |
-|---|----------|--------|--------|
+| --- | ---------- | -------- | -------- |
 | 19 | Is this a solo experience, social experience, or both? | | |
 | 20 | What social features are in scope? (friends, teams, leaderboards, challenges, sharing) | | |
 | 21 | Does social require content moderation? What's the UGC risk? | | |
@@ -64,7 +64,7 @@ Status key: Decided | Needs Research | Deferred | Assumption
 ## Content & Data Pipeline
 
 | # | Question | Answer | Status |
-|---|----------|--------|--------|
+| --- | ---------- | -------- | -------- |
 | 25 | What content does the app ship with at launch? | | |
 | 26 | How is new content added post-launch? (admin tool, CMS, manual updates) | | |
 | 27 | Is there user-generated content? What kind? | | |
@@ -74,7 +74,7 @@ Status key: Decided | Needs Research | Deferred | Assumption
 ## Gamification & Rewards
 
 | # | Question | Answer | Status |
-|---|----------|--------|--------|
+| --- | ---------- | -------- | -------- |
 | 30 | What achievement types exist? (badges, milestones, streaks, levels) | | |
 | 31 | How is progress visualized? | | |
 | 32 | What can users unlock? (routes, themes, cosmetics, features) | | |
@@ -85,7 +85,7 @@ Status key: Decided | Needs Research | Deferred | Assumption
 ## Monetization
 
 | # | Question | Answer | Status |
-|---|----------|--------|--------|
+| --- | ---------- | -------- | -------- |
 | 36 | What's the revenue model? (free, freemium, subscription, one-time) | | |
 | 37 | What's free vs. paid? Where's the paywall? | | |
 | 38 | Is there an ad-supported tier? | | |

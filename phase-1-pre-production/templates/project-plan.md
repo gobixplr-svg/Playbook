@@ -15,7 +15,7 @@
 ### Sprint Duration Guidance
 
 | Context | Recommended Duration | Notes |
-|---------|---------------------|-------|
+| --------- | --------------------- | ------- |
 | Solo dev, learning the stack | 3 weeks | Extra time for discovery and debugging |
 | Solo dev, experienced stack | 2 weeks | Tight but achievable with clear specs |
 | Small team (2–3 devs) | 1–2 weeks | Shorter sprints, more frequent integration |
@@ -27,13 +27,13 @@
 ### Hard Blockers
 
 | Story | Blocks | Reason |
-|-------|--------|--------|
+| ------- | -------- | -------- |
 | | | |
 
 ### Soft Dependencies
 
 | Story | Enhances | Notes |
-|-------|----------|-------|
+| ------- | ---------- | ------- |
 | | | |
 
 ### Independent Stories
@@ -47,7 +47,7 @@
 **Core loop:** [Describe the end-to-end user experience this achieves]
 
 | Order | Story ID | Story Title | Why It's in the Skeleton |
-|-------|----------|-------------|--------------------------|
+| ------- | ---------- | ------------- | -------------------------- |
 | 1 | | | |
 | 2 | | | |
 
@@ -113,7 +113,7 @@ _Repeat Sprint structure for each sprint..._
 ## Task Size Reference
 
 | Size | Duration | Examples |
-|------|----------|---------|
+| ------ | ---------- | --------- |
 | **S** | < half day | Add a model property, wire a button to existing logic, write a simple unit test |
 | **M** | Half day to full day | Implement a service method, build a view with state management, write integration tests |
 | **L** | 1–2 days | Integrate a third-party SDK, build a complex multi-state view, implement bidirectional sync |
@@ -125,7 +125,7 @@ If a task is larger than **L**, break it into smaller tasks. No single task shou
 ## Milestones
 
 | Milestone | Target Sprint | Key Stories | Demo Scenario |
-|-----------|---------------|-------------|---------------|
+| ----------- | --------------- | ------------- | --------------- |
 | | | | |
 
 ---
@@ -133,7 +133,7 @@ If a task is larger than **L**, break it into smaller tasks. No single task shou
 ## Risk Register
 
 | Risk | Category | Likelihood | Impact | Mitigation |
-|------|----------|------------|--------|------------|
+| ------ | ---------- | ------------ | -------- | ------------ |
 | | Technical / Scope / External / Personal | Low / Med / High | Low / Med / High | |
 
 ---

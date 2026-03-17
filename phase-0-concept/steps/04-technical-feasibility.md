@@ -26,7 +26,7 @@ For each target platform, verify that the required APIs and capabilities exist.
 
 **Document for each platform:**
 | Capability Needed | API/Framework | Availability | Limitations | Notes |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | e.g., Step counting | HealthKit | iOS 8+ | Requires permission, background limits | |
 
 ### 4.2 Third-Party Integration Assessment
@@ -82,7 +82,7 @@ Don't finalize the stack — document the realistic options with tradeoffs.
 
 For each viable approach:
 | Factor | Option A | Option B | Option C |
-|--------|----------|----------|----------|
+| -------- | ---------- | ---------- | ---------- |
 | Platforms covered | | | |
 | Code sharing | | | |
 | Native API access | | | |
@@ -96,7 +96,7 @@ For each viable approach:
 Compile all identified risks:
 
 | Risk | Likelihood | Impact | Mitigation |
-|------|-----------|--------|------------|
+| ------ | ----------- | -------- | ------------ |
 | e.g., HealthKit permission denied | Medium | High — core feature broken | Graceful fallback to manual entry |
 
 ### 4.7 Complexity Assessment

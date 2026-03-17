@@ -14,7 +14,7 @@
 ### iOS
 
 | Capability Needed | API / Framework | Min OS | Limitations | Status |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | | | | | Ready / Risky / Blocked |
 | | | | | |
 | | | | | |
@@ -22,7 +22,7 @@
 ### Android
 
 | Capability Needed | API / Framework | Min OS | Limitations | Status |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | | | | | Ready / Risky / Blocked |
 | | | | | |
 | | | | | |
@@ -30,7 +30,7 @@
 ### Web
 
 | Capability Needed | API / Approach | Browser Support | Limitations | Status |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | | | | | Ready / Risky / Blocked |
 | | | | | |
 | | | | | |
@@ -40,7 +40,7 @@
 ## Third-Party Integrations
 
 | Service / API | Purpose | Docs Quality | Auth Method | Rate Limits | Free Tier | Paid Cost | Status |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | | | | | | | | Ready / Risky / Blocked |
 | | | | | | | | |
 | | | | | | | | |
@@ -53,7 +53,7 @@ _For any "Blocked" items, document the alternative approach._
 ## Data & Content Sources
 
 | Data Source | Type | Availability | Format | License / Cost | Update Frequency | Status |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | | Public / Licensed / Created | | | | | Ready / Risky / Blocked |
 | | | | | | | |
 | | | | | | | |
@@ -68,7 +68,7 @@ _How will data be ingested, cleaned, and served? Any special tooling needed?_
 ### Prototype (10-100 users)
 
 | Service | Provider | Tier | Monthly Cost |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Backend / API | | | |
 | Database | | | |
 | Authentication | | | |
@@ -78,7 +78,7 @@ _How will data be ingested, cleaned, and served? Any special tooling needed?_
 ### Launch (1,000-10,000 users)
 
 | Service | Provider | Tier | Monthly Cost |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Backend / API | | | |
 | Database | | | |
 | Authentication | | | |
@@ -88,7 +88,7 @@ _How will data be ingested, cleaned, and served? Any special tooling needed?_
 ### Growth (100,000+ users)
 
 | Service | Provider | Tier | Monthly Cost |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Backend / API | | | |
 | Database | | | |
 | Authentication | | | |
@@ -101,7 +101,7 @@ _How will data be ingested, cleaned, and served? Any special tooling needed?_
 ## Tech Stack Options
 
 | Factor | Option A: _[Name]_ | Option B: _[Name]_ | Option C: _[Name]_ |
-|--------|---------------------|---------------------|---------------------|
+| -------- | --------------------- | --------------------- | --------------------- |
 | Platforms covered | | | |
 | Code sharing % | | | |
 | Native API access | | | |
@@ -118,7 +118,7 @@ _How will data be ingested, cleaned, and served? Any special tooling needed?_
 ## Feature Complexity Assessment
 
 | Feature | Complexity | Notes | Spike Needed? |
-|---------|-----------|-------|---------------|
+| --------- | ----------- | ------- | --------------- |
 | | Simple / Moderate / Complex / Unknown | | Yes / No |
 | | | | |
 | | | | |
@@ -134,7 +134,7 @@ _How will data be ingested, cleaned, and served? Any special tooling needed?_
 ## Risk Register
 
 | # | Risk | Likelihood | Impact | Mitigation |
-|---|------|-----------|--------|------------|
+| --- | ------ | ----------- | -------- | ------------ |
 | 1 | | Low / Medium / High | Low / Medium / High | |
 | 2 | | | | |
 | 3 | | | | |

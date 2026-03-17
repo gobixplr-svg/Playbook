@@ -41,7 +41,7 @@ _Repeat for each table..._
 ### [Table Name] — RLS Policies
 
 | Operation | Policy Name | Rule | Description |
-|-----------|------------|------|-------------|
+| ----------- | ------------ | ------ | ------------- |
 | SELECT | | | |
 | INSERT | | | |
 | UPDATE | | | |
@@ -64,7 +64,7 @@ _Repeat for each table..._
 
 **Input:**
 | Parameter | Type | Required | Validation |
-|-----------|------|----------|------------|
+| ----------- | ------ | ---------- | ------------ |
 | | | | |
 
 **Output (success):**
@@ -74,7 +74,7 @@ _Repeat for each table..._
 
 **Output (error):**
 | Error | Cause | Client Handling |
-|-------|-------|-----------------|
+| ------- | ------- | ----------------- |
 | | | |
 
 **Caching:** [Duration, invalidation strategy]
@@ -141,7 +141,7 @@ _Repeat for each function..._
 ### Buckets
 
 | Bucket | Purpose | Access | File Types | Size Limit |
-|--------|---------|--------|------------|------------|
+| -------- | --------- | -------- | ------------ | ------------ |
 | | | | | |
 
 ### File Naming Convention

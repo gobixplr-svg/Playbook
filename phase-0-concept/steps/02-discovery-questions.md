@@ -99,7 +99,7 @@ Consider:
 After completing the questionnaire, sort every answer into:
 
 | Category | Meaning | Next Action |
-|----------|---------|-------------|
+| ---------- | --------- | ------------- |
 | **Decided** | Clear answer, ready to act on | Document in Concept Doc |
 | **Needs Research** | Don't know yet, need data | Feed into Step 3 (Competitive) or Step 4 (Technical) |
 | **Deferred** | Not relevant for v1, revisit later | Document rationale for deferral |

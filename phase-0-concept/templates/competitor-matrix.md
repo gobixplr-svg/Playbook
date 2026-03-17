@@ -16,7 +16,7 @@
 _Apps that solve the same core problem for the same audience._
 
 | # | App Name | Platforms | Pricing | Rating | Downloads (est.) | One-Line Summary |
-|---|----------|-----------|---------|--------|-----------------|------------------|
+| --- | ---------- | ----------- | --------- | -------- | ----------------- | ------------------ |
 | 1 | | | | | | |
 | 2 | | | | | | |
 | 3 | | | | | | |
@@ -27,7 +27,7 @@ _Apps that solve the same core problem for the same audience._
 _Apps that solve an adjacent problem or serve a different audience._
 
 | # | App Name | Relevance | Why Indirect |
-|---|----------|-----------|--------------|
+| --- | ---------- | ----------- | -------------- |
 | 1 | | | |
 | 2 | | | |
 | 3 | | | |
@@ -36,7 +36,7 @@ _Apps that solve an adjacent problem or serve a different audience._
 _Non-app alternatives people use instead._
 
 | # | Solution | Why People Use It |
-|---|----------|-------------------|
+| --- | ---------- | ------------------- |
 | 1 | | |
 | 2 | | |
 
@@ -47,7 +47,7 @@ _Non-app alternatives people use instead._
 _Mark each feature: Yes, No, Partial, or Premium (behind paywall)._
 
 | Feature | Your App (Planned) | Competitor 1 | Competitor 2 | Competitor 3 | Competitor 4 |
-|---------|--------------------|--------------|--------------|--------------|--------------|
+| --------- | -------------------- | -------------- | -------------- | -------------- | -------------- |
 | **Core Features** | | | | | |
 | _[Feature 1]_ | | | | | |
 | _[Feature 2]_ | | | | | |
@@ -145,7 +145,7 @@ _Things nobody does well — your opening._
 ## Data Sources & APIs
 
 | Source | Type | Availability | Cost | Competitors Using It |
-|--------|------|-------------|------|---------------------|
+| -------- | ------ | ------------- | ------ | --------------------- |
 | | | | | |
 | | | | | |
 | | | | | |

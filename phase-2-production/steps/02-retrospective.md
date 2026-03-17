@@ -9,7 +9,7 @@ Pause, reflect, and improve — then get back to building. Retros are the mechan
 Run a retro at **any** of these triggers:
 
 | Trigger | Why |
-|---------|-----|
+| --------- | ----- |
 | **End of sprint** | Natural checkpoint — what worked, what didn't, what carries over |
 | **After major integration** | Backend, SDK, or third-party service integration surfaces process gaps |
 | **After a bug-fix session** | Multiple related bugs signal a systemic issue worth capturing |
@@ -72,7 +72,7 @@ Specific, actionable changes. This is the difference between a retro that improv
 For each change, categorize it:
 
 | Category | What to do | Example |
-|----------|-----------|---------|
+| ---------- | ----------- | --------- |
 | **Playbook change** | Modify an existing step guide | "Add SDK verification step to sprint execution" |
 | **New anti-pattern** | Add to the anti-patterns list | "SQL Forward References — define functions before policies" |
 | **Memory update** | Add to MEMORY.md | "supabase-swift signUp returns non-optional User" |

@@ -47,7 +47,7 @@ Before sequencing anything, identify what blocks what. Pull from three sources:
 **Dependency table format:**
 
 | Story | Depends On | Type | Reason |
-|-------|-----------|------|--------|
+| ------- | ----------- | ------ | -------- |
 | E3-S3 (Progress) | E2-S2 (Conversion) | Hard | Progress needs converted distance data |
 | E5-S1 (Badges) | E3-S3 (Progress) | Hard | Badge criteria evaluate progress milestones |
 | E5-S3 (Streaks) | E5-S2 (Trophy Case) | Soft | Streaks display in trophy case but aren't required for it |
@@ -145,7 +145,7 @@ Milestones are meaningful checkpoints — moments where the project reaches a qu
 **Milestone table format:**
 
 | Milestone | Target Sprint | Key Stories | Demo Scenario |
-|-----------|---------------|-------------|---------------|
+| ----------- | --------------- | ------------- | --------------- |
 | Core Loop Functional | Sprint 2 | E1-S1, E2-S1, E3-S1–S3, E4-S1 | Sign in → import activity → pick route → see progress on map |
 
 The "Demo Scenario" column forces you to think about milestones from the user's perspective, not the developer's. If you can't write a scenario, the milestone is too abstract.

@@ -7,7 +7,7 @@ This reference documents an AI-assisted design workflow that accelerates Steps 4
 ## Tool Stack
 
 | Phase | Tool | Cost | Purpose |
-|-------|------|------|---------|
+| ------- | ------ | ------ | --------- |
 | Visual direction | Midjourney | $10 one-time | Mood boards, color exploration, atmosphere |
 | Color system | Khroma + Coolors | Free | AI color palette generation, accessibility checking |
 | Screen generation | Google Stitch | Free | Text-to-UI design, multi-screen flows, Figma export |

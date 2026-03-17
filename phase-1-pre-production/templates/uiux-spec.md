@@ -21,7 +21,7 @@ _[One sentence describing the ideal user experience — the feeling you're desig
 _Link or embed 10-20 reference images that capture the app's personality._
 
 | # | Reference | What to Learn From It |
-|---|-----------|----------------------|
+| --- | ----------- | ---------------------- |
 | 1 | [App/image name] | [What you admire — color, spacing, animation, etc.] |
 | 2 | | |
 | 3 | | |
@@ -35,7 +35,7 @@ _Link or embed 10-20 reference images that capture the app's personality._
 ### Visual References
 
 | # | App / Brand | What to Learn |
-|---|-------------|---------------|
+| --- | ------------- | --------------- |
 | 1 | [Name] | [Specific design quality] |
 | 2 | | |
 | 3 | | |
@@ -47,7 +47,7 @@ _Link or embed 10-20 reference images that capture the app's personality._
 ### Brand Colors
 
 | Role | Name | Hex | RGB | Usage |
-|------|------|-----|-----|-------|
+| ------ | ------ | ----- | ----- | ------- |
 | Primary | | | | [Main CTA, brand identity, key UI elements] |
 | Secondary | | | | [Supporting elements, variety, secondary actions] |
 | Accent | | | | [Highlights, celebrations, alerts] |
@@ -55,7 +55,7 @@ _Link or embed 10-20 reference images that capture the app's personality._
 ### Neutral Colors
 
 | Role | Name | Hex | Usage |
-|------|------|-----|-------|
+| ------ | ------ | ----- | ------- |
 | Background | | | [Page background] |
 | Surface | | | [Cards, sheets, elevated surfaces] |
 | Border | | | [Dividers, input borders] |
@@ -66,7 +66,7 @@ _Link or embed 10-20 reference images that capture the app's personality._
 ### Semantic Colors
 
 | Role | Hex | Usage |
-|------|-----|-------|
+| ------ | ----- | ------- |
 | Success | | [Completions, confirmations] |
 | Warning | | [Cautions, approaching limits] |
 | Error | | [Errors, destructive actions] |
@@ -76,7 +76,7 @@ _Link or embed 10-20 reference images that capture the app's personality._
 ### Accessibility
 
 | Combination | Contrast Ratio | WCAG Level |
-|-------------|---------------|------------|
+| ------------- | --------------- | ------------ |
 | Text Primary on Background | :1 | [AA/AAA] |
 | Text Secondary on Background | :1 | [AA/AAA] |
 | Primary on Background | :1 | [AA/AAA] |
@@ -89,7 +89,7 @@ _Link or embed 10-20 reference images that capture the app's personality._
 ### Font Choices
 
 | Role | Font | Weight | Fallback |
-|------|------|--------|----------|
+| ------ | ------ | -------- | ---------- |
 | Headlines | | | |
 | Body | | | |
 | Numbers / Stats | | | |
@@ -97,7 +97,7 @@ _Link or embed 10-20 reference images that capture the app's personality._
 ### Type Scale
 
 | Style | Font | Size | Weight | Line Height | Usage |
-|-------|------|------|--------|-------------|-------|
+| ------- | ------ | ------ | -------- | ------------- | ------- |
 | Large Title | | pt | | | [Screen headers] |
 | Title 1 | | pt | | | [Section headers] |
 | Title 2 | | pt | | | [Card titles] |
@@ -111,7 +111,7 @@ _Link or embed 10-20 reference images that capture the app's personality._
 ## Screen Inventory
 
 | # | Screen | Tab / Flow | Type | Priority |
-|---|--------|-----------|------|----------|
+| --- | -------- | ----------- | ------ | ---------- |
 | 1 | | | Push / Sheet / Cover | Core / Secondary |
 | 2 | | | | |
 | 3 | | | | |
@@ -176,13 +176,13 @@ _Repeat for each screen..._
 ### Design Notes per Screen
 
 | Screen | Key Design Decisions | Animation Notes |
-|--------|---------------------|-----------------|
+| -------- | --------------------- | ----------------- |
 | | | |
 
 ### Interactive States
 
 | Element | Default | Pressed | Disabled | Selected |
-|---------|---------|---------|----------|----------|
+| --------- | --------- | --------- | ---------- | ---------- |
 | Primary Button | | | | |
 | Card | | | | |
 | Tab | | | | |
@@ -194,7 +194,7 @@ _Repeat for each screen..._
 ### Gestures
 
 | Gesture | Context | Action |
-|---------|---------|--------|
+| --------- | --------- | -------- |
 | Tap | | |
 | Swipe | | |
 | Long press | | |
@@ -204,7 +204,7 @@ _Repeat for each screen..._
 ### Transitions
 
 | Navigation | Transition Type | Duration |
-|------------|----------------|----------|
+| ------------ | ---------------- | ---------- |
 | Push to detail | | ms |
 | Present sheet | | ms |
 | Present fullscreen | | ms |
@@ -213,7 +213,7 @@ _Repeat for each screen..._
 ### Animations
 
 | Trigger | Animation | Duration | Easing |
-|---------|-----------|----------|--------|
+| --------- | ----------- | ---------- | -------- |
 | | | ms | |
 
 ---
@@ -221,7 +221,7 @@ _Repeat for each screen..._
 ## Prototype Links
 
 | Flow | Tool | Link |
-|------|------|------|
+| ------ | ------ | ------ |
 | First launch | Figma | [Link] |
 | Core loop | Figma | [Link] |
 | | | |
@@ -233,7 +233,7 @@ _Repeat for each screen..._
 _Track which AI tools were used and their outputs for future reference._
 
 | Step | Tool | Input (prompt/description) | Output | Used? |
-|------|------|---------------------------|--------|-------|
+| ------ | ------ | --------------------------- | -------- | ------- |
 | Mood board | | | | |
 | Color palette | | | | |
 | Screen design | | | | |
@@ -243,7 +243,7 @@ _Track which AI tools were used and their outputs for future reference._
 ## Feedback Notes
 
 | Reviewer | Date | Key Feedback | Action Taken |
-|----------|------|-------------|--------------|
+| ---------- | ------ | ------------- | -------------- |
 | | | | |
 
 ---

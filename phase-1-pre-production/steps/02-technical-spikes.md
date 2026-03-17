@@ -42,7 +42,7 @@ Review three sources for spike candidates:
 For each spike, define these before writing any code:
 
 | Parameter | Description |
-|-----------|-------------|
+| ----------- | ------------- |
 | **Question** | The specific question this spike answers. One question per spike. |
 | **Time Box** | Maximum time to spend. Typically 2-4 hours for a focused spike, 1-2 days for a complex one. |
 | **Success Criteria** | What does "validated" look like? Be concrete: "Data loads in under 2 seconds" not "It works." |

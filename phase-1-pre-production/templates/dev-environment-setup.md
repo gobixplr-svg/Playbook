@@ -40,7 +40,7 @@ _Update to match your architecture document's module list._
 ## 2. Dependencies
 
 | Dependency | Manager | Version | Purpose | Source Spec |
-|-----------|---------|---------|---------|-------------|
+| ----------- | --------- | --------- | --------- | ------------- |
 | | | | | |
 
 - [ ] All dependencies added to project
@@ -54,7 +54,7 @@ _Update to match your architecture document's module list._
 ### Test Targets
 
 | Target | Framework | Purpose |
-|--------|-----------|---------|
+| -------- | ----------- | --------- |
 | [App]Tests | [Swift Testing / XCTest] | Unit tests, service tests |
 | [App]UITests | XCUITest | UI flow tests |
 
@@ -63,7 +63,7 @@ _Update to match your architecture document's module list._
 _One mock class per service protocol from Step 3:_
 
 | Mock Class | Protocol | Ready |
-|-----------|----------|-------|
+| ----------- | ---------- | ------- |
 | | | [ ] |
 
 ### Hello World Test
@@ -78,7 +78,7 @@ _One mock class per service protocol from Step 3:_
 ## 4. External Services
 
 | Service | Dev Instance | Key Location | Verified |
-|---------|-------------|-------------|----------|
+| --------- | ------------- | ------------- | ---------- |
 | | | Info.plist / Keychain / Server-only | [ ] |
 
 **Key placement rules:**
@@ -114,7 +114,7 @@ _One mock class per service protocol from Step 3:_
 ### Project Instructions
 
 | File | Purpose | Created |
-|------|---------|---------|
+| ------ | --------- | --------- |
 | `.claude/CLAUDE.md` | Project overview, key decisions, structure, core values | [ ] |
 
 **CLAUDE.md should include:**
@@ -128,7 +128,7 @@ _One mock class per service protocol from Step 3:_
 ### Coding Rules
 
 | Rules File | Scope | Lines | Created |
-|-----------|-------|-------|---------|
+| ----------- | ------- | ------- | --------- |
 | `swift-coding.md` | Language standards, architecture, testing | ~50 | [ ] |
 | `swiftui-design.md` | UI framework, design system enforcement | ~60 | [ ] |
 | `security.md` | Input validation, credentials, privacy, OWASP | ~65 | [ ] |
@@ -139,7 +139,7 @@ _Adjust file names and scopes for your platform and tools. Each file should be 3
 ### Memory Seed
 
 | File | Purpose | Created |
-|------|---------|---------|
+| ------ | --------- | --------- |
 | `.claude/memory/MEMORY.md` | Key decisions from Steps 1–7 | [ ] |
 
 **MEMORY.md should summarize:**
@@ -155,7 +155,7 @@ _Adjust file names and scopes for your platform and tools. Each file should be 3
 ### Session Hooks (Optional)
 
 | Hook | Trigger | Purpose | Created |
-|------|---------|---------|---------|
+| ------ | --------- | --------- | --------- |
 | Session start | New session opens | Restore context (branch, active task) | [ ] |
 | Session end | Session closes | Persist current state | [ ] |
 | Pre-compact | Context compression | Snapshot before truncation | [ ] |

@@ -30,7 +30,7 @@ Walk through every Phase 1 deliverable. For each one, confirm it exists, is comp
 **Step deliverables:**
 
 | Step | Deliverable | Output File | Complete |
-|------|------------|-------------|----------|
+| ------ | ------------ | ------------- | ---------- |
 | 1 | Requirements Document (user stories, acceptance criteria, test plans) | `docs/pre-production/requirements-document.md` | [ ] |
 | 2 | Spike Reports (time-boxed validations with recommendations) | `docs/pre-production/spike-reports/` | [ ] |
 | 3 | Architecture Document (system design, data models, protocols, DI) | `docs/pre-production/architecture-document.md` | [ ] |
@@ -43,7 +43,7 @@ Walk through every Phase 1 deliverable. For each one, confirm it exists, is comp
 **Supporting artifacts:**
 
 | Artifact | Location | Complete |
-|----------|----------|----------|
+| ---------- | ---------- | ---------- |
 | Project CLAUDE.md (AI instructions) | `.claude/CLAUDE.md` | [ ] |
 | Coding rules files | `.claude/rules/` | [ ] |
 | MEMORY.md (session memory) | `.claude/memory/MEMORY.md` | [ ] |

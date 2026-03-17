@@ -13,7 +13,7 @@
 ## Spike Definition
 
 | Parameter | Value |
-|-----------|-------|
+| ----------- | ------- |
 | **Question** | _[The specific question this spike answers]_ |
 | **Time Box** | _[Maximum time allocated]_ |
 | **Success Criteria** | _[What "validated" looks like — concrete, measurable]_ |
@@ -47,7 +47,7 @@ _[Surprises, blockers, limitations. What was harder than expected? What assumpti
 ### Performance Data
 
 | Metric | Value | Acceptable? |
-|--------|-------|-------------|
+| -------- | ------- | ------------- |
 | _[e.g., Data load time]_ | _[e.g., 1.2 seconds]_ | _[Yes / No — against success criteria]_ |
 | | | |
 | | | |
@@ -65,7 +65,7 @@ _[Based on spike findings, how should this be built in production? What patterns
 _[Do any user stories or acceptance criteria need updating based on these findings? List specific changes.]_
 
 | Story | Change | Reason |
-|-------|--------|--------|
+| ------- | -------- | -------- |
 | _[Story ID]_ | _[What changes]_ | _[Why, based on spike findings]_ |
 | | | |
 
@@ -74,7 +74,7 @@ _[Do any user stories or acceptance criteria need updating based on these findin
 ## Impact on Risk Register
 
 | Risk | Update |
-|------|--------|
+| ------ | -------- |
 | _[Risk from Phase 0]_ | _[Mitigated / Elevated / Unchanged / New risk discovered]_ |
 | | |
 

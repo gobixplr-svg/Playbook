@@ -12,7 +12,7 @@ Transform a raw idea into a validated concept with enough clarity to commit reso
 ## Steps
 
 | Step | Name | Purpose | Key Output |
-|------|------|---------|------------|
+| ------ | ------ | --------- | ------------ |
 | 0 | [Guided Concept Session](steps/00-guided-concept-session.md) | Interactive Q&A that drives Steps 1-5 conversationally | Draft deliverables for all steps |
 | 1 | [Ideation & Vision](steps/01-ideation-and-vision.md) | Define the core idea and who it serves | Vision Statement |
 | 2 | [Discovery Questions](steps/02-discovery-questions.md) | Surface unknowns and scope decisions | Completed Questionnaire |

@@ -16,7 +16,7 @@
 ### Step Deliverables
 
 | Step | Deliverable | Output File | Complete |
-|------|-------------|-------------|----------|
+| ------ | ------------- | ------------- | ---------- |
 | 1 | Requirements Document | `docs/pre-production/requirements-document.md` | [ ] |
 | 2 | Spike Reports | `docs/pre-production/spike-reports/` | [ ] |
 | 3 | Architecture Document | `docs/pre-production/architecture-document.md` | [ ] |
@@ -29,7 +29,7 @@
 ### Supporting Artifacts
 
 | Artifact | Location | Complete |
-|----------|----------|----------|
+| ---------- | ---------- | ---------- |
 | Project instructions (CLAUDE.md) | `.claude/CLAUDE.md` | [ ] |
 | Coding rules | `.claude/rules/` | [ ] |
 | AI memory seed | `.claude/memory/MEMORY.md` | [ ] |
@@ -116,7 +116,7 @@
 ## 5. Phase 2 Continuity Package
 
 | Artifact | Status | Notes |
-|----------|--------|-------|
+| ---------- | -------- | ------- |
 | MEMORY.md updated for Phase 2 | [ ] | _Current Phase → Phase 2, Sprint 1 details added_ |
 | ROADMAP.md transitioned | [ ] | _Phase 1 → Done, Phase 2 → Active_ |
 | Sprint 1 kickoff brief (below) | [ ] | _Theme, stories, first task, dependencies_ |

@@ -17,7 +17,7 @@
 #### Brand Colors
 
 | Token | Name | Light Mode | Dark Mode | Usage |
-|-------|------|-----------|-----------|-------|
+| ------- | ------ | ----------- | ----------- | ------- |
 | `brand/primary` | | | | [Main CTA, active states] |
 | `brand/secondary` | | | | [Supporting accents, achievements] |
 | `brand/accent` | | | | [Celebrations, highlights] |
@@ -25,7 +25,7 @@
 #### Neutral Colors
 
 | Token | Name | Light Mode | Dark Mode | Usage |
-|-------|------|-----------|-----------|-------|
+| ------- | ------ | ----------- | ----------- | ------- |
 | `neutral/background` | | | | [Page background] |
 | `neutral/surface` | | | | [Cards, sheets] |
 | `neutral/border` | | | | [Dividers, input borders] |
@@ -36,7 +36,7 @@
 #### Semantic Colors
 
 | Token | Light Mode | Dark Mode | Usage |
-|-------|-----------|-----------|-------|
+| ------- | ----------- | ----------- | ------- |
 | `semantic/success` | | | [Completions, confirmations] |
 | `semantic/warning` | | | [Cautions, limits] |
 | `semantic/error` | | | [Errors, destructive actions] |
@@ -46,7 +46,7 @@
 #### On-Colors (Text/Icons on Colored Backgrounds)
 
 | Token | Value | Usage |
-|-------|-------|-------|
+| ------- | ------- | ------- |
 | `on/primary` | | [Text on brand/primary background] |
 | `on/secondary` | | [Text on brand/secondary background] |
 | `on/accent` | | [Text on brand/accent background] |
@@ -54,7 +54,7 @@
 ### Typography Tokens
 
 | Token | Font | Size | Weight | Line Height | Usage |
-|-------|------|------|--------|-------------|-------|
+| ------- | ------ | ------ | -------- | ------------- | ------- |
 | `type/largeTitle` | | pt | | pt | [Screen headers] |
 | `type/title1` | | pt | | pt | [Section headers] |
 | `type/title2` | | pt | | pt | [Card titles] |
@@ -70,7 +70,7 @@
 #### Specialty Typography
 
 | Token | Font | Size | Weight | Usage |
-|-------|------|------|--------|-------|
+| ------- | ------ | ------ | -------- | ------- |
 | `type/heroStat` | | pt | | [Large feature numbers] |
 | `type/supportingStat` | | pt | | [Secondary stat displays] |
 | `type/inlineStat` | | pt | | [Inline numerical values] |
@@ -78,7 +78,7 @@
 ### Spacing Tokens
 
 | Token | Value | Usage |
-|-------|-------|-------|
+| ------- | ------- | ------- |
 | `spacing/xs` | pt | [Tight internal spacing] |
 | `spacing/sm` | pt | [Component internal padding] |
 | `spacing/md` | pt | [Standard spacing] |
@@ -91,7 +91,7 @@
 ### Corner Radius Tokens
 
 | Token | Value | Usage |
-|-------|-------|-------|
+| ------- | ------- | ------- |
 | `radius/small` | pt | [Buttons, chips] |
 | `radius/medium` | pt | [Cards, inputs] |
 | `radius/large` | pt | [Sheets, large cards] |
@@ -100,7 +100,7 @@
 ### Shadow Tokens
 
 | Token | X | Y | Blur | Opacity | Usage |
-|-------|---|---|------|---------|-------|
+| ------- | --- | --- | ------ | --------- | ------- |
 | `shadow/sm` | | | | | [Cards on surface] |
 | `shadow/md` | | | | | [Floating elements] |
 | `shadow/lg` | | | | | [Sheets, modals] |
@@ -159,7 +159,7 @@ enum CornerRadius {
 ### Component Inventory
 
 | # | Component | Variants | Used In |
-|---|-----------|----------|---------|
+| --- | ----------- | ---------- | --------- |
 | 1 | | | |
 | 2 | | | |
 | 3 | | | |
@@ -173,12 +173,12 @@ enum CornerRadius {
 
 **Variants:**
 | Variant | Visual Difference | When Used |
-|---------|------------------|-----------|
+| --------- | ------------------ | ----------- |
 | | | |
 
 **Tokens Used:**
 | Property | Token |
-|----------|-------|
+| ---------- | ------- |
 | Background | |
 | Text color | |
 | Font | |
@@ -187,7 +187,7 @@ enum CornerRadius {
 
 **States:**
 | State | Visual Change |
-|-------|--------------|
+| ------- | -------------- |
 | Default | |
 | Pressed | |
 | Disabled | |
@@ -217,7 +217,7 @@ _Repeat for each component..._
 ### Screen Templates
 
 | Template | Structure | Used By |
-|----------|-----------|---------|
+| ---------- | ----------- | --------- |
 | Standard | | [Screens] |
 | Map | | [Screens] |
 | Sheet | | [Screens] |
@@ -232,7 +232,7 @@ _Repeat for each component..._
 ### Responsive Behavior
 
 | Element | iPhone SE | iPhone 16 | iPhone 16 Pro Max |
-|---------|-----------|-----------|-------------------|
+| --------- | ----------- | ----------- | ------------------- |
 | | | | |
 
 ---
@@ -242,7 +242,7 @@ _Repeat for each component..._
 ### Timing Curves
 
 | Name | SwiftUI Definition | Usage |
-|------|-------------------|-------|
+| ------ | ------------------- | ------- |
 | standard | | [General UI] |
 | quick | | [Micro-interactions] |
 | celebratory | | [Achievements, milestones] |
@@ -250,7 +250,7 @@ _Repeat for each component..._
 ### Transitions
 
 | Navigation | Type | Duration |
-|------------|------|----------|
+| ------------ | ------ | ---------- |
 | Push | | ms |
 | Sheet | | ms |
 | Tab switch | | ms |
@@ -259,7 +259,7 @@ _Repeat for each component..._
 ### Haptics
 
 | Trigger | Pattern | Intensity |
-|---------|---------|-----------|
+| --------- | --------- | ----------- |
 | Button tap | | |
 | Achievement | | |
 | Error | | |

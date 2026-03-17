@@ -20,7 +20,7 @@ _Document any changes, new insights, or resolved research items since the Concep
 ## Epics Overview
 
 | # | Epic | Description | Stories | Must Have | Should Have |
-|---|------|-------------|---------|-----------|-------------|
+| --- | ------ | ------------- | --------- | ----------- | ------------- |
 | E1 | _[Name]_ | _[What this epic delivers]_ | _[count]_ | _[count]_ | _[count]_ |
 | E2 | | | | | |
 | E3 | | | | | |
@@ -45,7 +45,7 @@ _[One-sentence description of what this epic delivers to the user.]_
 **Acceptance Criteria:**
 
 | # | Given | When | Then | Test Type |
-|---|-------|------|------|-----------|
+| --- | ------- | ------ | ------ | ----------- |
 | AC1 | _[precondition]_ | _[action]_ | _[outcome]_ | Unit / Integration / UI / Snapshot |
 | AC2 | | | | |
 | AC3 | | | | |
@@ -67,7 +67,7 @@ _[One-sentence description of what this epic delivers to the user.]_
 **Acceptance Criteria:**
 
 | # | Given | When | Then | Test Type |
-|---|-------|------|------|-----------|
+| --- | ------- | ------ | ------ | ----------- |
 | AC1 | _[precondition]_ | _[action]_ | _[outcome]_ | Unit / Integration / UI / Snapshot |
 | AC2 | | | | |
 | AC3 | | | | |
@@ -94,7 +94,7 @@ _[Repeat Epic + Story structure for each epic]_
 ### Platform Constraints
 
 | Constraint | Source | Impact | Mitigation |
-|------------|--------|--------|------------|
+| ------------ | -------- | -------- | ------------ |
 | _[e.g., HealthKit background refresh limits]_ | _[Platform/API]_ | _[What it affects]_ | _[How to handle]_ |
 | | | | |
 | | | | |
@@ -102,7 +102,7 @@ _[Repeat Epic + Story structure for each epic]_
 ### Business Constraints
 
 | Constraint | Description | Stories Affected |
-|------------|-------------|-----------------|
+| ------------ | ------------- | ----------------- |
 | _[e.g., Free vs. premium feature boundary]_ | _[Details]_ | _[Story IDs]_ |
 | | | |
 | | | |
@@ -110,7 +110,7 @@ _[Repeat Epic + Story structure for each epic]_
 ### Privacy & Compliance
 
 | Requirement | Description | Stories Affected |
-|-------------|-------------|-----------------|
+| ------------- | ------------- | ----------------- |
 | _[e.g., HealthKit usage description required]_ | _[Details]_ | _[Story IDs]_ |
 | | | |
 
@@ -123,7 +123,7 @@ _[Repeat Epic + Story structure for each epic]_
 _List stories that block other stories:_
 
 | Story | Blocks | Reason |
-|-------|--------|--------|
+| ------- | -------- | -------- |
 | _[Story ID]_ | _[Story IDs]_ | _[Why it must come first]_ |
 | | | |
 | | | |
@@ -142,7 +142,7 @@ _The minimal set of stories that produce a functioning (if bare-bones) app:_
 _Recommended sequence for development (feeds into Step 7: Project Plan):_
 
 | Phase | Stories | Rationale |
-|-------|---------|-----------|
+| ------- | --------- | ----------- |
 | Sprint 1 | _[Story IDs]_ | _[Walking skeleton / foundation]_ |
 | Sprint 2 | _[Story IDs]_ | _[Core features]_ |
 | Sprint 3 | _[Story IDs]_ | _[Remaining Must Haves]_ |
@@ -153,7 +153,7 @@ _Recommended sequence for development (feeds into Step 7: Project Plan):_
 ## Test Plan Summary
 
 | Test Type | Story Count | Estimated Test Count | Infrastructure Needed |
-|-----------|-------------|---------------------|----------------------|
+| ----------- | ------------- | --------------------- | ---------------------- |
 | Unit | _[count]_ | _[count]_ | XCTest |
 | Integration | _[count]_ | _[count]_ | XCTest + mock services |
 | UI | _[count]_ | _[count]_ | XCUITest |

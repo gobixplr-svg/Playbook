@@ -55,7 +55,7 @@ _Summarize the competitive landscape in 2-3 paragraphs. Who are the key players?
 ### Key Competitors
 
 | Competitor | Positioning | Strengths | Weaknesses |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | | | | |
 | | | | |
 | | | | |
@@ -85,7 +85,7 @@ _Describe the core user experience. What does a user do in their first session? 
 ### Platform Strategy
 
 | Platform | Priority | Launch Timing | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | iOS | | | |
 | Android | | | |
 | Web | | | |
@@ -107,7 +107,7 @@ _Achievement system, progress visualization, unlockables. Physical rewards scope
 _High-level technology direction with rationale. (Detailed architecture is Pre-Production.)_
 
 | Layer | Technology | Rationale |
-|---|---|---|
+| --- | --- | --- |
 | iOS | | |
 | Android | | |
 | Web | | |
@@ -118,7 +118,7 @@ _High-level technology direction with rationale. (Detailed architecture is Pre-P
 ### Key Integrations
 
 | Integration | Purpose | Feasibility |
-|---|---|---|
+| --- | --- | --- |
 | | | Ready / Risky / Needs Spike |
 | | | |
 
@@ -129,7 +129,7 @@ _Backend philosophy and cost expectations._
 ### Technical Risks
 
 | Risk | Likelihood | Impact | Mitigation |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | | | | |
 | | | | |
 
@@ -148,7 +148,7 @@ _Specific pricing with rationale grounded in competitive analysis._
 ### Free vs. Paid Split
 
 | Free | Paid |
-|------|------|
+| ------ | ------ |
 | | |
 | | |
 | | |
@@ -183,7 +183,7 @@ _Order-of-magnitude projections. Not precise forecasts — directional signals._
 ## Risk Register
 
 | # | Category | Risk | Likelihood | Impact | Mitigation |
-|---|----------|------|-----------|--------|------------|
+| --- | ---------- | ------ | ----------- | -------- | ------------ |
 | 1 | Technical | | | | |
 | 2 | Market | | | | |
 | 3 | Resource | | | | |
@@ -196,7 +196,7 @@ _Order-of-magnitude projections. Not precise forecasts — directional signals._
 ### Decision Criteria
 
 | Criteria | Met? | Evidence |
-|----------|------|----------|
+| ---------- | ------ | ---------- |
 | Clear target audience with real need | | |
 | Technical feasibility confirmed | | |
 | Differentiated from competitors | | |

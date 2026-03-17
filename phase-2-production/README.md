@@ -13,7 +13,7 @@ Build the app. Execute the plan from Pre-Production in structured sprints, maint
 ## Steps
 
 | Step | Name | Purpose | Key Output |
-|------|------|---------|------------|
+| ------ | ------ | --------- | ------------ |
 | 1 | [Sprint Execution](steps/01-sprint-execution.md) | Run a structured sprint from kickoff to review (repeatable) | [Sprint Tracker](templates/sprint-tracker.md) |
 | 2 | [Retrospective](steps/02-retrospective.md) | Pause, reflect, and improve the process (repeatable) | [Retro Tracker](templates/retro-tracker.md) |
 

@@ -40,7 +40,7 @@ Group the MoSCoW features into logical epics. An epic is a large body of work th
 
 **Example epic structure:**
 | Epic | Description | Features Included |
-|------|-------------|-------------------|
+| ------ | ------------- | ------------------- |
 | Route System | Browse, select, and track progress on routes | Route library, route detail, progress tracking |
 | Activity Tracking | Pull and convert movement data | HealthKit integration, activity conversion engine |
 
@@ -98,7 +98,7 @@ AC3: Given the user has completed 100% of the route distance,
 For each user story, categorize its acceptance criteria by test type:
 
 | Test Type | What It Verifies | When It Runs |
-|-----------|-----------------|--------------|
+| ----------- | ----------------- | -------------- |
 | **Unit** | Business logic in isolation (calculations, data transforms, state changes) | Every commit (CI) |
 | **Integration** | Components working together (API calls, data persistence, HealthKit queries) | Every commit (CI) |
 | **UI** | User-visible behavior (screens render correctly, navigation works, interactions respond) | Every PR / nightly |
