@@ -55,6 +55,7 @@ This Playbook is designed to work alongside Claude Code skills and CLAUDE.md con
 ```text
 Playbook/
 ├── README.md                           # This file
+├── CONTRIBUTING.md                     # How to contribute
 ├── LICENSE                             # MIT License
 ├── TRANSITIONS.md                      # Phase transition readiness checklists
 ├── phase-0-concept/
