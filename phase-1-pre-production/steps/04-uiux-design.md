@@ -14,9 +14,26 @@ Establish the visual direction, user flows, wireframes, and screen designs for t
 
 This step is the creative exploration phase — mood, color, typography, layout. Step 5 (Design System) extracts the reusable system from these designs.
 
-### AI-Assisted Workflow (Optional)
+### AI-Assisted Workflow (Recommended)
 
-For solo developers, an AI-powered design pipeline can accelerate this step significantly. See the [AI Design Pipeline Reference](../references/ai-design-pipeline.md) for tool recommendations and workflows (Midjourney, Stitch, Figma, Codia). The process below works with or without AI tools.
+For solo developers, AI tools can collapse the gap between "design concept" and "working code." Two approaches, used together or separately:
+
+**AI Code Generation (v0, Google AI Studio):**
+
+Tools like [v0](https://v0.dev) and Google AI Studio can generate actual UI component code from detailed prompts — not just mockups, but working React/SwiftUI/HTML with real framework components. This is the fastest path from concept to implementation:
+
+1. **Prepare context-rich prompts** for each key page/screen — include the project context, content structure, design direction, and specific components from your stack (e.g., shadcn/ui, SwiftUI native components)
+2. **Generate in v0 or AI Studio** — get working code for each page concept. Iterate, pick what resonates, request variations.
+3. **The output becomes both the UI/UX spec AND the starting code** — instead of writing a design doc that describes what to build, you have actual components that demonstrate it. The "spec" is the code.
+4. **This can merge Steps 4 and 5** — when the generated code uses your component library (shadcn/ui, etc.), it establishes the design system implicitly. Document the design decisions, extract tokens, and you've covered both steps.
+
+The key is prompt quality. Feed these tools your full project context — concept doc, requirements, architecture, content models — not just "make me a blog." The more specific the input, the more useful the output.
+
+**AI Image Generation (visual exploration):**
+
+See the [AI Design Pipeline Reference](../references/ai-design-pipeline.md) for image-generation tools (Midjourney, Stitch, Figma, Codia) that help with mood boards, visual direction, and screen mockups.
+
+**Both approaches work.** Code generation is faster when your stack has strong AI tool support (React + Tailwind + shadcn/ui is ideal for v0). Image generation is better for native platforms or when exploring visual direction before committing to code. The process below works with or without AI tools.
 
 ## Process
 
@@ -279,6 +296,7 @@ Complete the [UI/UX Spec Template](../templates/uiux-spec.md) and save it to you
 - **Steal from the best.** Browse Mobbin (mobbin.com) for hundreds of real app designs organized by screen type. See how successful apps solve the same design problems you're facing.
 - **Don't over-design v1.** You need enough design to build confidently. You don't need pixel-perfect mockups of every edge case. Wireframes + key screen designs + prototype is sufficient.
 - **AI tools are a starting point.** If you use AI generation tools (see [AI Design Pipeline](../references/ai-design-pipeline.md)), remember that output needs human curation and refinement. AI accelerates; it doesn't replace taste.
+- **Code generation can collapse Steps 4 + 5.** If you use v0 or similar tools to generate actual component code with your design system (e.g., shadcn/ui + Tailwind), the output establishes both the UI design and the design system in one pass. Document the design decisions extracted from the generated code rather than writing a separate wireframe spec. Don't let the process create busywork — if the code IS the spec, write a brief design decisions doc and move on.
 
 ### Game Development Notes
 

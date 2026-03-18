@@ -31,6 +31,18 @@ Review three sources for spike candidates:
 - Failure would force a significant architectural change
 - The team has no prior experience with the technology
 
+**When to skip spikes entirely:**
+
+Sometimes every flagged item turns out to be a known-good pattern by the time you reach Pre-Production. If that's the case, skip the step — don't run spikes just to check a box. Process should accelerate delivery, not slow it down.
+
+Skip spikes when:
+- All flagged items use well-documented, mature tooling with production track records
+- The "unknowns" have resolved into clear choices since the feasibility assessment (ecosystems evolve)
+- Fallback options exist and are trivial to swap if the primary choice doesn't work
+- A spike would essentially be building Sprint 1 features early with no additional learning
+
+If skipping, document the decision and rationale in a brief spike report. Note which approach you're choosing and why, so the reasoning is captured for Architecture Design (Step 3). Then move on.
+
 **Prioritizing spike candidates:**
 - **Spike what blocks architecture decisions first** — if a spike outcome changes your data model or service design, run it before Step 3
 - **Spike integration risks over implementation risks** — "Can we connect to this API?" matters more than "Can we build this feature?" (features can always be simplified; incompatible APIs cannot)
