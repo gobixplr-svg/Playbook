@@ -139,3 +139,48 @@ How to know when you're ready to move to the next phase — and what to watch ou
 - Launch metrics as a baseline (downloads, conversion rate, initial retention)
 - Known issues list from Phase 3/4 (deferred minor bugs to address in first updates)
 - All Playbook specs (referenced when planning iterations and updates)
+
+---
+
+## Agency Adaptation: Compressed Phase Transitions
+
+When using the 4-phase agency adaptation (see `docs/adaptations/agency-consulting.md`), phase gates include client approval checkpoints. The key difference: you may be technically ready to advance, but the client hasn't signed off yet. Build your timeline around their availability.
+
+### Discovery → Design & Setup
+
+- [ ] Discovery brief completed and reviewed with client
+- [ ] Technical scope agreed upon (written, not verbal)
+- [ ] Brand assets received (or explicitly deferred with placeholder plan)
+- [ ] Competitive audit completed
+
+**Agency-specific risk:** Moving to setup without a signed-off scope. The client says "yeah that sounds right" on a call. You build it. They say "that's not what I meant." Get it in writing.
+
+### Design & Setup → Build
+
+- [ ] Design tokens extracted into CSS custom properties
+- [ ] Project scaffolded with CLAUDE.md and playbook-state.md
+- [ ] Architecture decisions documented
+- [ ] **Design approved by client** (the most important gate)
+
+**Agency-specific risk:** Starting to build before design is approved. "The design is basically final, just waiting on the client's OK." Then the client changes the hero layout. Rebuild.
+
+### Build → Launch
+
+- [ ] All sections built and matching the approved design
+- [ ] Visual QA passed at mobile + desktop (Tier 1.5)
+- [ ] Responsive audit passed (`/responsive-check`)
+- [ ] Accessibility audit passed (`/accessibility`)
+- [ ] **Client has reviewed and approved the build**
+- [ ] All client feedback rounds completed
+
+**Agency-specific risk:** Launching without explicit client sign-off. "They haven't responded to the staging link but it's been a week, they're probably fine with it." They're not. Get written approval.
+
+### Launch → Optimize (Retainer Only)
+
+- [ ] Preflight passed clean
+- [ ] SEO and analytics verified with live events
+- [ ] Site deployed to production
+- [ ] Client handoff documentation delivered
+- [ ] **Client confirmed they can edit content** (test the handoff)
+
+**Agency-specific risk:** Handing off documentation nobody reads. Walk the client through it on a call. Have them make one edit while you watch. If they can't, the handoff isn't complete.
