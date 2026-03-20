@@ -2,6 +2,10 @@
 
 A structured, repeatable development process for building apps from concept to post-launch. Each phase produces two deliverables: a **reusable process template** (lives here) and a **project-specific output** (lives in the project repo).
 
+## See It in Action
+
+Visit [thedevplaybook.com](https://thedevplaybook.com) to see 9 real projects built with this Playbook, documented from concept to launch. The dev journal shows every phase working on real code, with real decisions, pivots, and mistakes included.
+
 ## Who This Is For
 
 Solo developers and small teams who want a professional, documented development process without enterprise overhead. Every step is designed to be actionable — not bureaucratic.
