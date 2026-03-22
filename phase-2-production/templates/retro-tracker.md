@@ -33,7 +33,23 @@
 
 ---
 
+## Discovered Work (Convergence Sprints)
+
+<!-- Skip this section for construction/polish sprints -->
+
+| Category | Count | Examples |
+| ---- | ---- | ---- |
+| Integration bugs | | |
+| Design gaps | | |
+| Technical debt | | |
+| Art/UX iteration | | |
+
+**Planned tasks:** → **Actual tasks:** → **Ratio:**
+
+---
+
 ## Changes Applied
+
 - [ ] [Change description] → [File modified]
 - [ ] [Change description] → [File modified]
 

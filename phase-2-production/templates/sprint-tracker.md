@@ -6,6 +6,7 @@
 | ------- | ------- |
 | **Sprint** | # |
 | **Theme** | |
+| **Sprint Type** | Construction / Convergence / Polish |
 | **Goal** | |
 | **Dates** | YYYY-MM-DD — YYYY-MM-DD |
 | **Demo Scenario** | |
@@ -41,6 +42,35 @@
 ---
 
 <!-- Copy the story block above for each story in the sprint -->
+
+## Session Log
+
+<!-- Log a summary at the end of each work session. Number sequentially. -->
+
+### Session 1 — [Date]
+
+- **Done:**
+- **Discovered:**
+- **Next:**
+
+---
+
+## First Full Playthrough (Convergence Sprints Only)
+
+<!-- Skip this section for Construction sprints. For Convergence sprints, play the full user flow early and log findings. -->
+
+- [ ] Full user flow played end-to-end (not debugging — playing)
+
+| Category | Count | Issues Found |
+| ---- | ---- | ---- |
+| Broken (doesn't work) | | |
+| Wrong (works but incorrect) | | |
+| Missing (design assumed it exists) | | |
+
+**Re-plan needed?** Yes / No
+**Stories deferred to make room:**
+
+---
 
 ## Integration Buffer
 

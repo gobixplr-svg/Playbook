@@ -136,6 +136,23 @@ Use a **3-tier testing approach** to balance confidence with development speed. 
 - Fix integration issues surfaced by combining features
 - Update ROADMAP.md with completed stories
 
+#### First Full Playthrough (Convergence Sprints)
+
+If this is the first sprint where independently-built systems must work together as a product (a "convergence sprint" — see [Project Plan, Section 7.3](../../phase-1-pre-production/steps/07-project-plan.md)), schedule a **First Full Playthrough** early in the sprint — before polish work begins.
+
+**Process:**
+1. Play through the complete user flow end-to-end (not debugging, _playing_)
+2. Log every issue into three buckets:
+   - **Broken:** Something doesn't work at all (dead code paths, missing wiring, crashes)
+   - **Wrong:** Something works but the behavior is incorrect (balance issues, wrong defaults, confusing UX)
+   - **Missing:** Something the design assumed would exist but doesn't (transitions, feedback, error states)
+3. Prioritize: fix Broken first, Wrong second, Missing third
+4. Re-plan the sprint with discovered work included
+
+**Why this exists:** Systems tested in isolation pass their own tests but fail together. In Fizzics, the first full playthrough revealed: overflow detection was dead code (never called), the Game Over panel had an inactive-GameObject listener bug, 11 tests were silently broken, and the difficulty curve was fundamentally too shallow (4 merge tiers instead of 6). All of these were invisible during isolated system testing. One playthrough session surfaced them all.
+
+**Budget:** The first full playthrough typically generates 1-2 sessions of discovered work. Plan for this. If the sprint scope doesn't have room, defer the lowest-priority planned story to make space.
+
 ### 6. Code Review (End of Sprint)
 
 Before the sprint review, run a structured code review on all code written during the sprint. This catches bugs, security issues, and architectural drift that testing alone misses.
@@ -200,6 +217,8 @@ When replacing mock services with real backend implementations, follow this chec
 - **Big-bang integration** — Don't build all stories in isolation then wire together at the end
 - **Skipping mocks** — Real services hide bugs behind network flakiness. Test with mocks first.
 - **Gold-plating** — If it's not in the sprint scope, write it down for later. Don't sneak in extras.
+- **Convergence blindness** — Planning a convergence sprint (systems integrating for the first time) as if it's a construction sprint (building new systems in isolation). Convergence always generates discovered work — dead code paths, design gaps, balance issues, iteration cycles. Budget 40% of the sprint for emergent tasks, or defer planned stories to make room. The sprint after the walking skeleton is functional is almost always convergence.
+- **Skipping the first playthrough** — Testing systems in isolation but never running the full user flow end-to-end. Individual systems pass their own tests but fail together. One full playthrough session early in the sprint surfaces more integration bugs than a week of unit testing.
 - **Broken builds** — Never leave the project in a state that doesn't compile. Every commit builds.
 - **Over-testing cadence** — Don't run full simulator test suites after every story. Use Tier 1 build checks during development, Tier 3 at sprint boundaries.
 - **Test-only validation** — `xcodebuild build` and `xcodebuild test` cannot verify that a user can see a button, that colors render correctly, or that navigation flows work end-to-end. Every view must be visually verified in the simulator at least once before marking a story complete. Tests verify logic in isolation; visual smoke tests verify the user experience.

@@ -82,9 +82,24 @@ Group user stories into sprints following these principles:
 **Sprint structure:**
 - **Sprint name** — a descriptive label (not just "Sprint 1")
 - **Theme** — what capability does this sprint deliver?
+- **Sprint type** — Construction, Convergence, or Polish (see below)
 - **Stories** — which user stories are included, with IDs
 - **Deliverable** — what can the user do at the end of this sprint that they couldn't before?
 - **Dependencies resolved** — what does completing this sprint unlock for future sprints?
+
+#### Sprint Type Classification
+
+Not all sprints are the same. Failing to recognize the type leads to under-planning convergence work and over-planning polish work.
+
+| Type | Characteristics | Planning Approach |
+| ---- | --------------- | ----------------- |
+| **Construction** | Building new systems in relative isolation. Each story maps to a distinct system or feature. | Plan by system. Stories are independent. Estimate normally. |
+| **Convergence** | Making independently-built systems work together as a product. First time the full user flow runs end-to-end. | Budget 40% for discovered work. Include integration testing, balance tuning, and visual/UX iteration as explicit tasks. Plan a "First Full Playthrough" session early. |
+| **Polish** | Refining a working product. Tuning feel, fixing edge cases, visual improvements. | Plan by feel-target, not feature list. Time-box iteration (e.g., "VFX tuning: 1 session max"). |
+
+**Why this matters:** In Fizzics (a physics puzzle game), Sprint 4 was planned as Construction (6 stories: Game Center, Ads, Art ×4) but was actually Convergence — the first time all systems had to work together as a shippable product. The sprint delivered 105 tasks instead of the planned 30. Integration bugs surfaced (dead overflow detection, broken event system), design gaps became visible (difficulty curve too shallow, requiring a full rebalance), and art/UI work revealed the need for system architecture (not just asset swaps). Two stories were deferred to the next sprint.
+
+The pattern is consistent across projects: the sprint after the walking skeleton is functional is always a convergence sprint. Plan for it.
 
 **Sprint duration guidance:**
 - Solo dev: 2–3 weeks per sprint
@@ -204,3 +219,5 @@ Complete the [Project Plan Template](../templates/project-plan.md) and save it t
 - **Should Haves go last, not sprinkled throughout.** Putting Should Haves in early sprints delays the core experience. Get Must Haves working first, then layer on enhancements.
 - **Tasks should be test-first.** For every feature task, the first sub-task is writing the test. This matches the TDD approach from Step 1 and ensures test coverage isn't an afterthought.
 - **Leave buffer for integration work.** Individual stories might work in isolation but break when combined. Plan time for "make Sprint N stories actually work together."
+- **Run a design sanity check before each sprint.** Before starting a sprint, ask: "Does the current design hold up? Are the numbers right? Have we tested the feel?" This is especially important before convergence sprints. A 5-minute question like "are 4 tiers enough depth for an endless game?" can prevent a multi-day rebalance mid-sprint.
+- **Require design specs for L-sized stories.** Small and medium stories can be implemented directly. Large stories benefit from a written spec before coding starts — even a one-page outline of what "done" looks like, what decisions need to be made, and what iteration is expected. This is validated: UI passes succeed when spec'd upfront; VFX work takes 2–3× longer without one.

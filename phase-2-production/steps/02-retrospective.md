@@ -125,12 +125,46 @@ After applying playbook changes, update project-level tracking:
 - **MEMORY.md** — Add new lessons, patterns, or gotchas that will be useful in future sessions
 - **Sprint tracker** — If this is a sprint retro, close out the sprint tracker
 
-### 2.6 Forward Look
+### 2.6 Discovered Work Audit (Convergence Sprints)
+
+For sprints where independently-built systems first work together as a product, add a discovered work section. This captures the gap between planned and actual scope — which is where most process learning lives.
+
+```markdown
+### Discovered Work
+
+| Category | Count | Examples |
+| ---- | ---- | ---- |
+| Integration bugs | N | [Dead code paths, wiring gaps, event system issues] |
+| Design gaps | N | [Balance issues, UX confusion, missing feedback] |
+| Technical debt | N | [Duplicate configs, performance issues, test failures] |
+| Art/UX iteration | N | [Visual work that needed multiple passes] |
+
+**Planned tasks:** N → **Actual tasks:** N → **Ratio:** X.Xx
+```
+
+Track the planned-to-actual ratio across sprints. A ratio above 2.0 means the sprint was planned as construction but was actually convergence. Use this signal to adjust future sprint planning.
+
+### 2.7 Session Boundary Logging
+
+For multi-session sprints, log a 3-line summary at each session boundary. This prevents gaps in the sprint record and makes it easier to trace decisions later.
+
+```markdown
+### Session N — [Date]
+
+- **Done:** [What was completed]
+- **Discovered:** [What was found that wasn't planned]
+- **Next:** [What the next session should start with]
+```
+
+Number sessions sequentially (Session 1, 2, 3...) rather than mapping them to calendar days. Multiple sessions can happen in one day, and one session can span multiple days.
+
+### 2.8 Forward Look
 
 End with a brief forward look. This creates continuity for the next session.
 
 ```markdown
 ### What's Next
+
 - [Next priority item]
 - [Any risks or blockers to watch for]
 - [Preparation needed before next work session]
