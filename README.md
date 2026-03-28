@@ -95,6 +95,7 @@ Playbook/
 │   ├── templates/
 │   │   ├── api-spec.md
 │   │   ├── architecture-document.md
+│   │   ├── content-authoring-brief.md   # Content planning for content-dependent apps
 │   │   ├── design-system-spec.md
 │   │   ├── dev-environment-setup.md
 │   │   ├── phase-retrospective.md
@@ -104,7 +105,9 @@ Playbook/
 │   │   └── uiux-spec.md
 │   └── references/
 │       ├── ai-design-pipeline.md        # AI-assisted design workflows
-│       └── asset-pipeline.md            # Asset creation tools and workflows
+│       ├── app-store-compliance-checklist.md  # iOS App Store submission requirements
+│       ├── asset-pipeline.md            # Asset creation tools and workflows
+│       └── platform-adaptation-guide.md # Web + game adaptations for each step
 ├── phase-2-production/
 │   ├── README.md
 │   ├── steps/
@@ -112,6 +115,7 @@ Playbook/
 │   │   └── 02-retrospective.md
 │   └── templates/
 │       ├── retro-tracker.md
+│       ├── sprint-0-spike-tracker.md    # Spike-driven first sprint template
 │       └── sprint-tracker.md
 ├── phase-3-testing-qa/
 │   ├── README.md

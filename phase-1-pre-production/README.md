@@ -115,6 +115,21 @@ Steps 4 and 5 use an AI-assisted design pipeline. All tools are free or near-fre
 
 **Pipeline:** Midjourney (mood) → Stitch (screens) → Figma (refine) → Codia/MCP (SwiftUI)
 
+## References
+
+| Reference | Purpose |
+| ---- | ---- |
+| [AI Design Pipeline](references/ai-design-pipeline.md) | AI-assisted design workflows for Steps 4-5 |
+| [Asset Pipeline](references/asset-pipeline.md) | Asset creation tools and workflows |
+| [App Store Compliance Checklist](references/app-store-compliance-checklist.md) | iOS submission requirements — use during Step 7 Expert Review |
+| [Platform Adaptation Guide](references/platform-adaptation-guide.md) | Web and game development adaptations for each step |
+
+## Additional Templates
+
+| Template | Purpose |
+| ---- | ---- |
+| [Content Authoring Brief](templates/content-authoring-brief.md) | Content planning for apps with content dependencies (question banks, levels, etc.) |
+
 ## Exit Criteria
 
 Phase 1 is complete when:

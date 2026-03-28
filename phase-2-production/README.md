@@ -19,6 +19,14 @@ Build the app. Execute the plan from Pre-Production in structured sprints, maint
 
 **Note:** Both steps are repeatable cycles, not sequential. Run Sprint Execution for every sprint and Retrospective at natural checkpoints (sprint end, major integration, bug-fix session, or bi-weekly minimum). The project plan (from Phase 1, Step 7) defines sprint scope and sequencing.
 
+## Templates
+
+| Template | Purpose |
+| ---- | ---- |
+| [Sprint Tracker](templates/sprint-tracker.md) | Per-sprint task tracking with session logs, integration buffer, and review sections |
+| [Sprint 0 Spike Tracker](templates/sprint-0-spike-tracker.md) | First sprint of production — spike-driven validation before feature sprints |
+| [Retro Tracker](templates/retro-tracker.md) | Structured retrospective with discovered work audit and session logging |
+
 ## Exit Criteria
 
 Phase 2 is complete when:
