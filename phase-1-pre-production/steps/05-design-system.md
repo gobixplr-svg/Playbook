@@ -20,6 +20,16 @@ With a design system:
 - **Speed** — new screens compose from existing components like building blocks
 - **Dark mode for free** — semantic tokens resolve to different values per appearance
 
+## When to Collapse or Skip
+
+This step can be significantly shortened when:
+
+- **AI code generation produced your UI (v0, Google AI Studio, etc.)** — If Step 4 used code generation tools that output working components with a design system (e.g., shadcn/ui + Tailwind), the design system already exists in the code. Extract and document the tokens and component patterns rather than defining them from scratch. This effectively merges Steps 4 and 5.
+- **Single-platform with system defaults** — If your app uses SF Pro, standard iOS colors, and minimal custom styling, the "design system" is Apple's. Document only your deviations (brand colors, custom components).
+- **Game with engine-native theming** — If your game engine manages visual consistency through its own systems (Unity themes, ScriptableObject palettes), document the engine-native approach rather than translating to SwiftUI patterns.
+
+Even when collapsing, still document: color token names and values, typography scale, spacing scale, and any custom components. The documentation is the contract for consistency — without it, the third sprint starts drifting.
+
 ## Prerequisites
 
 - Step 3 (Architecture) completed — data models and service protocols inform which components need data-bound states

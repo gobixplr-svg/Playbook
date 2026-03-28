@@ -13,6 +13,16 @@ This step formalizes three things:
 2. **Sprint sequence** — what gets built in what order, and why?
 3. **Task breakdowns** — what specific work happens in each sprint?
 
+## When to Simplify
+
+This step scales with project complexity:
+
+- **Small projects (< 10 stories)** — The dependency graph, walking skeleton, and sprint sequence can be a single section rather than separate subsections. One sprint may cover the entire build. Still define milestones and task breakdowns.
+- **Web projects with AI code-gen** — If Steps 4-5 collapsed into working code, the "project plan" may be a short list of remaining integration work rather than a multi-sprint sequence. Still identify the walking skeleton and convergence point.
+- **Solo weekend projects** — A bullet list of "build order" with size estimates is sufficient. Don't create process overhead that exceeds the project's complexity.
+
+Never skip this step entirely — even a 10-minute planning pass prevents the "build whatever feels exciting" trap that leads to half-finished features.
+
 ## Prerequisites
 
 - Step 1 (Requirements) completed — user stories with acceptance criteria and MoSCoW priorities
@@ -165,7 +175,58 @@ Milestones are meaningful checkpoints — moments where the project reaches a qu
 
 The "Demo Scenario" column forces you to think about milestones from the user's perspective, not the developer's. If you can't write a scenario, the milestone is too abstract.
 
-### 7.6 Identify Risks and Mitigations
+### 7.6 Expert Review Checkpoint
+
+Before finalizing the project plan, consult platform-specific expertise to surface compliance gaps, architectural blind spots, and submission risks that the Playbook's generic steps don't cover.
+
+**Why this exists:** In KnowYou (a social trivia app), expert review before the project plan surfaced 10+ compliance and design gaps — account deletion (GDPR + App Store), UGC moderation requirements, PrivacyInfo.xcprivacy manifests, ad consent flow ordering (UMP → ATT → AdMob), and paywall legal link requirements. Every one of these would have been a Sprint 3-5 blocker requiring simultaneous updates to 4+ specs. The review saved an estimated full sprint of rework.
+
+**Review areas by platform:**
+
+| Platform | Key Review Areas |
+| ---- | ---- |
+| **iOS / App Store** | PrivacyInfo.xcprivacy, ATT consent flow, account deletion requirement, age rating, in-app purchase rules, UGC moderation policy |
+| **Web** | GDPR/CCPA consent, cookie policy, accessibility (WCAG), hosting/CDN configuration, SEO technical requirements |
+| **Game (any platform)** | Age rating with interactive elements, ad SDK compliance, virtual currency regulations, loot box disclosure requirements |
+
+**How to run the review:**
+
+1. **Gather your specs** — requirements, architecture, API design, and UI/UX spec
+2. **Review against platform guidelines** — Apple's [App Store Review Guidelines](https://developer.apple.com/app-store/review/guidelines/), Google's [Play Console requirements](https://play.google.com/console/about/), or your target platform's submission checklist
+3. **Use AI assistance** — ask an AI coding assistant to audit your specs against the platform guidelines. Prompt: "Review these specs against [platform] submission requirements. What compliance gaps exist?"
+4. **Document findings** — for each gap, note the requirement, which spec needs updating, and whether it affects the sprint plan
+5. **Update specs** — cross-cutting concerns discovered here typically require updates to 2-4 specs simultaneously (requirements, architecture, API, UI/UX). Update them all before finalizing the project plan.
+
+**When to skip:** If you've shipped multiple apps to the same platform and your specs already account for platform requirements, this is a quick sanity check (5 minutes) rather than a deep review. If this is your first submission to a platform, invest 30-60 minutes.
+
+**Output:** Compliance items integrated into the sprint plan as explicit tasks, not afterthoughts discovered mid-sprint.
+
+### 7.7 Cross-Spec Consistency Verification
+
+Before declaring the project plan final, verify that identifiers are consistent across all specs produced in Steps 1-6. Naming drift between specs creates ambiguity during implementation — the developer (or AI) picks whichever name it finds first, leading to mismatches between database columns, service methods, and UI labels.
+
+**What to verify:**
+
+| Identifier Type | Check Across |
+| ---- | ---- |
+| Story IDs (E1-S1, etc.) | Requirements ↔ Project Plan ↔ Sprint tasks |
+| Data model names | Requirements ↔ Architecture ↔ API Spec |
+| Database table/column names | Architecture ↔ API Spec |
+| Service protocol names | Architecture ↔ API Spec ↔ Project Plan |
+| Screen/view names | UI/UX Spec ↔ Requirements ↔ Design System |
+| Design token names | Design System ↔ UI/UX Spec |
+
+**How to run the check:**
+1. Pick one spec as the source of truth for each identifier type (usually Requirements for story IDs, Architecture for model names, API Spec for table names)
+2. Search for each identifier in the other specs
+3. Flag mismatches (e.g., `users` table in architecture but `user_profiles` in API spec)
+4. Resolve by updating the non-authoritative spec to match the source of truth
+
+**Why this exists:** In KnowYou, a `users` vs `user_profiles` table name mismatch between the architecture and API specs was only caught during the Phase 1 retrospective. Catching it earlier — before any code references the wrong name — is free. Catching it during Sprint 3 means renaming across models, services, queries, and tests.
+
+**When to skip:** If a single person wrote all specs in one continuous session, consistency is likely high. If specs were written across multiple sessions or by multiple contributors (including AI), always run this check.
+
+### 7.8 Identify Risks and Mitigations
 
 Every project has risks. Naming them upfront with a mitigation plan prevents surprises.
 
@@ -181,7 +242,7 @@ Every project has risks. Naming them upfront with a mitigation plan prevents sur
 - Impact (Low / Medium / High)
 - Mitigation strategy
 
-### 7.7 Verify Coverage
+### 7.9 Verify Coverage
 
 Cross-reference the plan against requirements:
 
@@ -208,6 +269,8 @@ Complete the [Project Plan Template](../templates/project-plan.md) and save it t
 - [ ] Stories broken into implementation tasks with size estimates
 - [ ] Milestones defined with target sprints and demo scenarios
 - [ ] Risks identified with mitigation strategies
+- [ ] Expert review completed for target platform (or explicitly skipped with rationale)
+- [ ] Cross-spec consistency verified (story IDs, model names, table names, service names match across all specs)
 - [ ] Coverage verified against requirements document
 
 ## Tips

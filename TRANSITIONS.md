@@ -41,7 +41,8 @@ How to know when you're ready to move to the next phase — and what to watch ou
 - [ ] Sprint 1 stories are broken into tasks with size estimates
 - [ ] Walking skeleton stories are identified for Sprint 1-2
 - [ ] Conditional Go items from Phase 0 are resolved
-- [ ] Cross-spec consistency verified (story IDs, model names, service names match)
+- [ ] Cross-spec consistency verified — Step 7.7 (story IDs, model names, table names, service names match across all specs)
+- [ ] Expert review completed for target platform — Step 7.6 (or explicitly skipped with rationale)
 - [ ] MEMORY.md is updated for Phase 2 with architecture and sprint context
 - [ ] AI workspace can answer: What am I building? What's the architecture? What's Sprint 1?
 

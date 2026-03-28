@@ -123,7 +123,9 @@ Use a **3-tier testing approach** to balance confidence with development speed. 
 - Build: One layer at a time, Tier 1 build checks as you go
 - End: Commit working code, update tracker, note blockers
 
-### 5. Integration Buffer (Final 1-2 Days)
+### 5. Integration Buffer (Required Gate — Final 1-2 Days)
+
+The integration buffer is a **formal gate**, not an optional polish session. A sprint is not complete until the integration buffer passes. Skipping it to "save time" consistently costs more time in the next sprint when integration bugs surface as blockers.
 
 - Run full test suite (Tier 3) across all sprint stories
 - **User Flow Walkthrough** — walk through the app as a real user, not a developer:

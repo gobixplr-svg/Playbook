@@ -13,6 +13,14 @@ This step formalizes three things:
 2. **API contracts** — what the client calls and what comes back
 3. **Data flows** — how data moves between the client, backend, and external services
 
+## When to Skip or Simplify
+
+Skip or significantly simplify this step when:
+
+- **No backend / on-device only** — Games, offline tools, and local-only apps don't have APIs, databases, or server-side logic. Define service contracts for external SDKs (Game Center, ad networks, health APIs) and local persistence schema (save file format, UserDefaults structure), then move on. See the "No-Backend / On-Device Projects" section at the end of this step.
+- **Static site / no dynamic data** — If your web project serves pre-built content with no user accounts, database, or API calls, skip this step entirely and note the rationale.
+- **Backend already exists** — If integrating with an existing API (your own or third-party), document the relevant endpoints and data shapes rather than designing from scratch. Focus on the client-side data flow and any gaps between what the API provides and what your UI needs.
+
 ## Prerequisites
 
 - Step 3 (Architecture) completed — data models, service protocols, and system components defined

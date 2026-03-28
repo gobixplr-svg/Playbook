@@ -177,6 +177,19 @@ Create low-fidelity layouts for every screen in the app. Wireframes define what 
 
 **Create wireframes for every screen in the screen inventory**, with priority on the core flow screens.
 
+**HUD/Overlay/Persistent Element Checklist:**
+
+Some apps have elements that persist across multiple screens — game HUDs, floating action buttons, status bars, always-visible toolbars, or notification banners. These don't fit the "one wireframe per screen" model and need explicit attention:
+
+- [ ] Are there always-visible overlay or HUD elements? (score displays, health bars, mini-maps, floating buttons)
+- [ ] Which screens do they appear on? (all screens, only during gameplay, only when authenticated)
+- [ ] How do overlays interact with navigation? (do they persist during transitions, hide on certain screens?)
+- [ ] What's the z-order? (which overlays appear above others)
+- [ ] How do overlays respond to safe areas? (notch, home indicator, status bar)
+- [ ] Are there multiple overlay states? (expanded/collapsed HUD, notification appearing/dismissing)
+
+If your app has persistent overlays, create a dedicated wireframe showing the overlay layer separately from screen content. This prevents the overlay from being "assumed" in screen wireframes but never explicitly designed.
+
 ### 4.6 Design Key Screens
 
 Transform wireframes into high-fidelity designs with real colors, typography, and imagery.
