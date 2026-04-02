@@ -14,6 +14,7 @@ How to know when you're ready to move to the next phase — and what to watch ou
 - [ ] Technical feasibility is confirmed with no unresolved blockers
 - [ ] Discovery questions are answered (or explicitly deferred with rationale)
 - [ ] Working app name is selected with availability confirmed
+- [ ] **Risk registry reviewed** — no Critical risks unresolved, High risks have mitigation plans
 - [ ] Phase 0 retrospective is completed
 - [ ] ROADMAP.md has Phase 1 tasks defined
 
@@ -28,6 +29,7 @@ How to know when you're ready to move to the next phase — and what to watch ou
 - Concept Document and Concept Brief (read first in Phase 1 sessions)
 - CLAUDE.md with project context and key decisions
 - ROADMAP.md with Phase 1 tasks queued
+- Risk registry with updated scores and review log entry
 - Any deferred questions as explicit Phase 1 investigation items
 
 ---
@@ -43,6 +45,7 @@ How to know when you're ready to move to the next phase — and what to watch ou
 - [ ] Conditional Go items from Phase 0 are resolved
 - [ ] Cross-spec consistency verified — Step 7.7 (story IDs, model names, table names, service names match across all specs)
 - [ ] Expert review completed for target platform — Step 7.6 (or explicitly skipped with rationale)
+- [ ] **Risk registry reviewed** — spike results moved to Resolved, new architecture/design risks added, no Critical risks unresolved
 - [ ] MEMORY.md is updated for Phase 2 with architecture and sprint context
 - [ ] AI workspace can answer: What am I building? What's the architecture? What's Sprint 1?
 
@@ -72,6 +75,7 @@ How to know when you're ready to move to the next phase — and what to watch ou
 - [ ] Known bugs are logged with severity levels
 - [ ] Tech debt is documented (not necessarily resolved, but visible)
 - [ ] All third-party integrations are connected and working
+- [ ] **Risk registry reviewed** — production risks re-scored, integration/performance risks assessed
 
 ### Common Mistakes When Transitioning Too Early
 
@@ -99,6 +103,7 @@ How to know when you're ready to move to the next phase — and what to watch ou
 - [ ] Beta testers have validated core flows
 - [ ] App Store / Play Store compliance is verified (age rating, content declarations, ATT)
 - [ ] Store assets are ready (screenshots, icon, preview video, description)
+- [ ] **Risk registry reviewed** — all Critical and High risks resolved or accepted with documented rationale
 
 ### Common Mistakes When Transitioning Too Early
 
@@ -126,6 +131,7 @@ How to know when you're ready to move to the next phase — and what to watch ou
 - [ ] App Store listing is published with optimized metadata
 - [ ] Support channel exists (at minimum, a support email in the App Store listing)
 - [ ] First 48 hours of post-launch monitoring completed without critical issues
+- [ ] **Risk registry reviewed** — remaining operational/market risks documented for ongoing monitoring
 
 ### Common Mistakes When Transitioning Too Early
 
