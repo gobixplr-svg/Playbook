@@ -41,6 +41,16 @@ Phase 4 is complete when:
 - **Monitor launch day.** Watch crash reports, reviews, and analytics closely for the first 48 hours.
 - **Launch is the beginning.** Shipping is not the finish line — it's the starting line for learning from real users.
 
+## Token Optimization
+
+See the full [AI Token Optimization Guide](../docs/ai-token-optimization.md) for universal techniques.
+
+**Phase 4 profile:** Low token spend. Mostly checklist-following and asset preparation.
+
+- **Use skills for compliance checklists** — load on demand rather than holding procedures in context
+- **Use dedicated tools for assets** — screenshot and icon generation doesn't need AI context (use AppShot, BatchSnap directly)
+- **One-shot store descriptions** — provide the concept brief and keywords in a single prompt rather than iterating
+
 ## Estimated Time
 
 - **Solo dev:** 1-2 weeks (including review time)

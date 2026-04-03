@@ -54,6 +54,10 @@ This Playbook is designed to work alongside Claude Code skills and CLAUDE.md con
 - **CLAUDE.md** project instructions reference the Playbook phase the project is currently in
 - **Memory files** track which phase/step is active for session continuity
 
+### Token Optimization
+
+AI-assisted development is powerful but token-expensive. The [AI Token Optimization Guide](docs/ai-token-optimization.md) covers universal techniques for reducing credit usage, plus phase-specific tips embedded in each phase README. Key principle: control what enters context — 99% of token cost is input, not output.
+
 ## Directory Structure
 
 ```text
@@ -62,6 +66,9 @@ Playbook/
 ├── CONTRIBUTING.md                     # How to contribute
 ├── LICENSE                             # MIT License
 ├── TRANSITIONS.md                      # Phase transition readiness checklists
+├── docs/
+│   ├── ROADMAP.md                      # Playbook development roadmap
+│   └── ai-token-optimization.md        # AI credit/token optimization guide
 ├── phase-0-concept/
 │   ├── README.md                       # Phase overview, entry/exit criteria
 │   ├── steps/

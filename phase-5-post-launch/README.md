@@ -42,6 +42,17 @@ Sustain, grow, and evolve the app based on real user data. This phase is ongoing
 
 Phase 5 doesn't end — it cycles. However, you should plan **Retrospectives** at regular intervals to capture lessons learned and feed improvements back into the Playbook.
 
+## Token Optimization
+
+See the full [AI Token Optimization Guide](../docs/ai-token-optimization.md) for universal techniques.
+
+**Phase 5 profile:** Intermittent. Spiky around update cycles, low during monitoring.
+
+- **Summarize analytics before bringing them to the AI** — raw dashboard data is token-heavy
+- **Start iteration sessions with roadmap + feedback log** — not a full codebase re-read
+- **Keep CLAUDE.md current** — returning sessions shouldn't waste tokens re-discovering what changed
+- **Update cycles are mini Phase 2 sprints** — apply the same Phase 2 optimizations
+
 ## Key Principles
 
 - **Data over opinion.** Let user behavior and metrics guide priorities, not hunches.

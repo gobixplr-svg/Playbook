@@ -40,6 +40,17 @@ Phase 3 is complete when:
 - **Fix the cause, not the symptom.** When a bug is found, understand why before patching.
 - **Compliance is not optional.** App Store rejections cost weeks. Audit before submitting.
 
+## Token Optimization
+
+See the full [AI Token Optimization Guide](../docs/ai-token-optimization.md) for universal techniques.
+
+**Phase 3 profile:** Lots of test execution and log reading. Repetitive patterns.
+
+- **Use hooks to filter test output** — show only failures, not full suite output (the #1 token waste in QA)
+- **Delegate test runs to subagents** — keep verbose output out of your main context
+- **Batch related bugs by module** — one session per module, not one session per bug
+- **Summarize profiler output before pasting** — raw Instruments/profiler data is extremely token-expensive
+
 ## Estimated Time
 
 - **Solo dev, simple app:** 1-2 weeks

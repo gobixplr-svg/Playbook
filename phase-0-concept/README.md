@@ -73,6 +73,17 @@ your-project/
 
 Don't rush this phase. Decisions made here compound through every future phase. An hour spent here saves days in production.
 
+## Token Optimization
+
+See the full [AI Token Optimization Guide](../docs/ai-token-optimization.md) for universal techniques.
+
+**Phase 0 profile:** High exploration, moderate generation. The AI helps you think, not build.
+
+- **Use the Guided Concept Session** (Step 0) — structured conversation avoids the back-and-forth waste of open-ended brainstorming
+- **Front-load context** — paste your full rough idea upfront rather than revealing it across multiple messages
+- **Name specific competitors** — "compare against Headspace and Calm" beats "find competitors for me"
+- **Save the Concept Brief** — this compressed summary prevents future sessions from re-reading the full Concept Document
+
 ## Common Pitfalls
 
 - **Skipping competitive analysis** — You think your idea is unique. It probably isn't, and that's fine. Understanding the market is how you differentiate.

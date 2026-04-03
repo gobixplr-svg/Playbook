@@ -44,6 +44,19 @@ Phase 2 is complete when:
 - **Commit often.** Small, frequent commits with clear messages. Every commit should build.
 - **Track progress visibly.** Update the roadmap and progress docs after each sprint.
 
+## Token Optimization
+
+See the full [AI Token Optimization Guide](../docs/ai-token-optimization.md) for universal techniques.
+
+**Phase 2 profile:** Highest total spend. Many sessions with targeted reads and writes.
+
+- **Prompt specificity matters most here** — every sprint task should reference the file, function, and acceptance criteria by name
+- **One task per session, `/clear` between tasks** — stale context from a bug fix wastes tokens on your next feature
+- **Keep sprint context in CLAUDE.md** — current sprint, active stories, architecture summary prevents re-discovery
+- **Commit frequently** — small commits are cheap save points; re-doing work after a wrong turn is the most expensive waste
+- **Escape immediately on wrong direction** — every wrong-direction message compounds context cost
+- **Scope test runs** — "run auth tests" not "run all tests"
+
 ## Estimated Time
 
 - **Solo dev, simple app:** 2-4 weeks

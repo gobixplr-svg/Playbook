@@ -45,6 +45,18 @@ TDD is not a single step — it's embedded throughout:
 
 Architecture should support v1 features cleanly. Future features should be possible but not pre-built.
 
+## Token Optimization
+
+See the full [AI Token Optimization Guide](../docs/ai-token-optimization.md) for universal techniques.
+
+**Phase 1 profile:** Moderate reads, heavy generation. Lots of structured spec output.
+
+- **Use Plan Mode** (Shift+Tab) before generating specs — preview the approach before committing tokens to full output
+- **One spec per session** — don't ask for "architecture and API spec" in one message; combined context explodes
+- **Reference previous specs by summary** — "architecture uses MVVM with Supabase backend" is cheaper than re-reading the full doc
+- **Use templates** — the AI fills in structure rather than inventing it, saving generation tokens
+- **Run cross-spec checks as a focused task** — not embedded in other work
+
 ### Spike the Unknowns
 
 Any "Complex" or "Unknown" items from the feasibility assessment get a time-boxed spike (Step 2) before committing to architecture.
