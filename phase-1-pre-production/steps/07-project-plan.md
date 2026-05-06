@@ -142,6 +142,38 @@ For each story in each sprint, break it down into implementation tasks. These ar
 
 Sizes: **S** = < half day, **M** = half day to full day, **L** = 1–2 days
 
+These are **effort** sizes, not wall-clock. See 7.4.1 for why that distinction matters when AI agents are in the loop.
+
+### 7.4.1 Estimating in the AI-Agent Era: Wall-Clock vs. Effort
+
+The traditional "size estimate" assumes one human typing on one keyboard. When you delegate work to an AI agent — especially one running in a separate worktree while you do something else — that assumption breaks. A 5-hour effort can be a 30-minute wall-clock. A 1-hour effort can be a 4-hour wall-clock if you're context-switching across several agent sessions.
+
+For any task with effort >30 minutes, estimate **two** numbers:
+
+- **Wall-clock** — how long before you can review the output. Drives "before the meeting?" / "tonight or tomorrow?" decisions and what stakeholders actually wait for.
+- **Effort** — the size and complexity of the change itself. Drives review burden and scope-vs-bandwidth tradeoffs.
+
+**Quote both numbers, and name the strategy.** Don't quote a single human-developer number then silently delegate. The recommended format:
+
+> "Wall-clock ~30-45 min via agent delegation. Effort-equivalent of 5-7 hours of focused human work — meaning the diff will be substantive."
+
+When choosing between strategies, name the trade-off:
+
+> "5-7 hours if I do it inline; 30-45 min if I delegate to an agent in a worktree (recommended for this size)."
+
+Inline work is incremental — you see issues mid-build, ask questions, course-correct. Agent-delegated work shows up complete: bigger upfront review, fewer course corrections, harder to redirect mid-stream. These are different commitments, not just different timelines.
+
+**Calibration biases to track.** After a few projects, you'll know where your gut is wrong. Common patterns:
+
+- **Design + brand + prototype work:** AI agents tend to overdeliver here. If you've been quoting based on human time, you're likely overestimating by 3-10× when delegating. Adjust down.
+- **Debug + investigation + integration:** Root causes surprise. The agent finds a layer-4 bug when you scoped a layer-1 fix. Underestimate by 2-3×. Adjust up.
+- **Build features end-to-end:** Usually accurate within 2× either direction.
+- **Doc / spec / runbook writing:** Usually accurate.
+
+These are general patterns. Your project-specific biases are more useful — log misses in `docs/sprints/sprint-N/retro.md` so you can re-derive estimates from real data instead of from gut feel. Phase 5 retrospectives should explicitly review estimating accuracy.
+
+**When someone pushes back on your estimate ("that feels off"):** don't defend the number. Re-derive from your calibration log. Which category is this work in? What's the bias on that category? Is there a project-specific reason it should be different?
+
 ### 7.5 Define Milestones
 
 Milestones are meaningful checkpoints — moments where the project reaches a qualitatively different state. They're bigger than "sprint complete" and mark real capability shifts.
@@ -277,7 +309,8 @@ Complete the [Project Plan Template](../templates/project-plan.md) and save it t
 
 - **Plan the sprints, not the calendar.** Don't assign dates yet — assign sequences. Dates come when you start Phase 2 and know your actual velocity.
 - **The walking skeleton is your first milestone.** Everything else is embellishment. If the skeleton works, the app works — features just make it better.
-- **Over-estimate, don't under-estimate.** Solo devs consistently underestimate by 2–3x. If you think a story takes 2 days, plan for 4. The extra time gets absorbed by debugging, testing, and "oh I forgot about that."
+- **Quote two estimates, not one.** Wall-clock and effort have decoupled now that AI agents handle work in parallel. See 7.4.1 — single-number estimates either misrepresent timeline (when you delegate) or misrepresent review burden (when you don't say you delegated). Both numbers, every time, for any task >30 min.
+- **Track your calibration biases per project.** Solo devs without AI tend to underestimate effort by 2-3×. With AI agents, the bias splits by work type — overestimate creative work when delegating, underestimate debug work always. Log misses in sprint retros so you can re-derive next time.
 - **Sprint themes keep you focused.** When a sprint is "Reward Loop" and you find yourself refactoring auth, you've drifted. Themes create guardrails.
 - **Should Haves go last, not sprinkled throughout.** Putting Should Haves in early sprints delays the core experience. Get Must Haves working first, then layer on enhancements.
 - **Tasks should be test-first.** For every feature task, the first sub-task is writing the test. This matches the TDD approach from Step 1 and ensures test coverage isn't an afterthought.
