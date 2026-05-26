@@ -48,6 +48,22 @@
 
 ---
 
+## Estimation Variance
+
+<!-- Pull from project's `docs/estimation-tracker.md` (template at
+phase-2-production/templates/estimation-tracker.md). Skip if the project
+isn't tracking estimation yet. -->
+
+| Slice | Est sessions | Actual sessions | Est hours | Actual hours | Variance | Pattern |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| | | | | | | |
+
+**Aggregate so far:** N data points, mean variance X.YY
+**Calibration action:** [update wall-clock claim in memory / adjust default
+estimates in scoping docs / no change yet — need more data]
+
+---
+
 ## Changes Applied
 
 - [ ] [Change description] → [File modified]
