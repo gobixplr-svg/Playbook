@@ -9,6 +9,7 @@
 | **Sprint Type** | Construction / Convergence / Polish |
 | **Goal** | |
 | **Dates** | YYYY-MM-DD — YYYY-MM-DD |
+| **Estimate** | N sessions / ~N hours (log actuals at close; copy row into `docs/estimation-tracker.md`) |
 | **Demo Scenario** | |
 
 ---
