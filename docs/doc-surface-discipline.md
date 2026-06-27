@@ -38,8 +38,9 @@ Five documentation surfaces, five distinct roles. Don't duplicate narrative acro
 | Roadmap (`docs/ROADMAP.md`) | Forward planning — themes, milestones, blockers, critical path | EDIT-IN-PLACE status lines + blocker bullets; NO session-NN blocks at top | < 50 KB (soft) |
 | Priming doc (`CLAUDE.md`) | Agent priming — tech stack, conventions, file pointers, version | Edited only on convention/structure/version change; "Current State" sub-section is a one-sentence pointer | "Project Context" section < 4 KB (hard < 8 KB) |
 | Commit messages | Per-commit context — what changed + why | One per commit; conventional commit prefix | n/a (git) |
+| Decision log (`docs/decisions.md`) | Decision retrieval — a queryable index of significant decisions | APPEND a row at decision time; point to the ADR/memory holding the "why"; never rewrite a row | < 30 KB (soft) |
 
-The state file and priming doc are the surfaces that get read most often by AI agents on cold start. The session log is the durable history. The roadmap is the forward-looking plan. Commit messages are the immutable record.
+The state file and priming doc are the surfaces that get read most often by AI agents on cold start. The session log is the durable history. The roadmap is the forward-looking plan. Commit messages are the immutable record. The decision log is the retrieval index — see "The Decision Log" below for why narrative and ADRs alone don't cover it.
 
 ## The Five Discipline Rules
 
@@ -92,6 +93,42 @@ If either is over budget, you violated Rule A or Rule B. Fix before committing.
 ### Rule E — Foundation Docs Refresh on Triggers, Not on Wrapups
 
 Architecture, data model, dev environment, deployment runbook, platform dependencies — these refresh on theme-close, ADR, new platform dependency, or scheduled drift audit. NOT every wrapup. See the doc-refresh-cadence pattern in `phase-2-production/`.
+
+## The Decision Log
+
+The surfaces above carry *narrative* (session log), *state* (state file), and
+*plans* (roadmap). None is built for **retrieving a decision** — "what did we
+decide about X, and why?" The session log holds the answer but it is an
+append-only journal that grows unbounded (one real project hit 660 KB); grepping
+it for a decision among thousands of narrative paragraphs does not scale. Two
+existing patterns help but leave a gap:
+
+- **ADRs** (`docs/adr/`) capture *architectural* decisions in full — context,
+  decision, consequences. Use the `adr.md` template (`phase-1-pre-production/templates/`).
+  But not every durable decision is architectural, and a full ADR is too heavy
+  for a product/scope/ops call.
+- **Memories** (the agent's persistent notes) capture the "why" of many
+  product/ops decisions — but they're per-agent, not a project artifact, and not
+  enumerable by a teammate reading the repo.
+
+`docs/decisions.md` closes the gap: a **queryable index**, not a new archive. It
+is a pointer-table — each row names the decision and links to where the reasoning
+lives (an ADR, a memory, a design doc). Seed it from your existing ADRs; add a
+row whenever a decision is made (at decision time, not at wrapup). Use the
+`decision-log.md` template (`phase-1-pre-production/templates/`).
+
+**What belongs:** a choice between real alternatives with lasting consequences.
+Architectural → also a full ADR. Product/scope/strategy/ops → a memory + a row.
+**What does NOT:** status (roadmap), narrative (session log), task tracking, or
+pure style preferences.
+
+**The decision sweep.** Compaction moves narrative out of the hot files into the
+session log. The hazard: a *decision* embedded in that prose gets archived into a
+660 KB journal where it is no longer retrievable. So compaction gains one step —
+before trimming, scan the prose being removed for any decision (not just status)
+and confirm it is captured in `docs/decisions.md` (and an ADR/memory if
+warranted) before it leaves the hot file. This is folded into the Compaction
+Recipe below as step 0.
 
 ## Mechanical Enforcement
 
@@ -158,6 +195,10 @@ This was the most surprising failure mode in the case study above — a single l
 
 When bloat is already present (legacy projects adopting this discipline):
 
+0. **Decision sweep.** Before trimming anything, scan the prose you're about to
+   move/remove for any *decision* (not just status). For each, confirm it's
+   captured in `docs/decisions.md` (and an ADR/memory if warranted). This keeps
+   decisions retrievable instead of buried in the archived narrative.
 1. Create `docs/playbook-session-log.md` from the skeleton in Rule A
 2. Move per-session narrative paragraphs verbatim from state file / priming doc into a "Snapshot" section of the session log (preserved as historical record — don't try to split or edit)
 3. Replace the state file's "Current Step" with a one-sentence description of where the project actually is right now
@@ -178,6 +219,7 @@ Verify with `wc -c` against the size budgets.
 | Refreshing every foundation doc on every wrapup | Doc-edit churn; obscured signal about what actually changed | Trigger-based refresh only (theme-close, ADR, new platform dep) |
 | Bypassing the pre-commit hook with `--no-verify` | The discipline is now optional in your project | Treat hook failures as a real signal; compact, don't bypass |
 | Adopting the discipline only in CLAUDE.md (the priming doc) | State file still bloats invisibly; agent reads it via state-file pointer | Discipline applies to all 4 surfaces, not just the priming doc |
+| Decisions live only in session-log narrative | "Why did we choose X?" means grepping a 660 KB journal; decisions get buried on compaction | Index significant decisions in `docs/decisions.md`; run the decision sweep before compaction |
 
 ## When This Discipline Fires
 
@@ -194,3 +236,5 @@ The discipline scales: a 2-week project barely needs it, a 6-month project criti
 - `phase-2-production/steps/02-retrospective.md` — wrapup discipline lives here
 - `docs/ai-token-optimization.md` — broader context on why narrative bloat is expensive
 - `phase-1-pre-production/` — establish session log + hooks during dev environment setup
+- `phase-1-pre-production/templates/adr.md` — Architecture Decision Record template (Nygard format)
+- `phase-1-pre-production/templates/decision-log.md` — decision-log index template

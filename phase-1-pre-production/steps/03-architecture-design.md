@@ -155,6 +155,15 @@ How are sensitive operations and data protected?
 
 Complete the [Architecture Document Template](../templates/architecture-document.md) and save it to your project's `docs/pre-production/architecture-document.md`.
 
+**Significant decisions get an ADR.** When this step (or any later one) settles a
+choice between real alternatives with lasting consequences — a database, an auth
+model, a platform relocation — record it as an Architecture Decision Record using
+the [ADR Template](../templates/adr.md) in `docs/adr/NNN-slug.md`, and add a row
+to your [Decision Log](../templates/decision-log.md) (`docs/decisions.md`). ADRs
+are append-only. The decision log is a queryable index over them plus the
+smaller product/ops decisions that don't merit a full ADR. See
+[Doc Surface Discipline → The Decision Log](../../docs/doc-surface-discipline.md).
+
 ## Definition of Done
 
 - [ ] System architecture overview with component diagram
