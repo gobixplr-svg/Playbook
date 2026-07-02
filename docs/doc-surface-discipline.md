@@ -253,7 +253,14 @@ a post-launch plan; adopting an ADR/epic's own slice numbering.
    live schemes.
 3. **Collapse to one forward plan** (Axis 2). Any planning content that grew a
    second home folds back into the roadmap; leftovers become clearly-labeled
-   reference or archive.
+   reference or archive. **Verify every item you route — don't copy it.** A
+   retired parking-lot is stale by nature: check each surviving item against
+   the authoritative source (the code, the DB, git history, the tracker of
+   record) before it lands in the plan. The first live run of this ritual
+   routed three "open" items that were in fact already resolved — caught only
+   because a human read the rendered plan and said "wait, we fixed that."
+   An AI assistant will confidently carry a resolved item forward; the
+   verify-on-route step is what stops it.
 4. **Archive the frozen** (Axis 4). Closed trackers → `docs/archive/`. Live
    docs contain only-live.
 5. **Decision sweep.** Scan the prose you're moving for _decisions_ (not just
