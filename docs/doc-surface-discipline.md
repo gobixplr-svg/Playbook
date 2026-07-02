@@ -6,6 +6,8 @@ Across a long project, documentation accretes. The same "what happened this sess
 
 **Core insight:** every documentation surface has exactly one role. When narrative lives in multiple places, drift, bloat, and stale-context costs compound. Pick one home for session narrative and edit everything else in place.
 
+That much bounds each surface's *size*. On a long project a second failure appears — the *number* of live planning surfaces and work-item vocabularies multiplies until the plan needs a decoder ring. [Beyond size: bounding the forest](#beyond-size-bounding-the-forest-count-vocabulary-freshness) adds three more axes (count, vocabulary, freshness) and the [re-scoping ritual](#the-re-scoping-ritual-the-missing-reflex) that keeps them in check.
+
 ## The Failure Pattern
 
 Without discipline, every wrapup cycle does this:
@@ -130,6 +132,135 @@ and confirm it is captured in `docs/decisions.md` (and an ADR/memory if
 warranted) before it leaves the hot file. This is folded into the Compaction
 Recipe below as step 0.
 
+## Beyond size: bounding the forest (count, vocabulary, freshness)
+
+Everything above bounds a surface's **size** and prevents **narrative
+duplication**. That keeps each tree healthy. But a long project hits a second,
+sneakier failure — every surface stays within budget, yet the *number* of live
+planning surfaces and the *number* of work-item vocabularies multiply until a
+newcomer needs a decoder ring to read the plan. Nobody is managing the forest.
+
+> **Real signal (a project at ~170 sessions):** every file was within its byte
+> budget, but "what's next" was spread across four live planning docs (a
+> roadmap, a backlog, an open-questions parking-lot, and per-feature
+> implementation boards), and work items had accumulated **six** numbering
+> schemes as the project re-scoped (sprints → themes → two parallel tracks) —
+> plus a "Rosetta" table whose only job was to translate between them. The
+> size discipline had done its job; the forest had gone feral anyway.
+
+Three more axes bound the forest. They are not per-commit reflexes like the
+size hook — they fire at phase transitions, re-scopes, and the periodic drift
+audit.
+
+### Axis 2 — Count: the live planning roster
+
+A project has a **fixed, small roster of _live planning_ surfaces.** Every new
+planning doc must fit an existing slot, or it doesn't get created. (Borrowed
+from Diátaxis, which caps documentation to a fixed set of modes kept "separate
+and distinct" and thereby "prevents sprawl where content accumulates without
+coherent organization," and from Amazon's one-narrative rule, where a single
+document replaces the deck + memo + tracker.)
+
+The roster — exactly one of each:
+
+| Slot | Surface | Answers |
+| --- | --- | --- |
+| Forward plan | `docs/ROADMAP.md` | "What's next, in what order?" |
+| State pointer | `docs/playbook-state.md` | "What phase/step are we on right now?" |
+| Narrative log | `docs/playbook-session-log.md` | "What happened, session by session?" |
+| Decision index | `docs/decisions.md` | "What did we decide, and where's the why?" |
+
+Everything else is **reference** (ADRs, design docs — the why/how) or
+**archive** (frozen). Reference and archive are _not_ planning surfaces and
+don't count against the roster.
+
+**The anti-pattern:** a second "backlog," "open-notes," or "parking-lot" doc
+that quietly becomes a _parallel plan_. Its actionable items belong in the one
+forward plan; the doc itself, if it survives at all, is **reference detail
+only, explicitly labeled "not a plan — see the roadmap."** Same for a
+per-feature implementation board: it holds detail, it does not hold priority.
+
+**Mechanism — the surface census.** The count-analog of the size budget. At
+each phase transition (and on the periodic drift audit), list the live planning
+surfaces. Anything outside the roster gets folded back in, archived, or
+explicitly promoted into the roster. You can't fully mechanize this the way the
+byte-count hook is mechanized, so make it a named trigger, not a hope.
+
+### Axis 3 — Vocabulary: one work-item scheme
+
+A project names its work in **one scheme.** Don't invent terms. (Linear:
+_"call projects projects"_; _"rigid flexibility creates workflow chaos at
+scale."_ ADRs model the disciplined version — sequential numbers, never reused.)
+
+The trap is the **re-scope**: when you change how work is broken down
+(sprints → themes, one track → two, pre-launch plan → post-launch plan), it is
+tempting to introduce a fresh ID scheme and leave the old one live. Don't. You
+have exactly two legal moves:
+
+- **Migrate** — renumber the surviving items into the new scheme, or
+- **Freeze** — move the old scheme's artifacts to `docs/archive/` and stop
+  issuing new IDs in it.
+
+**The failure signal is unambiguous: if you ever need a table that translates
+between two _live_ schemes, you have already failed.** Collapse to one. A
+translation table is only ever legitimate as a frozen historical footnote.
+
+### Axis 4 — Freshness: archive is the only home for frozen
+
+`docs/archive/` holds everything frozen — superseded plans, closed
+sprint/theme trackers, retired parking-lots. The rule that makes the live
+surface trustworthy: **not-archived ⇒ live.** A reader (human or AI) can trust
+that anything sitting in the live docs is current. This extends the design-doc
+"archive-on-ship" rule to _all_ tracking and planning artifacts, not just
+design docs.
+
+**Prune, don't groom.** Stale backlog items are archived on a staleness
+threshold, not endlessly re-triaged. Both Shape Up and Linear reached the same
+conclusion independently: _"Important ones will resurface; low-priority ones
+never get fixed"_ (Linear auto-archives closed/untouched items after a
+configurable window; Shape Up refuses a backlog outright — _"a big weight we
+don't need to carry"_). Trust resurfacing — customers, repeated asks, your own
+memory, the AI's on-demand recall — over hoarding a list you'll never work.
+
+**Who catches rot when there's no reviewer.** GitLab fights doc-rot with
+Designated Responsible Individuals and monthly audits — pure overhead for a
+1–2 person shop, and it presupposes a _second party_ to catch drift. A solo /
+AI-assisted team has no second reviewer, so the failure mode inverts: docs rot
+silently until the AI confidently acts on a stale fact. The substitute is
+cheap: **make the AI the second reviewer** — on session resume, have it flag
+contradictions between surfaces and items past their staleness window. (This is
+the same accretion problem SSOT + "deprecation over accretion" address at
+enterprise scale, sized down to n=1.)
+
+## The re-scoping ritual (the missing reflex)
+
+The byte-size discipline is a per-commit reflex, enforced by a hook. But the
+moment that actually _spawns_ count/vocabulary/freshness sprawl is the
+**re-scope** — when a project changes how it breaks work down — and there is no
+reflex for it. Every accreted scheme and orphaned tracker in the case study
+above entered at a re-scope that added structure without retiring the old. This
+ritual is the missing reflex.
+
+**When it fires:** you change the work-breakdown model. Examples — date-bound
+sprints → feature themes; a single track → parallel tracks; a pre-launch plan →
+a post-launch plan; adopting an ADR/epic's own slice numbering.
+
+**The checklist (minutes at the re-scope; saves the Rosetta):**
+
+1. **Name the one new scheme.** It _replaces_, it does not _augment_.
+2. **Migrate or freeze the old scheme** (Axis 3). Renumber survivors into the
+   new scheme, or archive the old trackers and stop issuing old IDs. Never two
+   live schemes.
+3. **Collapse to one forward plan** (Axis 2). Any planning content that grew a
+   second home folds back into the roadmap; leftovers become clearly-labeled
+   reference or archive.
+4. **Archive the frozen** (Axis 4). Closed trackers → `docs/archive/`. Live
+   docs contain only-live.
+5. **Decision sweep.** Scan the prose you're moving for _decisions_ (not just
+   status); capture each in `docs/decisions.md` before it leaves the hot files.
+6. **Surface census.** Confirm the live planning roster matches the sanctioned
+   set above.
+
 ## Mechanical Enforcement
 
 Discipline that depends only on memory will drift. Three mechanical safeguards:
@@ -228,6 +359,13 @@ In playbook phase terms:
 - **Phase 0-1:** Surface roles aren't fully established yet; state file may not exist. Get the session log skeleton in place by end of Phase 1 so Phase 2 starts clean.
 - **Phase 2 (Production):** Discipline applies on every sprint wrapup. This is where the discipline is tested and where the bloat compounds if absent.
 - **Phase 3-5:** Lower wrapup frequency; discipline still applies but is easier to maintain.
+
+The size rules (A-E) fire on **every wrapup**. The forest axes (count,
+vocabulary, freshness) fire on **re-scopes and phase transitions** — run the
+[re-scoping ritual](#the-re-scoping-ritual-the-missing-reflex) whenever the
+work-breakdown model changes, and a **surface census** at each phase gate. Size
+is a per-commit reflex; count/vocabulary/freshness are re-scope reflexes. A
+project needs both — the size hook alone lets the forest go feral.
 
 The discipline scales: a 2-week project barely needs it, a 6-month project critically needs it, a multi-year project cannot survive without it.
 

@@ -68,6 +68,7 @@ Playbook/
 ├── TRANSITIONS.md                      # Phase transition readiness checklists
 ├── docs/
 │   ├── ROADMAP.md                      # Playbook development roadmap
+│   ├── doc-surface-discipline.md       # Bounding doc sprawl: size + count/vocabulary/freshness + the re-scoping ritual
 │   └── ai-token-optimization.md        # AI credit/token optimization guide
 ├── phase-0-concept/
 │   ├── README.md                       # Phase overview, entry/exit criteria
@@ -168,5 +169,6 @@ Playbook/
 - **Always have a working deliverable** — Each step ends with something concrete, not just notes
 - **Document decisions, not just outcomes** — Capture the "why" so future-you understands the reasoning
 - **Smallest viable process** — Only add process steps that earn their keep. If a step doesn't produce value, cut it
+- **One plan, one vocabulary, one home for frozen** — Keep the planning surface small and legible: a single forward plan, a single work-item scheme, and `docs/archive/` as the only home for anything frozen. When you re-scope how work is broken down, run the re-scoping ritual so old schemes and dead trackers don't accrete. See [doc-surface-discipline.md](docs/doc-surface-discipline.md)
 - **Phase gates are checkpoints, not gates** — Review exit criteria honestly, but don't let process block momentum
 - **Improve the Playbook as you go** — After each project, update templates and steps with lessons learned
